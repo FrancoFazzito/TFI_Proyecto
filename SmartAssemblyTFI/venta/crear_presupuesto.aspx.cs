@@ -19,8 +19,9 @@ namespace SmartAssemblyTFI
             DropDownList3.DataSource = new List<string>()
             {
                 "Seleccionar",
-                "Precio",
-                "Calidad"
+                "Precio de los componentes",
+                "Calidad de los componentes",
+                "Combinado"
             };
             DropDownList3.DataBind();
         }

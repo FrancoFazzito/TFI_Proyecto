@@ -18,7 +18,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h3>Ingrese los datos necesarios para el presupuesto</h3>
+                                    <h3>Ingrese los datos necesarios para poder crear el presupuesto</h3>
                                 </center>
                             </div>
                         </div>
@@ -29,11 +29,11 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label>Cantidad de dinero</label>
+                                <label>Cantidad de dinero en pesos</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" TextMode="Number" step="1000" placeholder="Cantidad de dinero"></asp:TextBox>
                                 </div>
-                                <label>Tipo de uso</label>
+                                <label>Para que vas a usar la PC</label>
                                 <div class="form-group">
                                     <asp:DropDownList class="form-control" ID="DropDownList2" runat="server"></asp:DropDownList>
                                 </div>
