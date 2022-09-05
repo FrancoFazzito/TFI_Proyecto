@@ -23,8 +23,8 @@ namespace SmartAssemblyTFI
             Componentes = new List<Componente>()
             {
                 new Componente() { Nombre = "SSD 256GB Crucial" },
-                new Componente() { Nombre = "HDD 1TB WD" },
                 new Componente() { Nombre = "RAM 8GB Kingston" },
+                new Componente() { Nombre = "HDD 1TB WD" },
                 new Componente() { Nombre = "R5 3400G" }
             };
         }
