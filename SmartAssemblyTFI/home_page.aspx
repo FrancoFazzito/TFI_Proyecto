@@ -27,7 +27,7 @@
                 <div class="col-12">
                     <center>
                         <h2>Nuestro proceso de armado</h2>
-                        <p><b>Contamos con un sencillo proceso de 3 pasos</b></p>
+                        <p><b>Contamos con un excelente proceso de 3 pasos</b></p>
                     </center>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <center>
                         <img class="homeCard" src="imgs/search-online.png" />
                         <h4>Armamos tu computadora</h4>
-                        <p class="text-justify">Nos indicas cuanto queres gastar y para que queres usar tu compu, despues nosotros hacemos todo el trabajo (?</p>
+                        <p class="text-justify">Nos indicas cuanto queres gastar y para que queres usar tu PC, despues nosotros hacemos todo el trabajo (?</p>
                     </center>
                 </div>
                 <div class="col-md-4">
