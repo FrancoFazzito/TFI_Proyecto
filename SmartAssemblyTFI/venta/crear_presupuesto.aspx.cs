@@ -20,8 +20,7 @@ namespace SmartAssemblyTFI
             {
                 "Seleccionar",
                 "Precio de los componentes",
-                "Calidad de los componentes",
-                "Combinado"
+                "Calidad de los componentes"
             };
             DropDownList3.DataBind();
         }
