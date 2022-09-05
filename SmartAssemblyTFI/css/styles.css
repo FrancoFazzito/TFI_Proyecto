@@ -5,8 +5,8 @@
 }
 
 .card {
-    padding: 25px;
-    margin: 25px;
+    padding: 15px;
+    margin: 15px;
 }
 
 .tipoUsoCard {
@@ -62,5 +62,4 @@
 
 .itemNav {
     margin: 10px 15px 10px 15px;
-    font-size: 1.25rem;
 }
