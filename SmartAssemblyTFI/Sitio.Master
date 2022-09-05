@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sitio.master.cs" Inherits="SmartAssemblyTFI.Sitio" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server" id="headerMaster">
+    <title></title>
+
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--our custom css--%>
+    <link href="css/styles.css" rel="stylesheet" />
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="chartJs/highcharts.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="../home_page.aspx"> FSolutions </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link itemNav" href="../home_page.aspx">Inicio</a>
+                        </li>
+                    </ul>
+                    <asp:Button class="btn btn-outline-light my-2 my-sm-0 nav-link itemNav" type="submit" runat="server" PostBackUrl="/venta/crear_presupuesto.aspx" Text="Arma tu PC" />
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton1" runat="server" href="login/cliente_login.aspx">Ingresar</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton2" runat="server" href="login/cliente_signup.aspx">Registrarse</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server">Salir</asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server">hola nombre usuario</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <section class="">
+                <br />
+                <div class="container text-center text-md-start mt-5">
+
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-6">
+
+                            <h6 class="text-uppercase fw-bold mb-4">Administracion
+                            </h6>
+                            <p>
+                                <a href="login/admin_login.aspx" class="text-reset">Login admin</a>
+                            </p>
+                            <p>
+                                <a href="home_admin.aspx" class="text-reset">Home admin</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+                            <h6 class="text-uppercase fw-bold mb-4">FSolutions
+                            </h6>
+                            <p>
+                                Nos dedicamos a ofrecer las mejores computadoras personalizadas al mejor precio.
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-6">
+
+                            <h6 class="text-uppercase fw-bold mb-4">Productos
+                            </h6>
+                            <p>
+                                <a href="/venta/crear_presupuesto.aspx" class="text-reset">Gaming</a>
+                            </p>
+                            <p>
+                                <a href="/venta/crear_presupuesto.aspx" class="text-reset">Work station</a>
+                            </p>
+                            <p>
+                                <a href="/venta/crear_presupuesto.aspx" class="text-reset">Edicion de video</a>
+                            </p>
+                            <p>
+                                <a href="/venta/crear_presupuesto.aspx"" class="text-reset">Arquitectura</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-6">
+
+                            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                            <p>Direccion: Buenos Aires, Mercedes 3808, Argentina</p>
+                            <p>Correo: cliente@fsolutions.com</p>
+                            <p>Telefono: + 54 11 1234-5678</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2022 Copyright:
+                <a class="text-reset fw-bold">FSolutions.com</a>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

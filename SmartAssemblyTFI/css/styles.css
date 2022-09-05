@@ -1,0 +1,66 @@
+﻿.homeCard {
+    width: 150px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.card {
+    padding: 25px;
+    margin: 25px;
+}
+
+.tipoUsoCard {
+    margin: 10px 25px;
+}
+
+.resumenCard {
+    margin: 25px;
+}
+
+.containerBienvenida {
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.containerBienvenidaAdmin {
+    margin-top: 125px;
+}
+
+.tituloHome {
+    font-size: 3.5rem;
+}
+
+.armarPcBoton {
+    padding: 10px 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 18rem;
+    height: 6rem;
+    margin-top: 30px;
+}
+
+#adminChartcontainer {
+    margin: 30px 75px 0px;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+.cardHeaderResumen {
+    background-color: #0069D9;
+    color: white;
+}
+
+.labelAclaracion {
+    font-size: smaller;
+}
+
+.fieldABMC {
+    margin-top: 10px;
+}
+
+.itemNav {
+    margin: 10px 15px 10px 15px;
+    font-size: 1.25rem;
+}
