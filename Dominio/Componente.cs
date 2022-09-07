@@ -28,14 +28,9 @@ namespace Dominio
         public int Stock { get; set; }
         public int StockLimite { get; set; }
 
-        public bool EsCompatibleConComponente(ICompatibilidad compatibilidad, Componente componente)
+        public bool EsCompatible(ICompatibilidad compatibilidad, Componente componente)
         {
             return compatibilidad.EsCompatible(this, componente);
-        }
-
-        public bool EsSuficienteCantidad(ISuficiente suficiente, int? cantidad)
-        {
-            return suficiente.EsSuficiente(this, cantidad);
         }
     }
 
@@ -43,21 +38,23 @@ namespace Dominio
     {
         public string TipoUso { get; set; }
         public string Importancia { get; set; }
+        public Especificacion Especificacion { get; set; }
+        public decimal Precio { get; set; }
     }
 
     public class FactoryCompatibilidad
     {
+        private readonly Dictionary<string, ICompatibilidad> CompatibilidadNombre = new Dictionary<string, ICompatibilidad>();
 
-    }
-
-    public class FactorySuficiente
-    {
-
+        public ICompatibilidad GetCompatibilidadPorNombre(string nombre)
+        {
+            return CompatibilidadNombre[nombre];
+        }
     }
 
     public class Computadora
     {
-        public void Add(Componente element, int quantity = 1)
+        public void Add(Componente element, int quantity)
         {
             for (var i = 0; i < quantity; i++)
             {
@@ -70,7 +67,7 @@ namespace Dominio
         public decimal CostoArmado { get; set; } //add costo armado to computer table
         public ICollection<Componente> Componentes { get; } = new List<Componente>();
         public decimal Price => Componentes.Sum(c => c.Precio) + CostoArmado;
-        public int TotalConsumption => Componentes.Sum(c => c.ConsumoEnWatts);
+        public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);
         public decimal Perfomance => Componentes.Sum(c => c.Perfomance);
         public decimal PricePerfomance => Math.Round(Perfomance / Price * 10000, 2);
         public Componente this[string tipo] => Componentes.FirstOrDefault(c => c.Tipo == tipo);
@@ -86,8 +83,24 @@ namespace Dominio
         bool EsSuficiente(Componente componente, int? cantidad);
     }
 
-    public class AgregadoInvalido : Exception
+    public class ExcepcionAgregadoInvalido : Exception
     {
 
     }
+
+    public class Especificacion
+    {
+        public int? Mother;
+
+        public int Cpu { get; set; }
+        public int? Fan { get; set; }
+        public int Ram { get; set; }
+        public int? Gpu { get; set; }
+        public int Hdd { get; set; }
+        public int Ssd { get; set; }
+    }
+
 }
+
+
+    

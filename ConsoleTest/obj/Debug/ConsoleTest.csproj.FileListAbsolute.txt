@@ -1,0 +1,12 @@
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\obj\Debug\ConsoleTest.csproj.AssemblyReference.cache
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\obj\Debug\ConsoleTest.csproj.CoreCompileInputs.cache
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\ConsoleTest.exe.config
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\ConsoleTest.exe
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\ConsoleTest.pdb
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\Aplicacion.dll
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\Dominio.dll
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\Aplicacion.pdb
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\bin\Debug\Dominio.pdb
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\obj\Debug\ConsoleTest.csproj.CopyComplete
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\obj\Debug\ConsoleTest.exe
+C:\Users\Franc\Downloads\TFI_Proyecto\ConsoleTest\obj\Debug\ConsoleTest.pdb

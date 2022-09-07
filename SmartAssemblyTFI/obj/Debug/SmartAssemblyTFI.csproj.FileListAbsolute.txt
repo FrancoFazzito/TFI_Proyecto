@@ -170,7 +170,6 @@ C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\roslyn\VBCSCompiler.e
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.csproj.AssemblyReference.cache
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.csproj.CoreCompileInputs.cache
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.csproj.CopyComplete
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.dll

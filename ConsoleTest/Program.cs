@@ -10,7 +10,7 @@ namespace ConsoleTest
 {
     class Program
     {
-        void Main(string[] args)
+        static void Main(string[] args)
         {
             var requerimiento = new RequerimientoArmado();
             var componentes = new List<Componente>(); //ordenar por importancia
@@ -19,7 +19,7 @@ namespace ConsoleTest
             // verificar el login antes de armar el pedido y luego del presupuesto presupuesto -> control login -> pedido
         }
 
-        private Computadora ObtenerComputadora(RequerimientoArmado requerimiento, List<Componente> componentes)
+        private static Computadora ObtenerComputadora(RequerimientoArmado requerimiento, List<Componente> componentes)
         {
             var computadoras =  from cpu in new List<Componente>().Where(c => c.Tipo == "CPU")
                                 let computer = ArmarComputadora(cpu, requerimiento)
@@ -33,7 +33,7 @@ namespace ConsoleTest
         {
             try
             {
-               return BuilderComputadora.Inicializar(null, requerimiento, 0, null, null, cpuIterado)
+               return BuilderComputadora.Inicializar(null, requerimiento, 0, null, cpuIterado)
                                         .AgregarCpu()
                                         .AgregarMother()
                                         .AgregarRam()
@@ -45,7 +45,7 @@ namespace ConsoleTest
                                         .AgregarPsu()
                                         .Build();
             }
-            catch (AgregadoInvalido)
+            catch (ExcepcionAgregadoInvalido)
             {
                 return null;
             }
