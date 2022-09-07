@@ -42,10 +42,10 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton1" runat="server" href="login/cliente_login.aspx">Ingresar</asp:LinkButton>
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton1" runat="server" href="../login/cliente_login.aspx">Ingresar</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton2" runat="server" href="login/cliente_signup.aspx">Registrarse</asp:LinkButton>
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton2" runat="server" href="../login/cliente_signup.aspx">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server">Salir</asp:LinkButton>
