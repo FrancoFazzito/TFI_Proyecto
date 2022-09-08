@@ -4,15 +4,15 @@
     {
         public string Id { get; set; }
         public string TipoUso { get; set; }
-        public int Mother => Cpu - 1;
+        public int Mother => Cpu - 10;
         public int Cpu { get; set; }
-        public int Fan => Cpu - 1;
+        public int Fan => Cpu - 10;
         public int Ram { get; set; }
         public int Gpu { get; set; }
         public int Hdd { get; set; }
         public int Ssd { get; set; }
-        public int Tower => ((Fan + Cpu + Gpu) / 3) - 1;
-        public int Psu => ((Cpu + Gpu) / 2) - 1;
+        public int Tower => (Fan + Cpu + Gpu) / 3;
+        public int Psu => ((Cpu + Gpu) / 2) - 20;
     }
 
 }

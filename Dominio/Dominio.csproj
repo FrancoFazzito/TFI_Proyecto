@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,9 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compatibilidades\CompatibilidadFanCpu.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadMotherCpu.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadRamCpu.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadRamMother.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadTowerFan.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadTowerMother.cs" />
+    <Compile Include="Compatibilidades\CompatibilidadVideoIntegrado.cs" />
     <Compile Include="Computadora\Componente.cs" />
     <Compile Include="Computadora\Computadora.cs" />
-    <Compile Include="Computadora\ICompatibilidad.cs" />
+    <Compile Include="Compatibilidades\ICompatibilidad.cs" />
     <Compile Include="Requerimientos\Especificacion.cs" />
     <Compile Include="Excepciones\ExcepcionAgregadoInvalido.cs" />
     <Compile Include="Excepciones\ExcepcionRequerimientoInvalido.cs" />

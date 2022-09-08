@@ -35,7 +35,7 @@ namespace SmartAssemblyTFI
         protected void Button1_Click(object sender, EventArgs e)
         {
             var tipoUso = DropDownList2.SelectedValue;
-            var importancia = DropDownList3.SelectedValue == "Calidad de los componentes" ? "precio" : "calidad";
+            var importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
             var precio = decimal.Parse(TextBox1.Text);
             var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
             var director = new DirectorArmadorComputadora(requerimiento);

@@ -28,9 +28,8 @@ namespace Aplicacion
         {
             var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
             var componentes = GetComponentesOrdenadosPorImportancia(_requerimientoArmado.Importancia);
-            var computadoras = ObtenerComputadoras(componentes, _requerimientoArmado, especificacion);
-            var computadora = computadoras.OrderByDescending(c => c.PrecioPerfomance).FirstOrDefault();
-            return computadora == null ? computadora : throw new ExcepcionRequerimientoInvalido();
+            var computadoras = ObtenerComputadoras(componentes, _requerimientoArmado.Precio, especificacion);
+            return computadoras.OrderByDescending(c => c.PrecioPerfomance).FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
         }
 
         private IEnumerable<Componente> GetComponentesOrdenadosPorImportancia(string importancia)
@@ -40,19 +39,24 @@ namespace Aplicacion
                 : _repositorioComponente.ObtenerTodos.OrderByDescending(c => c.Perfomance);
         }
 
-        private IEnumerable<Computadora> ObtenerComputadoras(IEnumerable<Componente> componentes, RequerimientoArmado requerimiento, Especificacion especificacion)
+        private IEnumerable<Computadora> ObtenerComputadoras(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion)
         {
             return from cpu in componentes.Where(c => c.Tipo == "CPU")
-                   let computer = ArmarComputadora(componentes, requerimiento, especificacion, cpu)
+                   let computer = ArmarComputadora(componentes, precio, especificacion, cpu)
                    where computer != null
                    select computer;
         }
 
-        private Computadora ArmarComputadora(IEnumerable<Componente> componentes, RequerimientoArmado requerimiento, Especificacion especificacion, Componente cpuIterado)
+        private Computadora ArmarComputadora(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, Componente cpuParaIterar)
         {
             try
             {
-                return ArmadorComputadora.Inicializar(componentes, requerimiento.Precio, especificacion, _costoArmado, _factoryCompatibilidad, cpuIterado)
+                return ArmadorComputadora.Inicializar(componentes, 
+                                                      precio, 
+                                                      especificacion, 
+                                                      _costoArmado, 
+                                                      _factoryCompatibilidad, 
+                                                      cpuParaIterar)
                                          .AgregarCpu()
                                          .AgregarMother()
                                          .AgregarRam()
@@ -62,7 +66,7 @@ namespace Aplicacion
                                          .AgregarSsd()
                                          .AgregarTower()
                                          .AgregarPsu()
-                                         .ObtenerComputadoraArmada();
+                                         .ComputadoraArmada;
             }
             catch (ExcepcionAgregadoInvalido)
             {
