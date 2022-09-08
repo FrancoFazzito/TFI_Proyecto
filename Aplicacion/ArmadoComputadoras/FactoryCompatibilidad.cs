@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Dominio;
+using System.Collections.Generic;
 
-namespace Dominio
+namespace Aplicacion
 {
     public class FactoryCompatibilidad
     {

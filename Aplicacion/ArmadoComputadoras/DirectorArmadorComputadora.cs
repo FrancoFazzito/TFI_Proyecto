@@ -11,12 +11,17 @@ namespace Aplicacion
         private readonly decimal _costoArmado = decimal.Parse(ConfigurationManager.AppSettings["costoArmado"]);
         private readonly FactoryCompatibilidad _factoryCompatibilidad = new FactoryCompatibilidad();
         private readonly RequerimientoArmado _requerimientoArmado;
-        private readonly ComponenteRepositorioSoloLectura _repositorioComponente;
-        private readonly EspecificacionRepositorioSoloLectura _repositorioEspecificacion;
+        private readonly RepositorioComponenteSoloLectura _repositorioComponente;
+        private readonly RepositorioEspecificacionSoloLectura _repositorioEspecificacion;
         //add precio to pantalla de presentacion de computadora
+        // si da error llevar a una pantalla de error que le permita volver a cargar otro presupuesto
+        // verificar el login antes de armar el pedido y luego del presupuesto presupuesto -> control login -> pedido
+
         public DirectorArmadorComputadora(RequerimientoArmado requerimientoArmado)
         {
             _requerimientoArmado = requerimientoArmado;
+            _repositorioComponente = new RepositorioComponenteSoloLectura();
+            _repositorioEspecificacion = new RepositorioEspecificacionSoloLectura();
         }
 
         public Computadora ObtenerComputadoraArmada()
@@ -24,7 +29,7 @@ namespace Aplicacion
             Especificacion especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
             IEnumerable<Componente> componentes = GetComponentesOrdenadosPorImportancia(_requerimientoArmado.Importancia);
             IEnumerable<Computadora> computadoras = ObtenerComputadoras(componentes, _requerimientoArmado, especificacion);
-            Computadora computadora = computadoras.OrderByDescending(c => c.PricePerfomance).FirstOrDefault();
+            Computadora computadora = computadoras.OrderByDescending(c => c.PrecioPerfomance).FirstOrDefault();
             return computadora == null ? computadora : throw new ExcepcionRequerimientoInvalido();
         }
 

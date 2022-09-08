@@ -18,10 +18,10 @@ namespace Dominio
         public string TipoUso { get; set; }
         public decimal CostoArmado { get; set; } //add costo armado to computer table
         public ICollection<Componente> Componentes { get; } = new List<Componente>();
-        public decimal Price => Componentes.Sum(c => c.Precio) + CostoArmado;
+        public decimal Precio => Componentes.Sum(c => c.Precio) + CostoArmado;
         public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);
-        public decimal Perfomance => Componentes.Sum(c => c.Perfomance);
-        public decimal PricePerfomance => Math.Round(Perfomance / Price * 10000, 2);
+        public decimal PerfomanceTotal => Componentes.Sum(c => c.Perfomance);
+        public decimal PrecioPerfomance => Math.Round(PerfomanceTotal / Precio * 10000, 2);
         public Componente this[string tipo] => Componentes.FirstOrDefault(c => c.Tipo == tipo);
     }
 

@@ -6,6 +6,6 @@ namespace Repositorio
 {
     public class Db
     {
-        public static IDbConnection Conexion => new SqlConnection(ConfigurationManager.ConnectionStrings["db"].ConnectionString);
+        public static IDbConnection Conexion => new SqlConnection(ConfigurationManager.ConnectionStrings["DB"].ConnectionString);
     }
 }

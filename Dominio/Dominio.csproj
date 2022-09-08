@@ -41,15 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Componente.cs" />
-    <Compile Include="Computadora.cs" />
-    <Compile Include="Especificacion.cs" />
-    <Compile Include="ExcepcionAgregadoInvalido.cs" />
-    <Compile Include="ExcepcionRequerimientoInvalido.cs" />
-    <Compile Include="FactoryCompatibilidad.cs" />
-    <Compile Include="ICompatibilidad.cs" />
+    <Compile Include="Computadora\Componente.cs" />
+    <Compile Include="Computadora\Computadora.cs" />
+    <Compile Include="Computadora\ICompatibilidad.cs" />
+    <Compile Include="Requerimientos\Especificacion.cs" />
+    <Compile Include="Excepciones\ExcepcionAgregadoInvalido.cs" />
+    <Compile Include="Excepciones\ExcepcionRequerimientoInvalido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequerimientoArmado.cs" />
+    <Compile Include="Requerimientos\RequerimientoArmado.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

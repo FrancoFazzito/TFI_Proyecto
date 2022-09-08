@@ -169,7 +169,7 @@ namespace Aplicacion
 
         private bool EsPresupuestoValido(Componente componente)
         {
-            decimal costoTotal = _computadoraArmada.Price + componente.Precio + _costoDeArmado;
+            decimal costoTotal = _computadoraArmada.Precio + componente.Precio + _costoDeArmado;
             return costoTotal >= _precio;
         }
 

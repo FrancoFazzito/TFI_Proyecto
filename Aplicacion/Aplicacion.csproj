@@ -42,8 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArmadorComputadora.cs" />
-    <Compile Include="DirectorArmadorComputadora.cs" />
+    <Compile Include="ArmadoComputadoras\ArmadorComputadora.cs" />
+    <Compile Include="ArmadoComputadoras\DirectorArmadorComputadora.cs" />
+    <Compile Include="ArmadoComputadoras\FactoryCompatibilidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

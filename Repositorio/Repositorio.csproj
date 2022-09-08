@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponenteRepositorioSoloLectura.cs" />
-    <Compile Include="db.cs" />
-    <Compile Include="EspecificacionRepositorioSoloLectura.cs" />
+    <Compile Include="Compartido\db.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\RepositorioComponenteSoloLectura.cs" />
+    <Compile Include="Repositorios\RepositorioEspecificacionSoloLectura.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">
