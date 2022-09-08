@@ -13,7 +13,6 @@ namespace Aplicacion
         private readonly RequerimientoArmado _requerimientoArmado;
         private readonly RepositorioComponenteSoloLectura _repositorioComponente;
         private readonly RepositorioEspecificacionSoloLectura _repositorioEspecificacion;
-        //add precio to pantalla de presentacion de computadora
         // si da error llevar a una pantalla de error que le permita volver a cargar otro presupuesto
         // verificar el login antes de armar el pedido y luego del presupuesto presupuesto -> control login -> pedido
 
@@ -51,11 +50,11 @@ namespace Aplicacion
         {
             try
             {
-                return ArmadorComputadora.Inicializar(componentes, 
-                                                      precio, 
-                                                      especificacion, 
-                                                      _costoArmado, 
-                                                      _factoryCompatibilidad, 
+                return ArmadorComputadora.Inicializar(componentes,
+                                                      precio,
+                                                      especificacion,
+                                                      _costoArmado,
+                                                      _factoryCompatibilidad,
                                                       cpuParaIterar)
                                          .AgregarCpu()
                                          .AgregarMother()

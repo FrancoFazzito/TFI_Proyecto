@@ -53,7 +53,7 @@ namespace SmartAssemblyTFI
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LimpiarFiltroCampos();
+            LimpiarFiltro();
             switch (DropDownList2.SelectedValue)
             {
                 case "CPU":
@@ -111,7 +111,7 @@ namespace SmartAssemblyTFI
             }
         }
 
-        private void LimpiarFiltroCampos()
+        private void LimpiarFiltro()
         {
             Socket.Visible = false;
             TieneVideoIntegrado.Visible = false;

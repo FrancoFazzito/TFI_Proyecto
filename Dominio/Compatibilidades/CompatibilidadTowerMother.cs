@@ -4,7 +4,8 @@
     {
         public bool EsCompatible(Componente tower, Componente mother)
         {
-            return GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
+            var v = GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
+            return v;
         }
 
         public int GetSize(string format)
@@ -13,15 +14,16 @@
             {
                 case "ATX":
                     return 3;
+
                 case "MATX":
                     return 2;
-                case "IATX":
+
+                case "ITX":
                     return 1;
+
                 default:
                     return 4;
             }
         }
     }
 }
-
-

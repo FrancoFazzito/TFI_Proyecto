@@ -32,10 +32,11 @@
                                 <div class="form-group">
                                     <ul class="list-group list-group-flush" selectmethod="GetData">
                                         <li class="list-group-item">CPU: <%=CpuNombre%></li>
-                                        <li class="list-group-item">GPU: <%=GpuNombre%></li>
-                                        <li class="list-group-item">RAM: <%=RamNombre%></li>
-                                        <li class="list-group-item">SSD: <%=SsdNombre%></li>
-                                        <li class="list-group-item">HDD: <%=HddNombre%></li>
+                                        <li class="list-group-item">GPU: <%=NombreGpu%></li>
+                                        <li class="list-group-item">RAM: <%=NombreRam%></li>
+                                        <li class="list-group-item">SSD: <%=NombreSsd%></li>
+                                        <li class="list-group-item">HDD: <%=NombreHdd%></li>
+                                        <li class="list-group-item">PRECIO: <%=Precio%></li>
                                     </ul>
                                 </div>
                                 <div class="form-group">

@@ -2,11 +2,6 @@
 {
     public class CompatibilidadTowerFan : ICompatibilidad
     {
-        public bool EsCompatible(Componente tower, Componente fan)
-        {
-            return fan == null || tower.TamanoFan >= fan.TamanoFan;
-        }
+        public bool EsCompatible(Componente tower, Componente fan) => fan == null || tower.TamanoFan >= fan.TamanoFan;
     }
 }
-
-

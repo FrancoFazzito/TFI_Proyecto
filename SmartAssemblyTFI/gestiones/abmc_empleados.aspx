@@ -49,8 +49,8 @@
                                 <label>Correo electronico</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Correo electronico"></asp:TextBox>
-                                </div>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Correo electronico"></asp:TextBox>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,10 +59,9 @@
                                 <label>Nombre</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Nombre"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Nombre"></asp:TextBox>
+                                    </div>
                                 </div>
-                                </div>
-                                
                             </div>
                         </div>
                         <div class="row">
@@ -80,10 +79,9 @@
                                 <label>Contraseña</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                                    </div>
                                 </div>
-                                </div>
-                                
                             </div>
                         </div>
                         <br>

@@ -14,7 +14,4 @@
         public int Tower => (Fan + Cpu + Gpu) / 3;
         public int Psu => ((Cpu + Gpu) / 2) - 20;
     }
-
 }
-
-

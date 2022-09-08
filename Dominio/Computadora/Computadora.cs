@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 
 namespace Dominio
@@ -21,10 +22,7 @@ namespace Dominio
         public decimal Precio => Componentes.Sum(c => c.Precio) + CostoArmado;
         public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);
         public decimal PerfomanceTotal => Componentes.Sum(c => c.Perfomance);
-        public decimal PrecioPerfomance => Math.Round(PerfomanceTotal / Precio * 10000, 2);
+        public decimal PrecioPerfomance => Math.Round(PerfomanceTotal / Precio * int.Parse(ConfigurationManager.AppSettings["multiplicadorPrecioPerfomance"]), 2);
         public Componente this[string tipo] => Componentes.FirstOrDefault(c => c.Tipo == tipo);
     }
-
 }
-
-

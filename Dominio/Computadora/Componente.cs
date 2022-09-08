@@ -25,5 +25,3 @@
         public bool EsCompatible(ICompatibilidad compatibilidad, Componente componente) => compatibilidad.EsCompatible(this, componente);
     }
 }
-
-

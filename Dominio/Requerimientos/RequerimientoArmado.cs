@@ -13,7 +13,4 @@
         public string Importancia { get; set; }
         public decimal Precio { get; set; }
     }
-
 }
-
-

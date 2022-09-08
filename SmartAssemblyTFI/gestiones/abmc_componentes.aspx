@@ -98,7 +98,7 @@
 
                         <div class="row">
                             <div class="col-md-6 mx-auto" runat="server" id="Socket" visible="false">
-                                <asp:label runat="server" ID="LabelSocket">Socket</asp:label>
+                                <asp:Label runat="server" ID="LabelSocket">Socket</asp:Label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox1" AutoPostBack="true" runat="server" placeholder="Socket"></asp:TextBox>
