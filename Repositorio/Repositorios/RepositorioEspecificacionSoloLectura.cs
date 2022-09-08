@@ -6,6 +6,6 @@ namespace Repositorio
 {
     public class RepositorioEspecificacionSoloLectura
     {
-        public IEnumerable<Especificacion> ObtenerTodos => Db.Conexion.Query<Especificacion>("SELECT * FROM Especificaciones");
+        public IEnumerable<Especificacion> ObtenerTodos => Db.Conexion.Query<Especificacion>("SELECT * FROM Especificacion");
     }
 }

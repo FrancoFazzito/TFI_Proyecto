@@ -1,8 +1,5 @@
-﻿using Aplicacion;
-using Dominio;
-using Repositorio;
+﻿using Repositorio;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleTest
@@ -11,12 +8,15 @@ namespace ConsoleTest
     {
         private static void Main(string[] args)
         {
-            RepositorioComponenteSoloLectura repo = new RepositorioComponenteSoloLectura();
-            IEnumerable<Componente> componentes = repo.ObtenerTodos;
-            foreach (var item in componentes)
-            {
-                Console.WriteLine(item.Nombre);
-            }
+            var repoComponentes = new RepositorioComponenteSoloLectura();
+            var componentes = repoComponentes.ObtenerTodos;
+            var componentesboolean = componentes.Any();
+
+            var repoEspecificaciones = new RepositorioEspecificacionSoloLectura();
+            var especificaciones = repoEspecificaciones.ObtenerTodos;
+            var especificacionesboolean = componentes.Any();
+
+            Console.ReadLine();
         }
     }
 }

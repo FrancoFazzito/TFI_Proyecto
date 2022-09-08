@@ -8,7 +8,7 @@ namespace Dominio
     {
         public void Add(Componente element, int quantity)
         {
-            for (int i = 0; i < quantity; i++)
+            for (var i = 0; i < quantity; i++)
             {
                 Componentes.Add(element);
             }

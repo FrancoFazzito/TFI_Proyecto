@@ -9,32 +9,37 @@ namespace SmartAssemblyTFI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DropDownList2.DataSource = new List<string>() //cargar tipos de uso con BD
+            if (!Page.IsPostBack)
             {
-                "Seleccionar",
-                "Gaming",
-                "Edicion de video",
-                "Arquitectura"
-            };
-            DropDownList2.DataBind();
+                DropDownList2.DataSource = new List<string>() //cargar tipos de uso con BD y agregar add items para select para que quede como predeterminado
+                {
+                    "Seleccionar",
+                    "Gaming juegos AAA",
+                    "Gaming juegos competitivos",
+                    "Edicion de video",
+                    "Arquitectura",
+                    "Oficina"
+                };
+                DropDownList2.DataBind();
 
-            DropDownList3.DataSource = new List<string>() //cargar importancias con BD
-            {
-                "Seleccionar",
-                "Precio de los componentes",
-                "Calidad de los componentes"
-            };
-            DropDownList3.DataBind();
+                DropDownList3.DataSource = new List<string>() //cargar importancias con BD y agregar add items para select para que quede como predeterminado
+                {
+                    "Seleccionar",
+                    "Precio de los componentes",
+                    "Calidad de los componentes"
+                };
+                DropDownList3.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string tipoUso = DropDownList2.SelectedValue;
-            string importancia = DropDownList3.SelectedValue;
-            decimal precio = decimal.Parse(TextBox1.Text);
-            RequerimientoArmado requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadoraArmada = director.ObtenerComputadoraArmada();
+            var tipoUso = DropDownList2.SelectedValue;
+            var importancia = DropDownList3.SelectedValue == "Calidad de los componentes" ? "precio" : "calidad";
+            var precio = decimal.Parse(TextBox1.Text);
+            var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadoraArmada = director.ObtenerComputadoraArmada();
             Session["computadoraArmada"] = computadoraArmada;
             Response.Redirect("crear_pedido.aspx");
         }

@@ -7,10 +7,7 @@ namespace Aplicacion
     {
         private readonly Dictionary<string, ICompatibilidad> CompatibilidadNombre = new Dictionary<string, ICompatibilidad>();
 
-        public ICompatibilidad GetCompatibilidadPorNombre(string nombre)
-        {
-            return CompatibilidadNombre[nombre];
-        }
+        public ICompatibilidad GetCompatibilidadPorNombre(string nombre) => CompatibilidadNombre[nombre];
     }
 
 }
