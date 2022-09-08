@@ -7,3 +7,14 @@ C:\Users\Franc\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.csproj.Cor
 C:\Users\Franc\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.csproj.CopyComplete
 C:\Users\Franc\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.dll
 C:\Users\Franc\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Aplicacion.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Aplicacion.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Dominio.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Repositorio.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Dominio.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\bin\Debug\Repositorio.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.csproj.CopyComplete
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\Aplicacion\obj\Debug\Aplicacion.pdb

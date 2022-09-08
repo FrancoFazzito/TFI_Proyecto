@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dominio
+﻿namespace Dominio
 {
     public class Componente
     {
@@ -33,74 +27,6 @@ namespace Dominio
             return compatibilidad.EsCompatible(this, componente);
         }
     }
-
-    public class RequerimientoArmado
-    {
-        public string TipoUso { get; set; }
-        public string Importancia { get; set; }
-        public Especificacion Especificacion { get; set; }
-        public decimal Precio { get; set; }
-    }
-
-    public class FactoryCompatibilidad
-    {
-        private readonly Dictionary<string, ICompatibilidad> CompatibilidadNombre = new Dictionary<string, ICompatibilidad>();
-
-        public ICompatibilidad GetCompatibilidadPorNombre(string nombre)
-        {
-            return CompatibilidadNombre[nombre];
-        }
-    }
-
-    public class Computadora
-    {
-        public void Add(Componente element, int quantity)
-        {
-            for (var i = 0; i < quantity; i++)
-            {
-                Componentes.Add(element);
-            }
-        }
-
-        public int Id { get; set; }
-        public string TipoUso { get; set; }
-        public decimal CostoArmado { get; set; } //add costo armado to computer table
-        public ICollection<Componente> Componentes { get; } = new List<Componente>();
-        public decimal Price => Componentes.Sum(c => c.Precio) + CostoArmado;
-        public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);
-        public decimal Perfomance => Componentes.Sum(c => c.Perfomance);
-        public decimal PricePerfomance => Math.Round(Perfomance / Price * 10000, 2);
-        public Componente this[string tipo] => Componentes.FirstOrDefault(c => c.Tipo == tipo);
-    }
-
-    public interface ICompatibilidad
-    {
-        bool EsCompatible(Componente componente, Componente componenteParaComparar);
-    }
-
-    public interface ISuficiente
-    {
-        bool EsSuficiente(Componente componente, int? cantidad);
-    }
-
-    public class ExcepcionAgregadoInvalido : Exception
-    {
-
-    }
-
-    public class Especificacion
-    {
-        public int? Mother;
-
-        public int Cpu { get; set; }
-        public int? Fan { get; set; }
-        public int Ram { get; set; }
-        public int? Gpu { get; set; }
-        public int Hdd { get; set; }
-        public int Ssd { get; set; }
-    }
-
 }
 
 
-    

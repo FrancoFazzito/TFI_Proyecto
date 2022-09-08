@@ -22,7 +22,7 @@ namespace SmartAssemblyTFI
                         "FAN"
                 };
                 DropDownList2.DataBind();
-                DropDownList2_SelectedIndexChanged(null,null);
+                DropDownList2_SelectedIndexChanged(null, null);
 
                 DropDownList1.DataSource = new List<string>()
                 {

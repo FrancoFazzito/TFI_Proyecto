@@ -42,7 +42,7 @@
                                     <asp:DropDownList class="form-control" ID="DropDownList3" runat="server"></asp:DropDownList>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Pedir mi computadora" PostBackUrl="/venta/crear_pedido.aspx" />
+                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Pedir mi computadora" PostBackUrl="/venta/crear_pedido.aspx" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>

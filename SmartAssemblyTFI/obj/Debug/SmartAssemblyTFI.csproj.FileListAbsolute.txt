@@ -174,3 +174,9 @@ C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTF
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.csproj.CopyComplete
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.dll
 C:\Users\Franc\Downloads\TFI_Proyecto\SmartAssemblyTFI\obj\Debug\SmartAssemblyTFI.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Aplicacion.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Dominio.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Repositorio.dll
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Aplicacion.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Dominio.pdb
+C:\Users\USUARIO\Downloads\TFI_Proyecto\SmartAssemblyTFI\bin\Repositorio.pdb
