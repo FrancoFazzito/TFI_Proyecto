@@ -26,16 +26,14 @@ namespace Aplicacion
         public Computadora ObtenerComputadoraArmada()
         {
             var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
-            var componentes = GetComponentesOrdenadosPorImportancia(_requerimientoArmado.Importancia);
+            var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
             var computadoras = ObtenerComputadoras(componentes, _requerimientoArmado.Precio, especificacion);
-            return computadoras.OrderByDescending(c => c.PrecioPerfomance).FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
-        }
 
-        private IEnumerable<Componente> GetComponentesOrdenadosPorImportancia(string importancia)
-        {
-            return importancia == "precio"
-                ? _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio)
-                : _repositorioComponente.ObtenerTodos.OrderByDescending(c => c.Perfomance);
+            computadoras = _requerimientoArmado.Importancia == "precio"
+                           ? computadoras.OrderBy(c => c.Precio)
+                           : computadoras.OrderBy(c => c.Perfomance);
+
+            return computadoras.FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
         }
 
         private IEnumerable<Computadora> ObtenerComputadoras(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion)

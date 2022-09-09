@@ -15,6 +15,13 @@ namespace Aplicacion
         private readonly decimal _precio;
         private Componente _fanIterado;
         private Componente _motherIterado;
+        private Componente _gpuIterada;
+        private Componente _hddIterado;
+        private Componente _psuIterado;
+        private Componente _tower;
+        private Componente _ssd;
+        private Componente _ram;
+
         private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, decimal costoDeArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpuIterado, Computadora computadoraArmada)
         {
             _componentes = componentes;
@@ -69,8 +76,9 @@ namespace Aplicacion
                 return this;
             }
 
-            AgregarComponente(_componentes.Where(c => c.Tipo == "GPU")
-                                          .FirstOrDefault(c => c.Perfomance >= _especificacion.Gpu));
+            _gpuIterada = _componentes.Where(c => c.Tipo == "GPU")
+                                      .FirstOrDefault(c => c.Perfomance >= _especificacion.Gpu);
+            AgregarComponente(_gpuIterada);
             return this;
         }
 
@@ -81,8 +89,9 @@ namespace Aplicacion
                 return this;
             }
 
-            AgregarComponente(_componentes.Where(c => c.Tipo == "HDD")
-                                          .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd));
+             _hddIterado = _componentes.Where(c => c.Tipo == "HDD")
+                                       .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
+            AgregarComponente(_hddIterado);
             return this;
         }
 
@@ -98,8 +107,9 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarPsu()
         {
-            AgregarComponente(_componentes.Where(c => c.Tipo == "PSU")
-                                          .FirstOrDefault(c => c.Capacidad >= ComputadoraArmada.ConsumoTotal));
+            _psuIterado = _componentes.Where(c => c.Tipo == "PSU")
+                                                      .FirstOrDefault(c => c.Capacidad >= ComputadoraArmada.ConsumoTotal);
+            AgregarComponente(_psuIterado);
             return this;
         }
 
@@ -108,10 +118,11 @@ namespace Aplicacion
             var compatibilidadRamCpu = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamCpu);
             var compatibilidadRamMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamMother);
             var cantidadRams = Math.Min(_cpuIterado.Canales, _motherIterado.Canales);
-            AgregarComponente(_componentes.Where(c => c.Tipo == "RAM")
-                                          .Where(c => c.EsCompatible(compatibilidadRamCpu, _cpuIterado))
-                                          .Where(c => c.EsCompatible(compatibilidadRamMother, _motherIterado))
-                                          .FirstOrDefault(c => c.Perfomance >= (_especificacion.Ram / cantidadRams)), cantidadRams);
+            _ram = _componentes.Where(c => c.Tipo == "RAM")
+                               .Where(c => c.EsCompatible(compatibilidadRamCpu, _cpuIterado))
+                               .Where(c => c.EsCompatible(compatibilidadRamMother, _motherIterado))
+                               .FirstOrDefault(c => c.Perfomance >= (_especificacion.Ram / cantidadRams));
+            AgregarComponente(_ram, cantidadRams);
             return this;
         }
 
@@ -122,8 +133,9 @@ namespace Aplicacion
                 return this;
             }
 
-            AgregarComponente(_componentes.Where(c => c.Tipo == "SSD")
-                                          .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd));
+            _ssd = _componentes.Where(c => c.Tipo == "SSD")
+                               .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
+            AgregarComponente(_ssd);
             return this;
         }
 
@@ -131,9 +143,10 @@ namespace Aplicacion
         {
             var compatibleTowerMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerMother);
             var compatibleTowerFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerFan);
-            AgregarComponente(_componentes.Where(c => c.Tipo == "TOWER")
-                                          .Where(c => c.EsCompatible(compatibleTowerFan, _fanIterado))
-                                          .FirstOrDefault(c => c.EsCompatible(compatibleTowerMother, _motherIterado)));
+            _tower = _componentes.Where(c => c.Tipo == "TOWER")
+                                 .Where(c => c.EsCompatible(compatibleTowerFan, _fanIterado))
+                                 .FirstOrDefault(c => c.EsCompatible(compatibleTowerMother, _motherIterado));
+            AgregarComponente(_tower);
             return this;
         }
 

@@ -2,6 +2,7 @@
 using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Web.UI;
 
 namespace SmartAssemblyTFI
 {
@@ -34,14 +35,21 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var tipoUso = DropDownList2.SelectedValue;
-            var importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
-            var precio = decimal.Parse(TextBox1.Text);
-            var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
-            var director = new DirectorArmadorComputadora(requerimiento);
-            var computadoraArmada = director.ObtenerComputadoraArmada();
-            Session["computadoraArmada"] = computadoraArmada;
-            Response.Redirect("crear_pedido.aspx");
+            try
+            {
+                var tipoUso = DropDownList2.SelectedValue;
+                var importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
+                var precio = decimal.Parse(TextBox1.Text);
+                var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
+                var director = new DirectorArmadorComputadora(requerimiento);
+                var computadoraArmada = director.ObtenerComputadoraArmada();
+                Session["computadoraArmada"] = computadoraArmada;
+                Response.Redirect("crear_pedido.aspx");
+            }
+            catch (ExcepcionRequerimientoInvalido)
+            {
+                
+            }
         }
     }
 }

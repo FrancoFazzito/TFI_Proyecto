@@ -11,7 +11,5 @@
         public int Gpu { get; set; }
         public int Hdd { get; set; }
         public int Ssd { get; set; }
-        public int Tower => (Fan + Cpu + Gpu) / 3;
-        public int Psu => ((Cpu + Gpu) / 2) - 20;
     }
 }

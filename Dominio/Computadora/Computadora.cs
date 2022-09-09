@@ -21,8 +21,8 @@ namespace Dominio
         public ICollection<Componente> Componentes { get; } = new List<Componente>();
         public decimal Precio => Componentes.Sum(c => c.Precio) + CostoArmado;
         public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);
-        public decimal PerfomanceTotal => Componentes.Sum(c => c.Perfomance);
-        public decimal PrecioPerfomance => Math.Round(PerfomanceTotal / Precio * int.Parse(ConfigurationManager.AppSettings["multiplicadorPrecioPerfomance"]), 2);
+        public decimal Perfomance => Componentes.Sum(c => c.Perfomance);
+        public decimal PrecioPerfomanceRatio => Math.Round(Perfomance / Precio * int.Parse(ConfigurationManager.AppSettings["multiplicadorPrecioPerfomance"]), 2);
         public Componente this[string tipo] => Componentes.FirstOrDefault(c => c.Tipo == tipo);
     }
 }
