@@ -47,7 +47,11 @@
   <ItemGroup>
     <Compile Include="Compartido\db.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorios\RepositorioComponenteSoloLectura.cs" />
+    <Compile Include="Repositorios\Componentes\ParametrosComponente.cs" />
+    <Compile Include="Repositorios\Componentes\RepositorioComponenteAlta.cs" />
+    <Compile Include="Repositorios\Componentes\RepositorioComponenteBaja.cs" />
+    <Compile Include="Repositorios\Componentes\RepositorioComponenteModificacion.cs" />
+    <Compile Include="Repositorios\Componentes\RepositorioComponenteSoloLectura.cs" />
     <Compile Include="Repositorios\RepositorioEspecificacionSoloLectura.cs" />
   </ItemGroup>
   <ItemGroup>
