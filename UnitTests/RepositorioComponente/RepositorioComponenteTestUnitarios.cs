@@ -11,11 +11,8 @@ namespace UnitTests
         [TestMethod]
         public void Alta()
         {
-            //act
-            var rows = RepositorioAlta.Agregar(ComponenteTest);
-
-            //assert
-            Assert.IsTrue(rows == 1);
+            //act assert
+            Assert.IsTrue(RepositorioAlta.Agregar(ComponenteTest) == 1);
 
             //exit
             RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
@@ -27,11 +24,8 @@ namespace UnitTests
             //arrange
             RepositorioAlta.Agregar(ComponenteTest);
 
-            //act
-            var rows = RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
-
-            //assert
-            Assert.IsTrue(rows == 1);
+            //act assert
+            Assert.IsTrue(RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id)) == 1);
         }
 
         [TestMethod]
@@ -43,11 +37,8 @@ namespace UnitTests
             componente.Nombre = "testModificado";
             componente.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
 
-            //act
-            var rows = RepositorioModificacion.Modificar(componente);
-
-            //assert
-            Assert.IsTrue(rows == 1);
+            //act assert
+            Assert.IsTrue(RepositorioModificacion.Modificar(componente) == 1);
 
             //exit
             RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
@@ -56,14 +47,8 @@ namespace UnitTests
         [TestMethod]
         public void Obtener()
         {
-            //arrange
-            var repositorio = new RepositorioComponenteSoloLectura();
-
-            //act
-            var componentes = repositorio.ObtenerTodos;
-
-            //assert
-            Assert.IsTrue(componentes.Any());
+            //arrange act assert
+            Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
         }
 
         private RepositorioComponenteSoloLectura RepositorioLectura => new RepositorioComponenteSoloLectura();
