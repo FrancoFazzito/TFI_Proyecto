@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositorio", "Repositorio\Repositorio.csproj", "{16B9F832-ECF6-441F-94B9-4A41747E907D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{1F70431C-8E4E-41FD-B998-36937C956449}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitarios", "UnitTests\TestUnitarios.csproj", "{1F70431C-8E4E-41FD-B998-36937C956449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
