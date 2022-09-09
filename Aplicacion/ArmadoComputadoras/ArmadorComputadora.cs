@@ -12,7 +12,7 @@ namespace Aplicacion
         private readonly decimal _costoArmado;
         private readonly decimal _precio;
         private readonly FactoryCompatibilidad _factoryCompatibilidad;
-        private readonly Especificacion _especificacion;
+        private readonly TipoUso _especificacion;
         private readonly Computadora _computadora;
         private readonly Componente _cpu;
         private Componente _fan;
@@ -25,7 +25,7 @@ namespace Aplicacion
         private Componente _ram;
 
 
-        private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraArmada)
+        private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraArmada)
         {
             _componentes = componentes;
             _precio = precio;
@@ -36,12 +36,12 @@ namespace Aplicacion
             _computadora = computadoraArmada;
         }
 
-        public static ArmadorComputadora Inicializar(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu)
+        public static ArmadorComputadora Inicializar(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu)
         {
             return new ArmadorComputadora(componentes, precio, especificacion, costoArmado, factoryCompatibilidad, cpu, new Computadora()
             {
                 CostoArmado = costoArmado,
-                TipoUso = especificacion.TipoUso
+                TipoUso = especificacion.Nombre
             });
         }
 

@@ -1,9 +1,9 @@
 ﻿namespace Dominio
 {
-    public class Especificacion
+    public class TipoUso
     {
-        public string Id { get; set; }
-        public string TipoUso { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
         public int Mother => Cpu - 10;
         public int Cpu { get; set; }
         public int Fan => Cpu - 10;

@@ -1,6 +1,4 @@
-﻿using Repositorio;
-using System;
-using System.Linq;
+﻿using System;
 
 namespace ConsoleTest
 {
@@ -8,14 +6,6 @@ namespace ConsoleTest
     {
         private static void Main(string[] args)
         {
-            var repoComponentes = new RepositorioComponenteSoloLectura();
-            var componentes = repoComponentes.ObtenerTodos;
-            var componentesboolean = componentes.Any();
-
-            var repoEspecificaciones = new RepositorioEspecificacionSoloLectura();
-            var especificaciones = repoEspecificaciones.ObtenerTodos;
-            var especificacionesboolean = componentes.Any();
-
             Console.ReadLine();
         }
     }

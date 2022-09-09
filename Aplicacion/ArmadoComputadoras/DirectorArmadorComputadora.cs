@@ -12,7 +12,7 @@ namespace Aplicacion
         private readonly FactoryCompatibilidad _factoryCompatibilidad = new FactoryCompatibilidad();
         private readonly RequerimientoArmado _requerimientoArmado;
         private readonly RepositorioComponenteSoloLectura _repositorioComponente;
-        private readonly RepositorioEspecificacionSoloLectura _repositorioEspecificacion;
+        private readonly RepositorioTipoUsoSoloLectura _repositorioEspecificacion;
         // si da error llevar a una pantalla de error que le permita volver a cargar otro presupuesto
         // verificar el login antes de armar el pedido y luego del presupuesto presupuesto -> control login -> pedido
 
@@ -20,14 +20,14 @@ namespace Aplicacion
         {
             _requerimientoArmado = requerimientoArmado;
             _repositorioComponente = new RepositorioComponenteSoloLectura();
-            _repositorioEspecificacion = new RepositorioEspecificacionSoloLectura();
+            _repositorioEspecificacion = new RepositorioTipoUsoSoloLectura();
         }
 
         public Computadora Computadora
         {
             get
             {
-                var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
+                var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.Nombre == _requerimientoArmado.TipoUso);
                 var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
                 
                 var computadoras = from cpu in componentes.Where(c => c.Tipo == "CPU")
@@ -42,7 +42,7 @@ namespace Aplicacion
             }
         }
 
-        private Computadora ArmarComputadora(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, Componente cpuParaIterar)
+        private Computadora ArmarComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, Componente cpuParaIterar)
         {
             try
             {

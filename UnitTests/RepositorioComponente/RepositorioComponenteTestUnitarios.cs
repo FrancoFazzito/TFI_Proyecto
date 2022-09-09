@@ -12,23 +12,23 @@ namespace UnitTests
         public void Alta()
         {
             //act
-            var rows = new RepositorioComponenteAlta().Agregar(ComponenteTest);
-            
+            var rows = RepositorioAlta.Agregar(ComponenteTest);
+
             //assert
             Assert.IsTrue(rows == 1);
 
             //exit
-            new RepositorioComponenteBaja().Eliminar(new RepositorioComponenteSoloLectura().ObtenerTodos.Max(c => c.Id));
+            RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
         }
 
         [TestMethod]
         public void Baja()
         {
             //arrange
-            new RepositorioComponenteAlta().Agregar(ComponenteTest);
+            RepositorioAlta.Agregar(ComponenteTest);
 
             //act
-            var rows = new RepositorioComponenteBaja().Eliminar(new RepositorioComponenteSoloLectura().ObtenerTodos.Max(c => c.Id));
+            var rows = RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
 
             //assert
             Assert.IsTrue(rows == 1);
@@ -38,19 +38,19 @@ namespace UnitTests
         public void Modificacion()
         {
             //arrange
-            new RepositorioComponenteAlta().Agregar(ComponenteTest);
+            RepositorioAlta.Agregar(ComponenteTest);
             var componente = ComponenteTest;
             componente.Nombre = "testModificado";
-            componente.Id = new RepositorioComponenteSoloLectura().ObtenerTodos.Max(c => c.Id);
+            componente.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
 
             //act
-            var rows = new RepositorioComponenteModificacion().Actualizar(componente);
+            var rows = RepositorioModificacion.Modificar(componente);
 
             //assert
             Assert.IsTrue(rows == 1);
 
             //exit
-            new RepositorioComponenteBaja().Eliminar(new RepositorioComponenteSoloLectura().ObtenerTodos.Max(c => c.Id));
+            RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
         }
 
         [TestMethod]
@@ -65,6 +65,11 @@ namespace UnitTests
             //assert
             Assert.IsTrue(componentes.Any());
         }
+
+        private RepositorioComponenteSoloLectura RepositorioLectura => new RepositorioComponenteSoloLectura();
+        private RepositorioComponenteBaja RepositorioBaja => new RepositorioComponenteBaja();
+        private RepositorioComponenteAlta RepositorioAlta => new RepositorioComponenteAlta();
+        private RepositorioComponenteModificacion RepositorioModificacion => new RepositorioComponenteModificacion();
 
         private static Componente ComponenteTest => new Componente()
         {

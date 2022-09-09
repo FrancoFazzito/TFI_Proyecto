@@ -52,7 +52,7 @@
     <Compile Include="Computadora\Componente.cs" />
     <Compile Include="Computadora\Computadora.cs" />
     <Compile Include="Compatibilidades\ICompatibilidad.cs" />
-    <Compile Include="Requerimientos\Especificacion.cs" />
+    <Compile Include="Requerimientos\TipoUso.cs" />
     <Compile Include="Excepciones\ExcepcionAgregadoInvalido.cs" />
     <Compile Include="Excepciones\ExcepcionRequerimientoInvalido.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
