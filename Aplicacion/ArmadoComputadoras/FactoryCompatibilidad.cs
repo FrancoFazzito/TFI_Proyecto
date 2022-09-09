@@ -18,15 +18,4 @@ namespace Aplicacion
 
         public ICompatibilidad GetCompatibilidadPorNombre(Compatibilidades compatibilidades) => CompatibilidadNombre[compatibilidades];
     }
-
-    public enum Compatibilidades
-    {
-        FanCpu,
-        MotherCpu,
-        RamCpu,
-        RamMother,
-        TowerFan,
-        TowerMother,
-        VideoIntegrado
-    }
 }

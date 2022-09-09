@@ -61,7 +61,7 @@ namespace Aplicacion
                                          .AgregarSsd()
                                          .AgregarTower()
                                          .AgregarPsu()
-                                         .Computadora;
+                                         .ArmarComputadora();
             }
             catch (ExcepcionAgregadoInvalido)
             {

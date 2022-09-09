@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmadoComputadoras\ArmadorComputadora.cs" />
+    <Compile Include="ArmadoComputadoras\Compatibilidades.cs" />
     <Compile Include="ArmadoComputadoras\DirectorArmadorComputadora.cs" />
     <Compile Include="ArmadoComputadoras\FactoryCompatibilidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
