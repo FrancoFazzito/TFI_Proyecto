@@ -10,7 +10,9 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e) => computadora = (Computadora)Session["computadoraArmada"];
 
-        public string CpuNombre => computadora.Componentes.First(c => c.Tipo == "CPU").Nombre;
+        public string NombreCpu => computadora.Componentes.First(c => c.Tipo == "CPU").Nombre;
+
+        public string NombreMother => computadora.Componentes.First(c => c.Tipo == "MOTHER").Nombre;
 
         public string NombreGpu => computadora.Componentes.FirstOrDefault(c => c.Tipo == "GPU") == null ? "Grafica integrada" : computadora.Componentes.FirstOrDefault(c => c.Tipo == "GPU").Nombre;
 

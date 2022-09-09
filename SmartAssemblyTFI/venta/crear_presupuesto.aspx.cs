@@ -42,7 +42,7 @@ namespace SmartAssemblyTFI
                 var precio = decimal.Parse(TextBox1.Text);
                 var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
                 var director = new DirectorArmadorComputadora(requerimiento);
-                var computadoraArmada = director.ObtenerComputadoraArmada();
+                var computadoraArmada = director.Computadora;
                 Session["computadoraArmada"] = computadoraArmada;
                 Response.Redirect("crear_pedido.aspx");
             }

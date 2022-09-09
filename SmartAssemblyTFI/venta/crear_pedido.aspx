@@ -31,8 +31,9 @@
                             <div class="col">
                                 <div class="form-group">
                                     <ul class="list-group list-group-flush" selectmethod="GetData">
-                                        <li class="list-group-item">CPU: <%=CpuNombre%></li>
+                                        <li class="list-group-item">CPU: <%=NombreCpu%></li>
                                         <li class="list-group-item">GPU: <%=NombreGpu%></li>
+                                        <li class="list-group-item">MOTHER: <%=NombreMother%></li>
                                         <li class="list-group-item">RAM: <%=NombreRam%></li>
                                         <li class="list-group-item">SSD: <%=NombreSsd%></li>
                                         <li class="list-group-item">HDD: <%=NombreHdd%></li>

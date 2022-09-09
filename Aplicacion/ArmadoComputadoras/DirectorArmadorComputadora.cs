@@ -23,25 +23,23 @@ namespace Aplicacion
             _repositorioEspecificacion = new RepositorioEspecificacionSoloLectura();
         }
 
-        public Computadora ObtenerComputadoraArmada()
+        public Computadora Computadora
         {
-            var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
-            var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
-            var computadoras = ObtenerComputadoras(componentes, _requerimientoArmado.Precio, especificacion);
+            get
+            {
+                var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.TipoUso == _requerimientoArmado.TipoUso);
+                var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
+                
+                var computadoras = from cpu in componentes.Where(c => c.Tipo == "CPU")
+                                   let computer = ArmarComputadora(componentes, _requerimientoArmado.Precio, especificacion, cpu)
+                                   where computer != null
+                                   select computer;
 
-            computadoras = _requerimientoArmado.Importancia == "precio"
-                           ? computadoras.OrderBy(c => c.Precio)
-                           : computadoras.OrderBy(c => c.Perfomance);
-
-            return computadoras.FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
-        }
-
-        private IEnumerable<Computadora> ObtenerComputadoras(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion)
-        {
-            return from cpu in componentes.Where(c => c.Tipo == "CPU")
-                   let computer = ArmarComputadora(componentes, precio, especificacion, cpu)
-                   where computer != null
-                   select computer;
+                return (_requerimientoArmado.Importancia == "precio" 
+                       ? computadoras.OrderBy(c => c.Precio) 
+                       : computadoras.OrderByDescending(c => c.Perfomance))
+                       .FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
+            }
         }
 
         private Computadora ArmarComputadora(IEnumerable<Componente> componentes, decimal precio, Especificacion especificacion, Componente cpuParaIterar)
@@ -63,7 +61,7 @@ namespace Aplicacion
                                          .AgregarSsd()
                                          .AgregarTower()
                                          .AgregarPsu()
-                                         .ComputadoraArmada;
+                                         .Computadora;
             }
             catch (ExcepcionAgregadoInvalido)
             {
