@@ -46,16 +46,15 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener()
-        {
+        public void Obtener() =>
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
-        }
 
         private RepositorioClienteSoloLectura RepositorioLectura => new RepositorioClienteSoloLectura();
         private RepositorioClienteAlta RepositorioAlta => new RepositorioClienteAlta();
         private RepositorioClienteModificacion RepositorioModificacion => new RepositorioClienteModificacion();
         private RepositorioClienteBaja RepositorioBaja => new RepositorioClienteBaja();
+
         private Cliente ClienteTest => new Cliente()
         {
             Id = 1,

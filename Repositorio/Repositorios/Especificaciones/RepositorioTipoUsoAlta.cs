@@ -11,6 +11,6 @@ namespace Repositorio
         {
             var rows = Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
             return rows;
-        } 
+        }
     }
 }

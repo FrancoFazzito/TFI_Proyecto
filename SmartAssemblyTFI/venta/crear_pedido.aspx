@@ -11,7 +11,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <img class="homeCard" src="../imgs/pc.png" /> 
+                                    <img class="homeCard" src="../imgs/pc.png" />
                                 </center>
                             </div>
                         </div>

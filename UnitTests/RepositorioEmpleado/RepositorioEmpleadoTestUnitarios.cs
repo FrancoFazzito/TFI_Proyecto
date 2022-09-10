@@ -1,7 +1,6 @@
 ﻿using Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Repositorio;
-using System;
 using System.Linq;
 
 namespace UnitTests
@@ -46,16 +45,15 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener()
-        {
+        public void Obtener() =>
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
-        }
 
         private RepositorioEmpleadoSoloLectura RepositorioLectura => new RepositorioEmpleadoSoloLectura();
         private RepositorioEmpleadoAlta RepositorioAlta => new RepositorioEmpleadoAlta();
         private RepositorioEmpleadoModificacion RepositorioModificacion => new RepositorioEmpleadoModificacion();
         private RepositorioEmpleadoBaja RepositorioBaja => new RepositorioEmpleadoBaja();
+
         private Empleado EmpleadoTest => new Empleado()
         {
             Id = 1,

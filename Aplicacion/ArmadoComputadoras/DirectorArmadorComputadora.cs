@@ -29,14 +29,14 @@ namespace Aplicacion
             {
                 var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.Nombre == _requerimientoArmado.TipoUso);
                 var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
-                
+
                 var computadoras = from cpu in componentes.Where(c => c.Tipo == "CPU")
                                    let computer = ArmarComputadora(componentes, _requerimientoArmado.Precio, especificacion, cpu)
                                    where computer != null
                                    select computer;
 
-                return (_requerimientoArmado.Importancia == "precio" 
-                       ? computadoras.OrderBy(c => c.Precio) 
+                return (_requerimientoArmado.Importancia == "precio"
+                       ? computadoras.OrderBy(c => c.Precio)
                        : computadoras.OrderByDescending(c => c.Perfomance))
                        .FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
             }

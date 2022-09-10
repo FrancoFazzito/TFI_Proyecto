@@ -48,7 +48,6 @@ namespace SmartAssemblyTFI
             }
             catch (ExcepcionRequerimientoInvalido)
             {
-                
             }
         }
     }

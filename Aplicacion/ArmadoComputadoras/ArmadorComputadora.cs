@@ -7,7 +7,6 @@ namespace Aplicacion
 {
     public class ArmadorComputadora
     {
-
         private readonly IEnumerable<Componente> _componentes;
         private readonly decimal _costoArmado;
         private readonly decimal _precio;
@@ -23,7 +22,6 @@ namespace Aplicacion
         private Componente _tower;
         private Componente _ssd;
         private Componente _ram;
-
 
         private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraArmada)
         {
@@ -90,8 +88,8 @@ namespace Aplicacion
                 return this;
             }
 
-             _hdd = _componentes.Where(c => c.Tipo == "HDD")
-                                .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
+            _hdd = _componentes.Where(c => c.Tipo == "HDD")
+                               .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
             AgregarComponente(_hdd);
             return this;
         }

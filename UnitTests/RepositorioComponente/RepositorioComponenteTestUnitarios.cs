@@ -45,11 +45,9 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener()
-        {
+        public void Obtener() =>
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
-        }
 
         private RepositorioComponenteSoloLectura RepositorioLectura => new RepositorioComponenteSoloLectura();
         private RepositorioComponenteBaja RepositorioBaja => new RepositorioComponenteBaja();
