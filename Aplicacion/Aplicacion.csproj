@@ -46,6 +46,10 @@
     <Compile Include="ArmadoComputadoras\Compatibilidades.cs" />
     <Compile Include="ArmadoComputadoras\DirectorArmadorComputadora.cs" />
     <Compile Include="ArmadoComputadoras\FactoryCompatibilidad.cs" />
+    <Compile Include="Clientes\GestorCliente.cs" />
+    <Compile Include="Componentes\GestorComponentes.cs" />
+    <Compile Include="Empleados\GestorEmpleado.cs" />
+    <Compile Include="TiposDeUso\GestorTipoUso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,5 +62,6 @@
       <Name>Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
