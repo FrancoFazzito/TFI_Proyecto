@@ -17,6 +17,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 150000);
         }
 
         [TestMethod]
@@ -28,6 +29,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 150000);
         }
 
         [TestMethod]
@@ -39,6 +41,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 300000);
         }
 
         [TestMethod]
@@ -50,6 +53,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 300000);
         }
 
         [TestMethod]
@@ -61,6 +65,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 450000);
         }
 
         [TestMethod]
@@ -72,6 +77,7 @@ namespace UnitTests
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
+            Assert.IsTrue(computadora.Precio <= 450000);
         }
     }
 }
