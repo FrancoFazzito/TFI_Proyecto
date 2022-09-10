@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Compatibilidades\CompatibilidadFanCpu.cs" />
     <Compile Include="Compatibilidades\CompatibilidadMotherCpu.cs" />
     <Compile Include="Compatibilidades\CompatibilidadRamCpu.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Computadora\Componente.cs" />
     <Compile Include="Computadora\Computadora.cs" />
     <Compile Include="Compatibilidades\ICompatibilidad.cs" />
+    <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="Requerimientos\TipoUso.cs" />
     <Compile Include="Excepciones\ExcepcionAgregadoInvalido.cs" />
     <Compile Include="Excepciones\ExcepcionRequerimientoInvalido.cs" />

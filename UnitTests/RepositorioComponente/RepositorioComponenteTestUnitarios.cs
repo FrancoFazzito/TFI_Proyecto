@@ -56,7 +56,7 @@ namespace UnitTests
         private RepositorioComponenteAlta RepositorioAlta => new RepositorioComponenteAlta();
         private RepositorioComponenteModificacion RepositorioModificacion => new RepositorioComponenteModificacion();
 
-        private static Componente ComponenteTest => new Componente()
+        private Componente ComponenteTest => new Componente()
         {
             Id = 1,
             Canales = 1,

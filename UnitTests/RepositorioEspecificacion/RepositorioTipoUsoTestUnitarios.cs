@@ -55,7 +55,7 @@ namespace UnitTests
         private RepositorioTipoUsoBaja RepositorioBaja => new RepositorioTipoUsoBaja();
         private RepositorioTipoUsoAlta RepositorioAlta => new RepositorioTipoUsoAlta();
         private RepositorioTipoUsoModificacion RepositorioModificacion => new RepositorioTipoUsoModificacion();
-        private static TipoUso TipoUsoTest => new TipoUso()
+        private TipoUso TipoUsoTest => new TipoUso()
         {
             Id = 1,
             Cpu = 1,

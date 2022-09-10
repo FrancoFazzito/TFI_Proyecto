@@ -28,16 +28,22 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <label>Nombre completo</label>
+                            <div class="col-md-4">
+                                <label>Nombre</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre completo"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <label>Apellido</label>
+                                <div class="form-group">
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Apellido"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
                                 <label>Fecha de nacimiento</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Date"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
