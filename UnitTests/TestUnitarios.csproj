@@ -50,10 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmadoComputadora\ArmadoComputadoraTestUnitario.cs" />
-    <Compile Include="RepositorioCliente\RepositorioClienteTestUnitarios.cs" />
+    <Compile Include="Cliente\GestorClienteTestUnitario - Copia.cs" />
+    <Compile Include="Cliente\GestorClienteTestUnitario.cs" />
+    <Compile Include="Cliente\RepositorioClienteTestUnitarios.cs" />
     <Compile Include="RepositorioComponente\RepositorioComponenteTestUnitarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioEmpleado\RepositorioEmpleadoTestUnitarios.cs" />
+    <Compile Include="Empleado\GestorEmpleadoTestUnitario.cs" />
+    <Compile Include="Empleado\RepositorioEmpleadoTestUnitarios.cs" />
     <Compile Include="RepositorioEspecificacion\RepositorioTipoUsoTestUnitarios.cs" />
   </ItemGroup>
   <ItemGroup>

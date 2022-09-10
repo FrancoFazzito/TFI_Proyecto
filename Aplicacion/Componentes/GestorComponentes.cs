@@ -8,7 +8,7 @@ namespace Aplicacion
     {
         public void Agregar(Componente componente) => new RepositorioComponenteAlta().Agregar(componente);
 
-        public void Eliminar(Componente componente) => new RepositorioComponenteBaja().Eliminar(componente.Id);
+        public void Eliminar(int id) => new RepositorioComponenteBaja().Eliminar(id);
 
         public void Modificar(Componente componente) => new RepositorioComponenteModificacion().Modificar(componente);
 
