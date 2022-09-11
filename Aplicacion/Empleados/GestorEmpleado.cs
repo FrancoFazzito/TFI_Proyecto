@@ -11,13 +11,17 @@ namespace Aplicacion
 
         public void Eliminar(int id) => new RepositorioEmpleadoBaja().Eliminar(id);
 
-        public void Modificar(Empleado empleado) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheado(empleado));
+        public void Modificar(Empleado empleado, string nuevaContrasena) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheado(empleado, nuevaContrasena));
 
         public IEnumerable<Empleado> Todos => new RepositorioEmpleadoSoloLectura().Todos;
 
-        private Empleado GetEmpleadoHasheado(Empleado empleado)
+        private Empleado GetEmpleadoHasheado(Empleado empleado, string nuevaContrasena)
         {
-            empleado.Contrasena = new GestorContrasena().Hashear(empleado.Contrasena);
+            if (nuevaContrasena == null)
+            {
+                return empleado;
+            }
+            empleado.Contrasena = new GestorContrasena().Hashear(nuevaContrasena);
             return empleado;
         }
     }
