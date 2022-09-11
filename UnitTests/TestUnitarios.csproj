@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArmadoComputadora\ArmadoComputadoraTestUnitario.cs" />
-    <Compile Include="Cliente\GestorClienteTestUnitario - Copia.cs" />
+    <Compile Include="Cliente\GestorLoginTestUnitario.cs" />
     <Compile Include="Cliente\GestorClienteTestUnitario.cs" />
     <Compile Include="Cliente\RepositorioClienteTestUnitarios.cs" />
     <Compile Include="RepositorioComponente\RepositorioComponenteTestUnitarios.cs" />

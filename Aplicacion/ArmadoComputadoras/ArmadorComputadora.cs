@@ -11,7 +11,7 @@ namespace Aplicacion
         private readonly decimal _costoArmado;
         private readonly decimal _precio;
         private readonly FactoryCompatibilidad _factoryCompatibilidad;
-        private readonly TipoUso _especificacion;
+        private readonly TipoUso _tipoUso;
         private readonly Computadora _computadora;
         private readonly Componente _cpu;
         private Componente _fan;
@@ -27,7 +27,7 @@ namespace Aplicacion
         {
             _componentes = componentes;
             _precio = precio;
-            _especificacion = especificacion;
+            _tipoUso = especificacion;
             _costoArmado = costoArmado;
             _factoryCompatibilidad = factoryCompatibilidad;
             _cpu = cpu;
@@ -45,7 +45,7 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarCpu()
         {
-            if (_cpu.Perfomance < _especificacion.Cpu)
+            if (_cpu.Perfomance < _tipoUso.Cpu)
             {
                 throw new ExcepcionAgregadoInvalido();
             }
@@ -56,12 +56,12 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarFan()
         {
-            if (_cpu.NivelFanIntegrado < _especificacion.Fan)
+            if (_cpu.NivelFanIntegrado < _tipoUso.Fan)
             {
                 var compatibilidadFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.FanCpu);
                 _fan = _componentes.Where(c => c.Tipo == "FAN")
                                    .Where(c => c.EsCompatible(compatibilidadFan, _cpu))
-                                   .FirstOrDefault(c => c.Perfomance >= _especificacion.Fan);
+                                   .FirstOrDefault(c => c.Perfomance >= _tipoUso.Fan);
                 AgregarComponente(_fan);
             }
             return this;
@@ -70,26 +70,26 @@ namespace Aplicacion
         public ArmadorComputadora AgregarGpu()
         {
             var compatibleVideoIntegrado = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.VideoIntegrado);
-            if (_cpu.NivelVideoIntegrado >= _especificacion.Gpu && _cpu.EsCompatible(compatibleVideoIntegrado, _mother))
+            if (_cpu.NivelVideoIntegrado >= _tipoUso.Gpu && _cpu.EsCompatible(compatibleVideoIntegrado, _mother))
             {
                 return this;
             }
 
             _gpu = _componentes.Where(c => c.Tipo == "GPU")
-                               .FirstOrDefault(c => c.Perfomance >= _especificacion.Gpu);
+                               .FirstOrDefault(c => c.Perfomance >= _tipoUso.Gpu);
             AgregarComponente(_gpu);
             return this;
         }
 
         public ArmadorComputadora AgregarHdd()
         {
-            if (_especificacion.Hdd == 0)
+            if (_tipoUso.Hdd == 0)
             {
                 return this;
             }
 
             _hdd = _componentes.Where(c => c.Tipo == "HDD")
-                               .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
+                               .FirstOrDefault(c => c.Capacidad >= _tipoUso.Ssd);
             AgregarComponente(_hdd);
             return this;
         }
@@ -99,7 +99,7 @@ namespace Aplicacion
             var compatibilidadMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.MotherCpu);
             _mother = _componentes.Where(c => c.Tipo == "MOTHER")
                                   .Where(c => c.EsCompatible(compatibilidadMother, _cpu))
-                                  .FirstOrDefault(c => c.Perfomance >= _especificacion.Mother);
+                                  .FirstOrDefault(c => c.Perfomance >= _tipoUso.Mother);
             AgregarComponente(_mother);
             return this;
         }
@@ -120,20 +120,20 @@ namespace Aplicacion
             _ram = _componentes.Where(c => c.Tipo == "RAM")
                                .Where(c => c.EsCompatible(compatibilidadRamCpu, _cpu))
                                .Where(c => c.EsCompatible(compatibilidadRamMother, _mother))
-                               .FirstOrDefault(c => c.Capacidad >= (_especificacion.Ram / cantidadRams));
+                               .FirstOrDefault(c => c.Capacidad >= (_tipoUso.Ram / cantidadRams));
             AgregarComponente(_ram, cantidadRams);
             return this;
         }
 
         public ArmadorComputadora AgregarSsd()
         {
-            if (_especificacion.Ssd == 0)
+            if (_tipoUso.Ssd == 0)
             {
                 return this;
             }
 
             _ssd = _componentes.Where(c => c.Tipo == "SSD")
-                               .FirstOrDefault(c => c.Capacidad >= _especificacion.Ssd);
+                               .FirstOrDefault(c => c.Capacidad >= _tipoUso.Ssd);
             AgregarComponente(_ssd);
             return this;
         }

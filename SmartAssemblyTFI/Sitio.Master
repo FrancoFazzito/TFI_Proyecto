@@ -52,7 +52,7 @@
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server">hola nombre usuario</asp:LinkButton>
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server">¡Hola nombre usuario!</asp:LinkButton>
                         </li>
                     </ul>
                 </div>

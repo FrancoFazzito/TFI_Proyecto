@@ -14,27 +14,29 @@ namespace UnitTests
         public void Ingresar()
         {
             //arrange act
-            Gestor.Agregar(ClienteTest);
             var id = Gestor.Todos.Max(c => c.Id);
+            Gestor.Agregar(GetClienteTest(id));
+            id = Gestor.Todos.Max(c => c.Id);
 
             //assert
             var cliente = Gestor.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(cliente);
-            Assert.IsTrue(new Login().IngresarCliente(cliente.Contrasena, "test"));
+            Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "test"));
 
             //exit
             Gestor.Eliminar(Gestor.Todos.Max(c => c.Id));
         }
+        //repetir con empleado
 
         private GestorCliente Gestor => new GestorCliente();
 
-        private Cliente ClienteTest => new Cliente()
+        private Cliente GetClienteTest(int rng) => new Cliente()
         {
             Id = 1,
             Nombre = "test",
             Apellido = "test",
             Contrasena = "test",
-            Correo = "test",
+            Correo = $"test {rng}",
             Barrio = "test",
             FechaNacimiento = DateTime.Now,
             Provincia = "test",
