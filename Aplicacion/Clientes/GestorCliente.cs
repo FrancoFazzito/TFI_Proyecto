@@ -11,7 +11,7 @@ namespace Aplicacion
         
         public void Eliminar(int id) => new RepositorioClienteBaja().Eliminar(id);
 
-        public void Modificar(Cliente cliente) => new RepositorioClienteModificacion().Modificar(cliente);
+        public void Modificar(Cliente cliente) => new RepositorioClienteModificacion().Modificar(GetClienteHasheado(cliente));
 
         public IEnumerable<Cliente> Todos => new RepositorioClienteSoloLectura().ObtenerTodos;
 

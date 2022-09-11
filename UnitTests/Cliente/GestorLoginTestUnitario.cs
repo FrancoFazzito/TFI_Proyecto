@@ -11,24 +11,40 @@ namespace UnitTests
     public class GestorLoginTestUnitario
     {
         [TestMethod]
-        public void Ingresar()
+        public void IngresarCliente()
         {
             //arrange act
-            var id = Gestor.Todos.Max(c => c.Id);
-            Gestor.Agregar(GetClienteTest(id));
-            id = Gestor.Todos.Max(c => c.Id);
+            var id = GestorCliente.Todos.Max(c => c.Id);
+            GestorCliente.Agregar(GetClienteTest(id));
+            id = GestorCliente.Todos.Max(c => c.Id);
 
             //assert
-            var cliente = Gestor.Todos.FirstOrDefault(c => c.Id == id);
+            var cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(cliente);
             Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "test"));
 
             //exit
-            Gestor.Eliminar(Gestor.Todos.Max(c => c.Id));
+            GestorCliente.Eliminar(cliente.Id);
         }
-        //repetir con empleado
 
-        private GestorCliente Gestor => new GestorCliente();
+        [TestMethod]
+        public void IngresarEmpleado()
+        {
+            //arrange act
+            var id = GestorEmpleado.Todos.Max(c => c.Id);
+            GestorEmpleado.Agregar(GetEmpleadoTest(id));
+            id = GestorEmpleado.Todos.Max(c => c.Id);
+
+            //assert
+            var empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
+            Assert.IsNotNull(empleado);
+            Assert.IsTrue(new Login().IngresarEmpleado(empleado.Correo, "test"));
+
+            //exit
+            GestorEmpleado.Eliminar(empleado.Id);
+        }
+
+        private GestorCliente GestorCliente => new GestorCliente();
 
         private Cliente GetClienteTest(int rng) => new Cliente()
         {
@@ -41,6 +57,18 @@ namespace UnitTests
             FechaNacimiento = DateTime.Now,
             Provincia = "test",
             Telefono = "test"
+        };
+
+        private GestorEmpleado GestorEmpleado=> new GestorEmpleado();
+
+        private Empleado GetEmpleadoTest(int rng) => new Empleado()
+        {
+            Id = 1,
+            Nombre = "test",
+            Apellido = "test",
+            Contrasena = "test",
+            Correo = $"test {rng}",
+            NombreUsuario = $"test {rng}"
         };
     }
 }

@@ -11,7 +11,7 @@ namespace Aplicacion
 
         public void Eliminar(int id) => new RepositorioEmpleadoBaja().Eliminar(id);
 
-        public void Modificar(Empleado empleado) => new RepositorioEmpleadoModificacion().Modificar(empleado);
+        public void Modificar(Empleado empleado) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheado(empleado));
 
         public IEnumerable<Empleado> Todos => new RepositorioEmpleadoSoloLectura().Todos;
 

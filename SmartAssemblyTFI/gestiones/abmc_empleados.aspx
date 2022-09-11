@@ -79,7 +79,17 @@
                                 <label>Contraseña</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9 mx-auto">
+                                <label>Contraseña</label>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Nueva Contraseña"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

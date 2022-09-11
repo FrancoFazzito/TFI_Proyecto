@@ -32,6 +32,7 @@ namespace UnitTests
 
             //act assert
             Assert.IsNotNull(Gestor.Todos.FirstOrDefault(c => c.Id == id));
+            Gestor.Eliminar(Gestor.Todos.Max(c => c.Id));
         }
 
         [TestMethod]
