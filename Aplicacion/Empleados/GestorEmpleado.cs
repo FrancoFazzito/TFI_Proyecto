@@ -6,16 +6,21 @@ namespace Aplicacion
 {
     public class GestorEmpleado
     {
-        //add hashing
         public void Agregar(Empleado empleado) => new RepositorioEmpleadoAlta().Agregar(GetEmpleadoHasheado(empleado));
 
         public void Eliminar(int id) => new RepositorioEmpleadoBaja().Eliminar(id);
 
-        public void Modificar(Empleado empleado, string nuevaContrasena) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheado(empleado, nuevaContrasena));
+        public void Modificar(Empleado empleado, string nuevaContrasena = null) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheadoModificado(empleado, nuevaContrasena));
 
         public IEnumerable<Empleado> Todos => new RepositorioEmpleadoSoloLectura().Todos;
 
-        private Empleado GetEmpleadoHasheado(Empleado empleado, string nuevaContrasena)
+        private Empleado GetEmpleadoHasheado(Empleado empleado)
+        {
+            empleado.Contrasena = new GestorContrasena().Hashear(empleado.Contrasena);
+            return empleado;
+        }
+
+        private Empleado GetEmpleadoHasheadoModificado(Empleado empleado, string nuevaContrasena = null)
         {
             if (nuevaContrasena == null)
             {
