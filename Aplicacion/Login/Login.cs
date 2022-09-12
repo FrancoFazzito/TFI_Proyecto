@@ -9,29 +9,29 @@ namespace Aplicacion
 
         public Login() => _gestorContrasena = new GestorContrasena();
 
-        public bool IngresarCliente(string correo, string contrasenaIngresada)
+        public bool IngresarCliente(string correo, string contrasena)
         {
             //ver si agregar singleton y add cookies
             var cliente = new RepositorioClienteSoloLectura().ObtenerTodos.FirstOrDefault(c => c.Correo == correo);
-            ClienteLogueado.Instancia.Logueado = cliente;
-            return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasenaIngresada);
+            SesionCliente.Ingresar(cliente);
+            return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasena);
         }
 
-        public bool IngresarEmpleado(string nombreUsuario, string contrasenaIngresada)
+        public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
             var empleado = new RepositorioEmpleadoSoloLectura().Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
-            EmpleadoLogueado.Instancia.Logueado = empleado;
-            return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasenaIngresada);
+            SesionEmpleado.Ingresar(empleado);
+            return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
         }
 
         public void SalirEmpleado()
         {
-            EmpleadoLogueado.Salir();
+            SesionEmpleado.Salir();
         }
 
         public void SalirCliente()
         {
-            ClienteLogueado.Salir();
+            SesionCliente.Salir();
         }
     }
 }

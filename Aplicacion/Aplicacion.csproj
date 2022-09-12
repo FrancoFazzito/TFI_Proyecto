@@ -49,8 +49,8 @@
     <Compile Include="Clientes\GestorCliente.cs" />
     <Compile Include="Componentes\GestorComponentes.cs" />
     <Compile Include="Empleados\GestorEmpleado.cs" />
-    <Compile Include="Login\ClienteLogueado.cs" />
-    <Compile Include="Login\EmpleadoLogueado.cs" />
+    <Compile Include="Login\SesionCliente.cs" />
+    <Compile Include="Login\SesionEmpleado.cs" />
     <Compile Include="Login\GestorContrasena.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="TiposDeUso\GestorTipoUso.cs" />

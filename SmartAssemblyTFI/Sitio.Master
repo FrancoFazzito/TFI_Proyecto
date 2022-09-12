@@ -48,11 +48,11 @@
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton2" runat="server" href="../login/cliente_signup.aspx">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server">Salir</asp:LinkButton>
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="false">Salir</asp:LinkButton>
                         </li>
 
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server">¡Hola nombre usuario!</asp:LinkButton>
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server" Text="¡Hola nombre usuario!" Visible="false"></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
@@ -74,9 +74,6 @@
                             </h6>
                             <p>
                                 <a href="login/admin_login.aspx" class="text-reset">Login admin</a>
-                            </p>
-                            <p>
-                                <a href="home_admin.aspx" class="text-reset">Home admin</a>
                             </p>
                         </div>
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
