@@ -8,7 +8,7 @@ namespace Repositorio
 
         public int Eliminar(int id)
         {
-            var rows = Db.Conexion.Execute(commmand, new ParametroId().Obtener(id));
+            int rows = Db.Conexion.Execute(commmand, new ParametroId().Obtener(id));
             return rows;
         }
     }

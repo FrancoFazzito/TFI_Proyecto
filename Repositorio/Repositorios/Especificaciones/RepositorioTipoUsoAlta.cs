@@ -9,7 +9,7 @@ namespace Repositorio
 
         public int Agregar(TipoUso tipoUso)
         {
-            var rows = Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
+            int rows = Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
             return rows;
         }
     }

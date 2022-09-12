@@ -41,7 +41,7 @@
                                     </ul>
                                 </div>
                                 <div class="form-group">
-                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Crear tu pedido con esta computadora" PostBackUrl="/venta/crear_pedido.aspx" />
+                                    <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Crear tu pedido con esta computadora" PostBackUrl="/venta/crear_pedido.aspx" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>

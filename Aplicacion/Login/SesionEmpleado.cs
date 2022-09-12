@@ -13,7 +13,7 @@ namespace Aplicacion
 
         public static void Ingresar(Empleado empleado)
         {
-            Logueado = empleado; 
+            Logueado = empleado;
         }
 
         public static void Salir()

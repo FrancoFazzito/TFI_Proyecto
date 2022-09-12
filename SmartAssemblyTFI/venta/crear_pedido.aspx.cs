@@ -1,4 +1,6 @@
-﻿using Dominio;
+﻿using Aplicacion;
+using Aplicacion.Pedidos;
+using Dominio;
 using System;
 using System.Linq;
 
@@ -8,7 +10,22 @@ namespace SmartAssemblyTFI
     {
         private Computadora computadora;
 
-        protected void Page_Load(object sender, EventArgs e) => computadora = (Computadora)Session["computadoraArmada"];
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            computadora = (Computadora)Session["computadoraArmada"];
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+           var clienteLogueado = SesionCliente.Logueado;
+            if (clienteLogueado == null)
+            {
+                Session["vieneDeCrearPedido"] = true;
+                Response.Redirect("../login/cliente_login.aspx");
+            }
+            new GestorPedido().Subir(computadora, clienteLogueado);
+            //creaste tu pedido con exito con numero! pantalla
+        }
 
         public string NombreCpu => computadora.Componentes.First(c => c.Tipo == "CPU").Nombre;
 

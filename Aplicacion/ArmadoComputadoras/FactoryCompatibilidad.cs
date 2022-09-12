@@ -16,6 +16,9 @@ namespace Aplicacion
             { Compatibilidades.VideoIntegrado, new CompatibilidadVideoIntegrado() },
         };
 
-        public ICompatibilidad GetCompatibilidadPorNombre(Compatibilidades compatibilidades) => CompatibilidadNombre[compatibilidades];
+        public ICompatibilidad GetCompatibilidadPorNombre(Compatibilidades compatibilidades)
+        {
+            return CompatibilidadNombre[compatibilidades];
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Aplicacion;
 using Dominio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Repositorio;
 using System;
 using System.Linq;
 
@@ -14,12 +13,12 @@ namespace UnitTests
         public void IngresarCliente()
         {
             //arrange act
-            var id = GestorCliente.Todos.Max(c => c.Id);
+            int id = GestorCliente.Todos.Max(c => c.Id);
             GestorCliente.Agregar(GetClienteTest(id));
             id = GestorCliente.Todos.Max(c => c.Id);
 
             //assert
-            var cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
+            Cliente cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(cliente);
             Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "test"));
 
@@ -31,12 +30,12 @@ namespace UnitTests
         public void IngresarEmpleado()
         {
             //arrange act
-            var id = GestorEmpleado.Todos.Max(c => c.Id);
+            int id = GestorEmpleado.Todos.Max(c => c.Id);
             GestorEmpleado.Agregar(GetEmpleadoTest(id));
             id = GestorEmpleado.Todos.Max(c => c.Id);
 
             //assert
-            var empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
+            Empleado empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(empleado);
             Assert.IsTrue(new Login().IngresarEmpleado(empleado.Correo, "test"));
 
@@ -46,29 +45,35 @@ namespace UnitTests
 
         private GestorCliente GestorCliente => new GestorCliente();
 
-        private Cliente GetClienteTest(int rng) => new Cliente()
+        private Cliente GetClienteTest(int rng)
         {
-            Id = 1,
-            Nombre = "test",
-            Apellido = "test",
-            Contrasena = "test",
-            Correo = $"test {rng}",
-            Barrio = "test",
-            FechaNacimiento = DateTime.Now,
-            Provincia = "test",
-            Telefono = "test"
-        };
+            return new Cliente()
+            {
+                Id = 1,
+                Nombre = "test",
+                Apellido = "test",
+                Contrasena = "test",
+                Correo = $"test {rng}",
+                Barrio = "test",
+                FechaNacimiento = DateTime.Now,
+                Provincia = "test",
+                Telefono = "test"
+            };
+        }
 
-        private GestorEmpleado GestorEmpleado=> new GestorEmpleado();
+        private GestorEmpleado GestorEmpleado => new GestorEmpleado();
 
-        private Empleado GetEmpleadoTest(int rng) => new Empleado()
+        private Empleado GetEmpleadoTest(int rng)
         {
-            Id = 1,
-            Nombre = "test",
-            Apellido = "test",
-            Contrasena = "test",
-            Correo = $"test {rng}",
-            NombreUsuario = $"test {rng}"
-        };
+            return new Empleado()
+            {
+                Id = 1,
+                Nombre = "test",
+                Apellido = "test",
+                Contrasena = "test",
+                Correo = $"test {rng}",
+                NombreUsuario = $"test {rng}"
+            };
+        }
     }
 }

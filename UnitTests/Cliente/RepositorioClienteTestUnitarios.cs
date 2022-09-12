@@ -34,7 +34,7 @@ namespace UnitTests
         {
             //arrange
             RepositorioAlta.Agregar(ClienteTest);
-            var cliente = ClienteTest;
+            Cliente cliente = ClienteTest;
             cliente.Nombre = "testModificado";
             cliente.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
 
@@ -46,9 +46,11 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener() =>
+        public void Obtener()
+        {
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
+        }
 
         private RepositorioClienteSoloLectura RepositorioLectura => new RepositorioClienteSoloLectura();
         private RepositorioClienteAlta RepositorioAlta => new RepositorioClienteAlta();

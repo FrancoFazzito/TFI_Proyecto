@@ -4,7 +4,7 @@
     {
         public bool EsCompatible(Componente tower, Componente mother)
         {
-            var v = GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
+            bool v = GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
             return v;
         }
 

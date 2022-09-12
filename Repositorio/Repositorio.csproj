@@ -34,6 +34,9 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Dapper.Transaction, Version=2.0.35.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Transaction.2.0.35.2\lib\net461\Dapper.Transaction.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -68,6 +71,8 @@
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoBaja.cs" />
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoModificacion.cs" />
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoSoloLectura.cs" />
+    <Compile Include="Repositorios\Pedidos\ParametrosPedido.cs" />
+    <Compile Include="Repositorios\Pedidos\RepositorioPedidoAlta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

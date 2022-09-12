@@ -53,6 +53,7 @@
     <Compile Include="Login\SesionEmpleado.cs" />
     <Compile Include="Login\GestorContrasena.cs" />
     <Compile Include="Login\Login.cs" />
+    <Compile Include="Pedidos\GestorPedido.cs" />
     <Compile Include="TiposDeUso\GestorTipoUso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

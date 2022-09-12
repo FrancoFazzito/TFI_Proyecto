@@ -6,7 +6,7 @@ namespace Repositorio
     {
         public DynamicParameters Obtener(int id)
         {
-            var parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@id", id);
             return parameters;
         }
