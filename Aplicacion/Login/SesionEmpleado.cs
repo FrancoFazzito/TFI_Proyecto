@@ -6,7 +6,6 @@ namespace Aplicacion
     {
         private SesionEmpleado()
         {
-
         }
 
         public static Empleado Logueado { get; private set; }

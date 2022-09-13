@@ -6,7 +6,6 @@ namespace Aplicacion
     {
         private SesionCliente()
         {
-
         }
 
         public static Cliente Logueado { get; private set; }

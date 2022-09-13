@@ -16,7 +16,6 @@ namespace SmartAssemblyTFI
             bool esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
             if (!esExitoso) //mostrar label que le fue mal :(
             {
-
             }
 
             Session["empleadoLogueado"] = SesionEmpleado.Logueado;

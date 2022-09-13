@@ -53,7 +53,6 @@
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="false">Salir</asp:LinkButton>
                         </li>
-                        
                     </ul>
                 </div>
             </nav>

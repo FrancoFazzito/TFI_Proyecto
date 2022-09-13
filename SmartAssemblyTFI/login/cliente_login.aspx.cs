@@ -16,7 +16,6 @@ namespace SmartAssemblyTFI
             bool esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {
-
             }
             Session["clienteLogueado"] = SesionCliente.Logueado;
 
@@ -24,7 +23,6 @@ namespace SmartAssemblyTFI
             {
                 Response.Redirect("../venta/crear_pedido.aspx");
             }
-
 
             Response.Redirect("../home_page.aspx");
         }
