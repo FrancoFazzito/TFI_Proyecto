@@ -21,7 +21,7 @@ namespace Aplicacion
             new RepositorioClienteModificacion().Modificar(GetClienteHasheadoModificado(cliente, nuevaContrasena));
         }
 
-        public IEnumerable<Cliente> Todos => new RepositorioClienteSoloLectura().ObtenerTodos;
+        public IEnumerable<Cliente> Todos => new RepositorioClienteSoloLectura().Todos;
 
         private Cliente GetClienteHasheado(Cliente cliente)
         {

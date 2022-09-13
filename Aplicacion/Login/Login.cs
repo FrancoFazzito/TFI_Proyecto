@@ -6,23 +6,26 @@ namespace Aplicacion
     public class Login
     {
         private readonly GestorContrasena _gestorContrasena;
+        private readonly RepositorioClienteSoloLectura _repositorioClienteSoloLectura;
+        private readonly RepositorioEmpleadoSoloLectura _repositorioEmpleadoSoloLectura;
 
         public Login()
         {
             _gestorContrasena = new GestorContrasena();
+            _repositorioClienteSoloLectura = new RepositorioClienteSoloLectura();
+            _repositorioEmpleadoSoloLectura = new RepositorioEmpleadoSoloLectura();
         }
 
         public bool IngresarCliente(string correo, string contrasena)
         {
-            //ver si agregar singleton y add cookies
-            Dominio.Cliente cliente = new RepositorioClienteSoloLectura().ObtenerTodos.FirstOrDefault(c => c.Correo == correo);
+            Dominio.Cliente cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
             SesionCliente.Ingresar(cliente);
             return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasena);
         }
 
         public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
-            Dominio.Empleado empleado = new RepositorioEmpleadoSoloLectura().Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
+            Dominio.Empleado empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
             SesionEmpleado.Ingresar(empleado);
             return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
         }

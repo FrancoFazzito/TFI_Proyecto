@@ -16,7 +16,7 @@ namespace UnitTests
             Assert.IsTrue(RepositorioAlta.Agregar(ClienteTest) == 1);
 
             //exit
-            RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
+            RepositorioBaja.Eliminar(RepositorioLectura.Todos.Max(c => c.Id));
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace UnitTests
             RepositorioAlta.Agregar(ClienteTest);
 
             //act assert
-            Assert.IsTrue(RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id)) == 1);
+            Assert.IsTrue(RepositorioBaja.Eliminar(RepositorioLectura.Todos.Max(c => c.Id)) == 1);
         }
 
         [TestMethod]
@@ -36,20 +36,20 @@ namespace UnitTests
             RepositorioAlta.Agregar(ClienteTest);
             Cliente cliente = ClienteTest;
             cliente.Nombre = "testModificado";
-            cliente.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
+            cliente.Id = RepositorioLectura.Todos.Max(c => c.Id);
 
             //act assert
             Assert.IsTrue(RepositorioModificacion.Modificar(cliente) == 1);
 
             //exit
-            RepositorioBaja.Eliminar(RepositorioLectura.ObtenerTodos.Max(c => c.Id));
+            RepositorioBaja.Eliminar(RepositorioLectura.Todos.Max(c => c.Id));
         }
 
         [TestMethod]
         public void Obtener()
         {
             //arrange act assert
-            Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
+            Assert.IsTrue(RepositorioLectura.Todos.Any());
         }
 
         private RepositorioClienteSoloLectura RepositorioLectura => new RepositorioClienteSoloLectura();

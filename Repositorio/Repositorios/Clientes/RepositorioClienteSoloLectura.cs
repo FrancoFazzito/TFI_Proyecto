@@ -6,6 +6,6 @@ namespace Repositorio
 {
     public class RepositorioClienteSoloLectura
     {
-        public IEnumerable<Cliente> ObtenerTodos => Db.Conexion.Query<Cliente>("SELECT * FROM Cliente");
+        public IEnumerable<Cliente> Todos => Db.Conexion.Query<Cliente>("SELECT * FROM Cliente");
     }
 }

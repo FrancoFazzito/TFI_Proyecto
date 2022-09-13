@@ -14,7 +14,6 @@ namespace Aplicacion
         private readonly RepositorioComponenteSoloLectura _repositorioComponente;
         private readonly RepositorioTipoUsoSoloLectura _repositorioEspecificacion;
         // si da error llevar a una pantalla de error que le permita volver a cargar otro presupuesto
-        // verificar el login antes de armar el pedido y luego del presupuesto presupuesto -> control login -> pedido
 
         public DirectorArmadorComputadora(RequerimientoArmado requerimientoArmado)
         {
