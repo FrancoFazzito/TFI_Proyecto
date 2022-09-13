@@ -45,6 +45,7 @@ namespace SmartAssemblyTFI
                 Computadora computadoraArmada = director.Computadora;
                 Session["computadoraArmada"] = computadoraArmada;
                 Response.Redirect("crear_pedido.aspx");
+                //cargar pantalla error
             }
             catch (ExcepcionRequerimientoInvalido)
             {
