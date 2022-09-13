@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using Dominio;
-using System;
 
 namespace Repositorio.Repositorios.Pedidos
 {
@@ -20,7 +19,7 @@ namespace Repositorio.Repositorios.Pedidos
             return parameters;
         }
 
-        internal DynamicParameters ObtenerIdComponente(Componente componente)
+        public DynamicParameters ObtenerIdComponente(Componente componente)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@idComponente", componente.Id);

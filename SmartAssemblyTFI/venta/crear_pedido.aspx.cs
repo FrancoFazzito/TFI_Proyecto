@@ -17,7 +17,7 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-           var clienteLogueado = SesionCliente.Logueado;
+            Cliente clienteLogueado = SesionCliente.Logueado;
             if (clienteLogueado == null)
             {
                 Session["vieneDeCrearPedido"] = true;

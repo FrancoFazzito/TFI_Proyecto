@@ -16,7 +16,7 @@ namespace Repositorio.Repositorios.Pedidos
                 {
                     int rows = transaction.Execute("INSERT INTO[dbo].[Pedido] VALUES(@idCliente)", new ParametrosPedido().ObtenerIdCliente(clienteLogueado));
                     rows += transaction.Execute("INSERT INTO[dbo].[computadora] VALUES ((SELECT IDENT_CURRENT('pedido')), @TipoUso)", new ParametrosPedido().ObtenerTipoUso(computadora.TipoUso));
-                    foreach (var componente in computadora.Componentes)
+                    foreach (Componente componente in computadora.Componentes)
                     {
                         transaction.Execute("INSERT INTO[dbo].[ComponenteComputadora] VALUES(@idComponente, (SELECT IDENT_CURRENT('computadora')))", new ParametrosPedido().ObtenerIdComponente(componente));
                     }
