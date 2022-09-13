@@ -20,22 +20,22 @@ namespace SmartAssemblyTFI
                 { "Julio", 1010000 },
                 { "Agosto", 1450000 }
             };
-            Componentes = new List<Componente>()
+            Componentes = new List<ComponenteVista>()
             {
-                new Componente() { Nombre = "SSD 256GB Crucial" },
-                new Componente() { Nombre = "RAM 8GB Kingston" },
-                new Componente() { Nombre = "HDD 1TB WD" },
-                new Componente() { Nombre = "R5 3400G" }
+                new ComponenteVista() { Nombre = "SSD 256GB Crucial" },
+                new ComponenteVista() { Nombre = "RAM 8GB Kingston" },
+                new ComponenteVista() { Nombre = "HDD 1TB WD" },
+                new ComponenteVista() { Nombre = "R5 3400G" }
             };
         }
 
         public string LineData;
         public Dictionary<string, int> TiposUso;
         public Dictionary<string, int> MesesGanancias;
-        public List<Componente> Componentes;
+        public List<ComponenteVista> Componentes;
     }
 
-    public class Componente
+    public class ComponenteVista
     {
         public string Nombre { get; set; }
         public int Id { get; internal set; }

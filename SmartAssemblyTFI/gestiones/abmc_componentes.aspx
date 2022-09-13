@@ -6,10 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-
                 <div class="border tipoUsoCard">
                     <div class="card-body">
-
                         <div class="row">
                             <div class="col">
                                 <center>
@@ -95,7 +93,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6 mx-auto" runat="server" id="Socket" visible="false">
                                 <asp:Label runat="server" ID="LabelSocket">Socket</asp:Label>
@@ -113,7 +110,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6 mx-auto" runat="server" id="Canales" visible="false">
                                 <label>Canales</label>
@@ -149,7 +145,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6 mx-auto" runat="server" id="NivelFan" visible="false">
                                 <label>Nivel de FAN (fan stock)</label>
@@ -168,7 +163,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-6 mx-auto" runat="server" id="Capacidad" visible="false">
                                 <label>Capacidad</label>
@@ -197,7 +191,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-10 mx-auto">
                                 <label>Imagen del componente</label>
@@ -210,7 +203,6 @@
                             </div>
                         </div>
                         <div class="row">
-
                             <div class="col-6">
                                 <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" />
                             </div>
@@ -220,7 +212,6 @@
                         </div>
                     </div>
                 </div>
-
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>
             </div>

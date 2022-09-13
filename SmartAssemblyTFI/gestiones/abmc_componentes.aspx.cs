@@ -24,7 +24,14 @@ namespace SmartAssemblyTFI
                 DropDownList2.DataBind();
                 DropDownList2_SelectedIndexChanged(null, null);
 
-                DropDownList1.DataSource = new List<string>()
+                DropDownList1.DataSource = new List<string>() //cargar desde BD Objects[] GroupedDistinct = ungroupedObjects
+                                                                //.GroupBy(line => new {
+                                                                //    PickFromClientCode = line.pickupFrom.clientCode,
+                                                                //    LoadAtClientCode = line.LoadAt.clientCode,
+                                                                //    DeliverToClientCode = line.deliverTo.clientCode
+                                                                //})
+                                                                //.Select(x => x.First())
+                                                                //.ToArray();
                 {
                         "DDR3",
                         "DDR4",
@@ -32,7 +39,7 @@ namespace SmartAssemblyTFI
                 };
                 DropDownList1.DataBind();
 
-                DropDownList3.DataSource = new List<string>()
+                DropDownList3.DataSource = new List<string>() //cargar desde BD
                 {
                         "ATX",
                         "ITX",
@@ -40,12 +47,12 @@ namespace SmartAssemblyTFI
                 };
                 DropDownList3.DataBind();
 
-                GridView1.DataSource = new List<Componente>()
+                GridView1.DataSource = new List<ComponenteVista>()
                 {
-                    new Componente() { Id=1, Nombre = "R5 3400G" },
-                    new Componente() { Id=2, Nombre = "RAM 8GB Kingston" },
-                    new Componente() { Id=3, Nombre = "HDD 1TB WD" },
-                    new Componente() { Id=4, Nombre = "SSD 256GB Crucial" }
+                    new ComponenteVista() { Id=1, Nombre = "R5 3400G" },
+                    new ComponenteVista() { Id=2, Nombre = "RAM 8GB Kingston" },
+                    new ComponenteVista() { Id=3, Nombre = "HDD 1TB WD" },
+                    new ComponenteVista() { Id=4, Nombre = "SSD 256GB Crucial" }
                 };
                 GridView1.DataBind();
             }

@@ -7,24 +7,24 @@ namespace SmartAssemblyTFI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = new List<Empleado>()
+            GridView1.DataSource = new List<EmpleadoVista>()
             {
-                new Empleado()
+                new EmpleadoVista()
                 {
                     ID = 1,
                     Usuario = "Franco Fazzito"
                 },
-                new Empleado()
+                new EmpleadoVista()
                 {
                     ID = 2,
                     Usuario = "Franco Balich"
                 },
-                new Empleado()
+                new EmpleadoVista()
                 {
                     ID = 3,
                     Usuario = "Ian Buceta"
                 },
-                new Empleado()
+                new EmpleadoVista()
                 {
                     ID = 4,
                     Usuario = "Lucas Gino"
@@ -34,7 +34,7 @@ namespace SmartAssemblyTFI
         }
     }
 
-    public class Empleado
+    public class EmpleadoVista
     {
         public int ID { get; internal set; }
         public string Usuario { get; internal set; }

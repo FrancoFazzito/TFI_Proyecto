@@ -6,10 +6,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-
                 <div class="border tipoUsoCard">
                     <div class="card-body">
-
                         <div class="row">
                             <div class="col">
                                 <center>
@@ -22,7 +20,6 @@
                                 <hr>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-md-9 mx-auto">
                                 <label>ID del empleado</label>
@@ -106,7 +103,6 @@
                         </div>
                     </div>
                 </div>
-
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>
             </div>
