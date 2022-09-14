@@ -6,20 +6,11 @@ namespace Aplicacion
 {
     public class GestorEmpleado
     {
-        public void Agregar(Empleado empleado)
-        {
-            new RepositorioEmpleadoAlta().Agregar(GetEmpleadoHasheado(empleado));
-        }
+        public void Agregar(Empleado empleado) => new RepositorioEmpleadoAlta().Agregar(GetEmpleadoHasheado(empleado));
 
-        public void Eliminar(int id)
-        {
-            new RepositorioEmpleadoBaja().Eliminar(id);
-        }
+        public void Eliminar(int id) => new RepositorioEmpleadoBaja().Eliminar(id);
 
-        public void Modificar(Empleado empleado, string nuevaContrasena = null)
-        {
-            new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheadoModificado(empleado, nuevaContrasena));
-        }
+        public void Modificar(Empleado empleado, string nuevaContrasena = null) => new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheadoModificado(empleado, nuevaContrasena));
 
         public IEnumerable<Empleado> Todos => new RepositorioEmpleadoSoloLectura().Todos;
 

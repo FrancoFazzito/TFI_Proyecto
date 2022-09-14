@@ -17,9 +17,6 @@ namespace Aplicacion
             return hash.ToString();
         }
 
-        public bool Verificar(string contrasenaGuardada, string contrasenaIngresada)
-        {
-            return Hashear(contrasenaIngresada) == contrasenaGuardada;
-        }
+        public bool Verificar(string contrasenaGuardada, string contrasenaIngresada) => Hashear(contrasenaIngresada) == contrasenaGuardada;
     }
 }

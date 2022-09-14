@@ -2,11 +2,7 @@
 {
     public class CompatibilidadTowerMother : ICompatibilidad
     {
-        public bool EsCompatible(Componente tower, Componente mother)
-        {
-            bool v = GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
-            return v;
-        }
+        public bool EsCompatible(Componente tower, Componente mother) => GetSize(tower.TipoFormato) >= GetSize(mother.TipoFormato);
 
         public int GetSize(string format)
         {

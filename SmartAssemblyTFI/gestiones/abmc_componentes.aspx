@@ -232,11 +232,11 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="9">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
+                                                <asp:Button OnClick="BajaButton_Click" class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
                                             </ItemTemplate>
                                             <ItemStyle Width="10px" />
                                         </asp:TemplateField>

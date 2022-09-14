@@ -1,15 +1,76 @@
-﻿using System;
+﻿using Aplicacion;
+using Dominio;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace SmartAssemblyTFI
 {
     public partial class Formulario_web18 : System.Web.UI.Page
     {
+        private readonly GestorComponente gestorComponente = new GestorComponente();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                DropDownList2.DataSource = new List<string>()
+                DropDownList2.DataSource = ObtenerTiposDeComponente();
+                DropDownList2.DataBind();
+                DropDownList2_SelectedIndexChanged(null, null);
+
+                DropDownList1.DataSource = ObtenerTiposDeMemoria();
+                DropDownList1.DataBind();
+
+                DropDownList3.DataSource = ObtenerTiposDeFormato();
+                DropDownList3.DataBind();
+                GridView1.DataSource = ObtenterDatatableComponentes(Componentes);
+                GridView1.DataBind();
+            }
+        }
+
+        private IEnumerable<Componente> Componentes => gestorComponente.Todos;
+
+        private DataTable ObtenterDatatableComponentes(IEnumerable<Componente> entrada)
+        {
+            using (var datatable = new DataTable())
+            {
+                datatable.Columns.Add("Id", typeof(int));
+                datatable.Columns.Add("Nombre", typeof(string));
+                var pageSize = GridView1.PageSize;
+                foreach (var componente in entrada)
+                {
+                    datatable.Rows.Add(componente.Id, componente.Nombre);
+                }
+                return datatable;
+            }
+        }
+
+        private static List<string> ObtenerTiposDeFormato()
+        {
+            return new List<string>()
+                {
+                        "ATX",
+                        "ITX",
+                        "MATX"
+                };
+        }
+
+        private static List<string> ObtenerTiposDeMemoria()
+        {
+            return new List<string>()
+                {
+                        "DDR3",
+                        "DDR4",
+                        "DDR5"
+                };
+        }
+
+        private static List<string> ObtenerTiposDeComponente()
+        {
+            return new List<string>()
                 {
                         "GPU",
                         "CPU",
@@ -21,41 +82,6 @@ namespace SmartAssemblyTFI
                         "Tower",
                         "FAN"
                 };
-                DropDownList2.DataBind();
-                DropDownList2_SelectedIndexChanged(null, null);
-
-                DropDownList1.DataSource = new List<string>() //cargar desde BD Objects[] GroupedDistinct = ungroupedObjects
-                                                                //.GroupBy(line => new {
-                                                                //    PickFromClientCode = line.pickupFrom.clientCode,
-                                                                //    LoadAtClientCode = line.LoadAt.clientCode,
-                                                                //    DeliverToClientCode = line.deliverTo.clientCode
-                                                                //})
-                                                                //.Select(x => x.First())
-                                                                //.ToArray();
-                {
-                        "DDR3",
-                        "DDR4",
-                        "DDR5"
-                };
-                DropDownList1.DataBind();
-
-                DropDownList3.DataSource = new List<string>() //cargar desde BD
-                {
-                        "ATX",
-                        "ITX",
-                        "M-ITX"
-                };
-                DropDownList3.DataBind();
-
-                GridView1.DataSource = new List<ComponenteVista>()
-                {
-                    new ComponenteVista() { Id=1, Nombre = "R5 3400G" },
-                    new ComponenteVista() { Id=2, Nombre = "RAM 8GB Kingston" },
-                    new ComponenteVista() { Id=3, Nombre = "HDD 1TB WD" },
-                    new ComponenteVista() { Id=4, Nombre = "SSD 256GB Crucial" }
-                };
-                GridView1.DataBind();
-            }
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,6 +158,20 @@ namespace SmartAssemblyTFI
             TipoFormato.Visible = false;
             TieneVideoIntegrado.Visible = false;
             TamanoFan.Visible = false;
+        }
+
+        protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataSource = ObtenterDatatableComponentes(Componentes);
+            GridView1.DataBind();
+        }
+
+        protected void BajaButton_Click(object sender, EventArgs e)
+        {
+            var index = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
+            var componente = Componentes.ElementAt(GridView1.PageIndex * GridView1.PageSize + index);
+            gestorComponente.Eliminar(componente.Id);
         }
     }
 }

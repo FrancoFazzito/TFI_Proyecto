@@ -7,10 +7,6 @@ namespace Repositorio
     {
         private const string command = "INSERT INTO [dbo].[TipoUso] VALUES (@Nombre,@cpu,@ram,@gpu,@hdd,@ssd)";
 
-        public int Agregar(TipoUso tipoUso)
-        {
-            int rows = Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
-            return rows;
-        }
+        public int Agregar(TipoUso tipoUso) => Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
     }
 }

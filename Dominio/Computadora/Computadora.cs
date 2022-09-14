@@ -17,7 +17,7 @@ namespace Dominio
 
         public int Id { get; set; }
         public string TipoUso { get; set; }
-        public decimal CostoArmado { get; set; } //add costo armado to computer table
+        public decimal CostoArmado { get; set; }
         public ICollection<Componente> Componentes { get; } = new List<Componente>();
         public decimal Precio => Componentes.Sum(c => c.Precio) + CostoArmado;
         public int ConsumoTotal => Componentes.Sum(c => c.ConsumoEnWatts);

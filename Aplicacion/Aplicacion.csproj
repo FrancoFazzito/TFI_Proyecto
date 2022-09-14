@@ -47,7 +47,7 @@
     <Compile Include="ArmadoComputadoras\DirectorArmadorComputadora.cs" />
     <Compile Include="ArmadoComputadoras\Compatibilidades\FactoryCompatibilidad.cs" />
     <Compile Include="Clientes\GestorCliente.cs" />
-    <Compile Include="Componentes\GestorComponentes.cs" />
+    <Compile Include="Componentes\GestorComponente.cs" />
     <Compile Include="Empleados\GestorEmpleado.cs" />
     <Compile Include="Login\SesionCliente.cs" />
     <Compile Include="Login\SesionEmpleado.cs" />

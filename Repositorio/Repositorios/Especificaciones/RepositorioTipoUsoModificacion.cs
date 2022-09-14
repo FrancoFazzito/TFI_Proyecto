@@ -7,10 +7,6 @@ namespace Repositorio
     {
         private const string command = "UPDATE [dbo].[TipoUso] SET [Nombre] = @Nombre ,[Cpu] = @cpu,[Ram] = @ram,[Gpu] = @gpu,[Hdd] = @hdd,[Ssd] = @ssd WHERE Id = @id";
 
-        public int Modificar(TipoUso tipoUso)
-        {
-            int rows = Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
-            return rows;
-        }
+        public int Modificar(TipoUso tipoUso) => Db.Conexion.Execute(command, new ParametrosTipoUso().Obtener(tipoUso));
     }
 }

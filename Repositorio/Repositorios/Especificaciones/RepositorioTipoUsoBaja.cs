@@ -6,10 +6,6 @@ namespace Repositorio
     {
         private const string commmand = "DELETE FROM [dbo].[TipoUso] WHERE Id = @id";
 
-        public int Eliminar(int id)
-        {
-            int rows = Db.Conexion.Execute(commmand, new ParametroId().Obtener(id));
-            return rows;
-        }
+        public int Eliminar(int id) => Db.Conexion.Execute(commmand, new ParametroId().Obtener(id));
     }
 }

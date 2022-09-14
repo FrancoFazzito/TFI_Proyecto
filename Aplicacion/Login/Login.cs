@@ -30,14 +30,8 @@ namespace Aplicacion
             return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
         }
 
-        public void SalirEmpleado()
-        {
-            SesionEmpleado.Salir();
-        }
+        public void SalirEmpleado() => SesionEmpleado.Salir();
 
-        public void SalirCliente()
-        {
-            SesionCliente.Salir();
-        }
+        public void SalirCliente() => SesionCliente.Salir();
     }
 }

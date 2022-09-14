@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Dapper.Transaction;
 using Dominio;
+using System.Data;
 
 namespace Repositorio.Repositorios.Pedidos
 {
@@ -12,11 +13,11 @@ namespace Repositorio.Repositorios.Pedidos
 
         public int Agregar(Computadora computadora, Cliente clienteLogueado)
         {
-            using (System.Data.IDbConnection conexion = Db.Conexion)
+            using (IDbConnection conexion = Db.Conexion)
             {
                 conexion.Open();
 
-                using (System.Data.IDbTransaction transaction = conexion.BeginTransaction())
+                using (IDbTransaction transaction = conexion.BeginTransaction())
                 {
                     int rows = transaction.Execute(commandPedido, new ParametrosPedido().ObtenerIdCliente(clienteLogueado));
                     rows += transaction.Execute(commandComputadora, new ParametrosPedido().ObtenerTipoUso(computadora.TipoUso));
