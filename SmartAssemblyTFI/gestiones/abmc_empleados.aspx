@@ -26,7 +26,6 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del empleado"></asp:TextBox>
-                                        <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
                                     </div>
                                 </div>
                             </div>
@@ -125,6 +124,12 @@
                             <div class="col">
                                 <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server">
                                     <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
+                                            </ItemTemplate>
+                                            <ItemStyle Width="10px" />
+                                        </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:Button class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
