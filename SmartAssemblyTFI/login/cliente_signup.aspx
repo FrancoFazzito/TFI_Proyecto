@@ -65,21 +65,13 @@
                             <div class="col-md-6">
                                 <label>Provincia</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
-                                        <asp:ListItem Text="Select" Value="select" />
-                                        <asp:ListItem Text="Buenos Aires" Value="Buenos Aires" />
-                                        <asp:ListItem Text="Ciudad de Buenos Aires" Value="Ciudad de Buenos Aires" />
-                                    </asp:DropDownList>
+                                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Barrio</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
-                                        <asp:ListItem Text="Select" Value="select" />
-                                        <asp:ListItem Text="San Telmo" Value="San Telmo" />
-                                        <asp:ListItem Text="Villa Ballester" Value="Villa Ballester" />
-                                    </asp:DropDownList>
+                                    <asp:DropDownList class="form-control" ID="DropDownList3" runat="server"></asp:DropDownList>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +93,7 @@
                             <div class="col-8 mx-auto">
                                 <center>
                                     <div class="form-group">
-                                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Registrarse" />
+                                        <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click" />
                                     </div>
                                 </center>
                             </div>
