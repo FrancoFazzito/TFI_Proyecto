@@ -61,7 +61,7 @@ namespace SmartAssemblyTFI
                     TieneVideoIntegrado.Visible = true;
                     break;
 
-                case "Mother":
+                case "MOTHER":
                     Socket.Visible = true;
                     TieneVideoIntegrado.Visible = true;
                     Canales.Visible = true;
@@ -131,18 +131,46 @@ namespace SmartAssemblyTFI
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
-            var componente = Componentes.ElementAt(ComponentesGrid.PageIndex * ComponentesGrid.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
-            gestorComponente.Eliminar(componente.Id);
+            gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e) //agregar validaciones
         {
             gestorComponente.Agregar(ComponenteCargado);
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e) //agregar validaciones
         {
             gestorComponente.Modificar(ComponenteCargado);
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        }
+
+        private void DetallarComponenteEnFormulario(Componente componente)
+        {
+            idtxt.Text = componente.Id.ToString();
+            canalestxt.Text = componente.Canales.ToString();
+            capacidadtxt.Text = componente.Capacidad.ToString();
+            consumotxt.Text = componente.ConsumoEnWatts.ToString();
+            frecuenciaMaximatxt.Text = componente.MaximaFrecuencia.ToString();
+            nivelFantxt.Text = componente.NivelFanIntegrado.ToString();
+            nivelVideoIntregadotxt.Text = componente.NivelVideoIntegrado.ToString();
+            perfomancetxt.Text = componente.Perfomance.ToString();
+            stocktxt.Text = componente.Stock.ToString();
+            limiteStocktxt.Text = componente.StockLimite.ToString();
+            tamanoFantxt.Text = componente.TamanoFan.ToString();
+            preciotxt.Text = componente.Precio.ToString();
+            nombretxt.Text = componente.Nombre ?? "";
+            sockettxt.Text = componente.Socket ?? "";
+            altaFrecuenciaCheck.Checked = componente.NecesitaAltaFrecuencia;
+            videoIntegradoCheck.Checked = componente.TieneVideoIntegrado;
+            tiposComponenteDll.SelectedValue = tiposComponenteDll.Items.FindByValue(componente.Tipo ?? "seleccionar").Value;
+            tiposFormatoDll.SelectedValue = tiposFormatoDll.Items.FindByValue(componente.TipoFormato ?? "seleccionar").Value;
+            tiposMemoriaDll.SelectedValue = tiposMemoriaDll.Items.FindByValue(componente.TipoMemoria ?? "seleccionar").Value;
+            DropDownList2_SelectedIndexChanged(null, null);
         }
 
         public Componente ComponenteCargado => new Componente()
@@ -155,10 +183,10 @@ namespace SmartAssemblyTFI
             NivelFanIntegrado = FormHelper.ObtenerValorTextInt(nivelFantxt),
             NivelVideoIntegrado = FormHelper.ObtenerValorTextInt(nivelVideoIntregadotxt),
             Perfomance = FormHelper.ObtenerValorTextInt(perfomancetxt),
-            Precio = FormHelper.ObtenerValorTextDecimal(preciotxt),
             Stock = FormHelper.ObtenerValorTextInt(stocktxt),
             StockLimite = FormHelper.ObtenerValorTextInt(stocktxt),
             TamanoFan = FormHelper.ObtenerValorTextInt(tamanoFantxt),
+            Precio = FormHelper.ObtenerValorTextDecimal(preciotxt),
             Nombre = FormHelper.ObtenerValorText(nombretxt),
             Socket = FormHelper.ObtenerValorText(sockettxt),
             NecesitaAltaFrecuencia = FormHelper.ObtenerValorCheck(altaFrecuenciaCheck),
@@ -168,9 +196,13 @@ namespace SmartAssemblyTFI
             TipoMemoria = tiposMemoriaDll.SelectedValue
         };
 
+        private Componente GetComponenteDataGrid(object sender) => Componentes.ElementAt(ComponentesGrid.PageIndex * ComponentesGrid.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
+
         private IEnumerable<Componente> Componentes => gestorComponente.Todos;
         private static List<string> TiposDeFormato => new List<string>() { "ATX", "ITX", "MATX" };
         private static List<string> TiposDeMemoria => new List<string>() { "DDR3", "DDR4", "DDR5" };
-        private static List<string> TiposDeComponente => new List<string>() { "GPU", "CPU", "RAM", "Mother", "PSU", "SSD", "HDD", "Tower", "FAN" };
+        private static List<string> TiposDeComponente => new List<string>() { "GPU", "CPU", "RAM", "MOTHER", "PSU", "SSD", "HDD", "Tower", "FAN" };
+
+        
     }
 }

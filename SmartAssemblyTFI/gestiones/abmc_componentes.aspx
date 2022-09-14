@@ -25,7 +25,6 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="idtxt" runat="server" placeholder="ID"></asp:TextBox>
-                                        <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +78,7 @@
                                 <label>Precio</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="preciotxt" runat="server" TextMode="Number" placeholder="Precio"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="preciotxt" runat="server" placeholder="Precio"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -233,6 +232,12 @@
                             <div class="col">
                                 <asp:GridView class="table table-striped table-bordered" ID="ComponentesGrid" runat="server" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="9">
                                     <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" OnClick="Button5_Click" />
+                                            </ItemTemplate>
+                                            <ItemStyle Width="10px" />
+                                        </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:Button OnClick="BajaButton_Click" class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
