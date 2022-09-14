@@ -35,25 +35,25 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaMediaPrecio()
         {
-            var requerimiento = new RequerimientoArmado("Arquitectura", "precio", 300000);
+            var requerimiento = new RequerimientoArmado("Arquitectura", "precio", 350000);
             var director = new DirectorArmadorComputadora(requerimiento);
             var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
-            Assert.IsTrue(computadora.Precio <= 300000);
+            Assert.IsTrue(computadora.Precio <= 350000);
         }
 
         [TestMethod]
         public void ArmarComputadoraGamaMediaCalidad()
         {
-            var requerimiento = new RequerimientoArmado("Arquitectura", "calidad", 300000);
+            var requerimiento = new RequerimientoArmado("Arquitectura", "calidad", 350000);
             var director = new DirectorArmadorComputadora(requerimiento);
             var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
-            Assert.IsTrue(computadora.Precio <= 300000);
+            Assert.IsTrue(computadora.Precio <= 350000);
         }
 
         [TestMethod]

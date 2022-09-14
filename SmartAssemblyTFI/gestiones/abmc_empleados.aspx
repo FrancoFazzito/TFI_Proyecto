@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_empleados.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web20" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="border tipoUsoCard">
@@ -104,7 +105,7 @@
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>
             </div>
-             <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="border tipoUsoCard">
                     <div class="card-body">
                         <div class="row">
