@@ -92,10 +92,10 @@
                         <div class="row">
 
                             <div class="col-6">
-                                <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" />
+                                <asp:Button OnClick="Button2_Click" ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" />
                             </div>
                             <div class="col-6">
-                                <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Actualizar" />
+                                <asp:Button OnClick="Button3_Click" ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Actualizar" />
                             </div>
                         </div>
                     </div>
@@ -125,13 +125,13 @@
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
+                                                <asp:Button OnClick="Button5_Click" class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
                                             </ItemTemplate>
                                             <ItemStyle Width="10px" />
                                         </asp:TemplateField>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
+                                                <asp:Button OnClick="BajaButton_Click" class="btn btn-danger" ID="BajaButton" Text="Eliminar" runat="server" />
                                             </ItemTemplate>
                                             <ItemStyle Width="10px" />
                                         </asp:TemplateField>

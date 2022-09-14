@@ -11,7 +11,7 @@ namespace SmartAssemblyTFI
 {
 
 
-    public partial class Formulario_web17
+    public partial class Formulario_web20
     {
 
         /// <summary>
@@ -96,12 +96,12 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control EmpleadosGrid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView EmpleadosGrid;
     }
 }

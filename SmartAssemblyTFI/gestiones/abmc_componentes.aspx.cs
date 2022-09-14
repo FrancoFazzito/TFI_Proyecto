@@ -20,12 +20,16 @@ namespace SmartAssemblyTFI
                 FormHelper.RellenarDropDownList(tiposComponenteDll, TiposDeComponente);
                 FormHelper.RellenarDropDownList(tiposFormatoDll, TiposDeFormato);
                 FormHelper.RellenarDropDownList(tiposMemoriaDll, TiposDeMemoria);
-
-                ComponentesGrid.DataSource = ObtenterDatatableComponentes(Componentes);
-                ComponentesGrid.DataBind();
+                ActualizarGrid();
 
                 DropDownList2_SelectedIndexChanged(null, null);
             }
+        }
+
+        private void ActualizarGrid()
+        {
+            ComponentesGrid.DataSource = ObtenterDatatableComponentes(Componentes);
+            ComponentesGrid.DataBind();
         }
 
         private DataTable ObtenterDatatableComponentes(IEnumerable<Componente> entrada)
@@ -128,15 +132,28 @@ namespace SmartAssemblyTFI
             ComponentesGrid.DataBind();
         }
 
-        protected void BajaButton_Click(object sender, EventArgs e) => gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
+        protected void BajaButton_Click(object sender, EventArgs e)
+        {
+            gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
+            ActualizarGrid();
+        }
 
         protected void Button2_Click(object sender, EventArgs e) //agregar validaciones
-=> gestorComponente.Agregar(ComponenteCargado);
+        {
+            gestorComponente.Agregar(ComponenteCargado);
+            ActualizarGrid();
+        }
 
         protected void Button3_Click(object sender, EventArgs e) //agregar validaciones
-=> gestorComponente.Modificar(ComponenteCargado);
+        {
+            gestorComponente.Modificar(ComponenteCargado);
+            ActualizarGrid();
+        }
 
-        protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        }
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
