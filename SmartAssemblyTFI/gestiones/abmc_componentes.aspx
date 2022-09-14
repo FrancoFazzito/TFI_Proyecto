@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_componentes.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web18" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_componentes.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web19" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="border tipoUsoCard">
@@ -25,7 +24,7 @@
                                 <label>ID del componente</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="idtxt" runat="server" placeholder="ID"></asp:TextBox>
                                         <asp:Button class="btn btn-primary" ID="Button5" runat="server" Text="Detallar" />
                                     </div>
                                 </div>
@@ -34,7 +33,7 @@
                                 <label>Nombre</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Nombre"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="nombretxt" runat="server" placeholder="Nombre"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -44,15 +43,15 @@
                                 <label>Tipo componente</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:DropDownList class="form-control" ID="DropDownList2" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
+                                        <asp:DropDownList class="form-control" ID="tiposComponenteDll" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged"></asp:DropDownList>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mx-auto">
-                                <label>Calidad</label>
+                                <label>Perfomance</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="Calidad"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="perfomancetxt" runat="server" TextMode="Number" placeholder="Perfomance"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +61,7 @@
                                 <label>Stock</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" TextMode="Number" placeholder="Stock"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="stocktxt" runat="server" TextMode="Number" placeholder="Stock"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +69,7 @@
                                 <label>Limite de stock</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" TextMode="Number" placeholder="Limite de stock"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="limiteStocktxt" runat="server" TextMode="Number" placeholder="Limite de stock"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -80,7 +79,7 @@
                                 <label>Precio</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Number" placeholder="Precio"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="preciotxt" runat="server" TextMode="Number" placeholder="Precio"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +87,7 @@
                                 <label>Consumo en Watts</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Number" Step="10" placeholder="Consumo en watts"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="consumotxt" runat="server" TextMode="Number" Step="10" placeholder="Consumo en watts"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -98,14 +97,14 @@
                                 <asp:Label runat="server" ID="LabelSocket">Socket</asp:Label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" AutoPostBack="true" runat="server" placeholder="Socket"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="sockettxt" AutoPostBack="true" runat="server" placeholder="Socket"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mx-auto" runat="server" id="TieneVideoIntegrado" visible="false">
                                 <div class="form-check">
                                     <br />
-                                    <asp:CheckBox CssClass="form-check-input" ID="CheckBox1" runat="server"></asp:CheckBox>
+                                    <asp:CheckBox CssClass="form-check-input" ID="videoIntegradoCheck" runat="server"></asp:CheckBox>
                                     <label class="form-check-label" for="exampleCheck1">Tiene video integrado</label>
                                 </div>
                             </div>
@@ -115,14 +114,14 @@
                                 <label>Canales</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" TextMode="Number" placeholder="Canales"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="canalestxt" runat="server" TextMode="Number" placeholder="Canales"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 mx-auto" runat="server" id="AltaFrecuencia" visible="false">
                                 <div class="form-check">
                                     <br />
-                                    <asp:CheckBox CssClass="form-check-input" ID="CheckBox2" runat="server"></asp:CheckBox>
+                                    <asp:CheckBox CssClass="form-check-input" ID="altaFrecuenciaCheck" runat="server"></asp:CheckBox>
                                     <label class="form-check-label" for="exampleCheck1">Necesita alta frecuencia</label>
                                 </div>
                             </div>
@@ -132,7 +131,7 @@
                                 <label>Tipo de memoria</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList class="form-control" ID="tiposMemoriaDll" runat="server"></asp:DropDownList>
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +139,7 @@
                                 <label>Tamaño de FAN</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox13" runat="server" TextMode="Number" Step="40" placeholder="Tamaño de FAN"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="tamanoFantxt" runat="server" TextMode="Number" Step="40" placeholder="Tamaño de FAN"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +149,7 @@
                                 <label>Nivel de FAN (fan stock)</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" TextMode="Number" placeholder="Nivel de FAN"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="nivelFantxt" runat="server" TextMode="Number" placeholder="Nivel de FAN"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +157,7 @@
                                 <label>Frecuencia maxima</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox class="form-control" ID="DropDownList4" TextMode="Number" runat="server"> </asp:TextBox>
+                                        <asp:TextBox class="form-control" ID="frecuenciaMaximatxt" TextMode="Number" runat="server"> </asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +167,7 @@
                                 <label>Capacidad</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" TextMode="Number" placeholder="Capacidad"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="capacidadtxt" runat="server" TextMode="Number" placeholder="Capacidad"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +175,7 @@
                                 <label>Tipo de formato</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:DropDownList class="form-control" ID="DropDownList3" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList class="form-control" ID="tiposFormatoDll" runat="server"></asp:DropDownList>
                                     </div>
                                 </div>
                             </div>
@@ -186,12 +185,12 @@
                                 <label>Nivel de video (video integrado)</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox12" runat="server" TextMode="Number" placeholder="Nivel de video"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="nivelVideoIntregadotxt" runat="server" TextMode="Number" placeholder="Nivel de video"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <%--<div class="row">
                             <div class="col-md-10 mx-auto">
                                 <label>Imagen del componente</label>
                                 <div class="form-group">
@@ -201,13 +200,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="row">
                             <div class="col-6">
-                                <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" />
+                                <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" OnClick="Button2_Click" />
                             </div>
                             <div class="col-6">
-                                <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Actualizar" />
+                                <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Actualizar" OnClick="Button3_Click" />
                             </div>
                         </div>
                     </div>
@@ -232,7 +231,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="9">
+                                <asp:GridView class="table table-striped table-bordered" ID="ComponentesGrid" runat="server" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="9">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>

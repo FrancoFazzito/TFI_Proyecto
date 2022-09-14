@@ -11,17 +11,17 @@ namespace SmartAssemblyTFI
 {
 
 
-    public partial class Formulario_web18
+    public partial class Formulario_web19
     {
 
         /// <summary>
-        /// Control TextBox3.
+        /// Control idtxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox idtxt;
 
         /// <summary>
         /// Control Button5.
@@ -33,67 +33,67 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control nombretxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox nombretxt;
 
         /// <summary>
-        /// Control DropDownList2.
+        /// Control tiposComponenteDll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList tiposComponenteDll;
 
         /// <summary>
-        /// Control TextBox8.
+        /// Control perfomancetxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox perfomancetxt;
 
         /// <summary>
-        /// Control TextBox4.
+        /// Control stocktxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox stocktxt;
 
         /// <summary>
-        /// Control TextBox7.
+        /// Control limiteStocktxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox limiteStocktxt;
 
         /// <summary>
-        /// Control TextBox5.
+        /// Control preciotxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox preciotxt;
 
         /// <summary>
-        /// Control TextBox6.
+        /// Control consumotxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox consumotxt;
 
         /// <summary>
         /// Control Socket.
@@ -114,13 +114,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.WebControls.Label LabelSocket;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control sockettxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox sockettxt;
 
         /// <summary>
         /// Control TieneVideoIntegrado.
@@ -132,13 +132,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TieneVideoIntegrado;
 
         /// <summary>
-        /// Control CheckBox1.
+        /// Control videoIntegradoCheck.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox videoIntegradoCheck;
 
         /// <summary>
         /// Control Canales.
@@ -150,13 +150,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Canales;
 
         /// <summary>
-        /// Control TextBox9.
+        /// Control canalestxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox canalestxt;
 
         /// <summary>
         /// Control AltaFrecuencia.
@@ -168,13 +168,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl AltaFrecuencia;
 
         /// <summary>
-        /// Control CheckBox2.
+        /// Control altaFrecuenciaCheck.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox CheckBox2;
+        protected global::System.Web.UI.WebControls.CheckBox altaFrecuenciaCheck;
 
         /// <summary>
         /// Control TipoMemoria.
@@ -186,13 +186,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TipoMemoria;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control tiposMemoriaDll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList tiposMemoriaDll;
 
         /// <summary>
         /// Control TamanoFan.
@@ -204,13 +204,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TamanoFan;
 
         /// <summary>
-        /// Control TextBox13.
+        /// Control tamanoFantxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox tamanoFantxt;
 
         /// <summary>
         /// Control NivelFan.
@@ -222,13 +222,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl NivelFan;
 
         /// <summary>
-        /// Control TextBox11.
+        /// Control nivelFantxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox nivelFantxt;
 
         /// <summary>
         /// Control FrecuenciaMaxima.
@@ -240,13 +240,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FrecuenciaMaxima;
 
         /// <summary>
-        /// Control DropDownList4.
+        /// Control frecuenciaMaximatxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DropDownList4;
+        protected global::System.Web.UI.WebControls.TextBox frecuenciaMaximatxt;
 
         /// <summary>
         /// Control Capacidad.
@@ -258,13 +258,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Capacidad;
 
         /// <summary>
-        /// Control TextBox10.
+        /// Control capacidadtxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox capacidadtxt;
 
         /// <summary>
         /// Control TipoFormato.
@@ -276,13 +276,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TipoFormato;
 
         /// <summary>
-        /// Control DropDownList3.
+        /// Control tiposFormatoDll.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList tiposFormatoDll;
 
         /// <summary>
         /// Control NivelVideoIntegrado.
@@ -294,22 +294,13 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl NivelVideoIntegrado;
 
         /// <summary>
-        /// Control TextBox12.
+        /// Control nivelVideoIntregadotxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
-
-        /// <summary>
-        /// Control Button4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.TextBox nivelVideoIntregadotxt;
 
         /// <summary>
         /// Control Button2.
@@ -330,12 +321,12 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control ComponentesGrid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView ComponentesGrid;
     }
 }

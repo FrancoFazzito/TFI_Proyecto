@@ -121,6 +121,7 @@
     <Compile Include="gestiones\abmc_tipouso.aspx.designer.cs">
       <DependentUpon>abmc_tipouso.aspx</DependentUpon>
     </Compile>
+    <Compile Include="compartido\FormHelper.cs" />
     <Compile Include="login\admin_login.aspx.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

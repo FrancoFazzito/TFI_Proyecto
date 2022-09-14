@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SmartAssemblyTFI
 {
-    public partial class Formulario_web18 : System.Web.UI.Page
+    public partial class Formulario_web19 : Page
     {
         private readonly GestorComponente gestorComponente = new GestorComponente();
 
@@ -17,21 +17,16 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList2.DataSource = ObtenerTiposDeComponente();
-                DropDownList2.DataBind();
+                FormHelper.RellenarDropDownList(tiposComponenteDll, TiposDeComponente);
+                FormHelper.RellenarDropDownList(tiposFormatoDll, TiposDeFormato);
+                FormHelper.RellenarDropDownList(tiposMemoriaDll, TiposDeMemoria);
+
+                ComponentesGrid.DataSource = ObtenterDatatableComponentes(Componentes);
+                ComponentesGrid.DataBind();
+
                 DropDownList2_SelectedIndexChanged(null, null);
-
-                DropDownList1.DataSource = ObtenerTiposDeMemoria();
-                DropDownList1.DataBind();
-
-                DropDownList3.DataSource = ObtenerTiposDeFormato();
-                DropDownList3.DataBind();
-                GridView1.DataSource = ObtenterDatatableComponentes(Componentes);
-                GridView1.DataBind();
             }
         }
-
-        private IEnumerable<Componente> Componentes => gestorComponente.Todos;
 
         private DataTable ObtenterDatatableComponentes(IEnumerable<Componente> entrada)
         {
@@ -39,7 +34,7 @@ namespace SmartAssemblyTFI
             {
                 datatable.Columns.Add("Id", typeof(int));
                 datatable.Columns.Add("Nombre", typeof(string));
-                var pageSize = GridView1.PageSize;
+                var pageSize = ComponentesGrid.PageSize;
                 foreach (var componente in entrada)
                 {
                     datatable.Rows.Add(componente.Id, componente.Nombre);
@@ -48,46 +43,10 @@ namespace SmartAssemblyTFI
             }
         }
 
-        private static List<string> ObtenerTiposDeFormato()
-        {
-            return new List<string>()
-                {
-                        "ATX",
-                        "ITX",
-                        "MATX"
-                };
-        }
-
-        private static List<string> ObtenerTiposDeMemoria()
-        {
-            return new List<string>()
-                {
-                        "DDR3",
-                        "DDR4",
-                        "DDR5"
-                };
-        }
-
-        private static List<string> ObtenerTiposDeComponente()
-        {
-            return new List<string>()
-                {
-                        "GPU",
-                        "CPU",
-                        "RAM",
-                        "Mother",
-                        "PSU",
-                        "SSD",
-                        "HDD",
-                        "Tower",
-                        "FAN"
-                };
-        }
-
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarFiltro();
-            switch (DropDownList2.SelectedValue)
+            switch (tiposComponenteDll.SelectedValue)
             {
                 case "CPU":
                     Socket.Visible = true;
@@ -141,6 +100,9 @@ namespace SmartAssemblyTFI
                     Socket.Visible = true;
                     LabelSocket.Text = $"Separar con - cada socket valido (Ej.: AM4-1151-1155)";
                     break;
+
+                default:
+                    break;
             }
         }
 
@@ -162,16 +124,53 @@ namespace SmartAssemblyTFI
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = ObtenterDatatableComponentes(Componentes);
-            GridView1.DataBind();
+            ComponentesGrid.PageIndex = e.NewPageIndex;
+            ComponentesGrid.DataSource = ObtenterDatatableComponentes(Componentes);
+            ComponentesGrid.DataBind();
         }
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
-            var index = ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
-            var componente = Componentes.ElementAt(GridView1.PageIndex * GridView1.PageSize + index);
+            var componente = Componentes.ElementAt(ComponentesGrid.PageIndex * ComponentesGrid.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
             gestorComponente.Eliminar(componente.Id);
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            gestorComponente.Agregar(ComponenteCargado);
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            gestorComponente.Modificar(ComponenteCargado);
+        }
+
+        public Componente ComponenteCargado => new Componente()
+        {
+            Id = FormHelper.ObtenerValorTextInt(idtxt),
+            Canales = FormHelper.ObtenerValorTextInt(canalestxt),
+            Capacidad = FormHelper.ObtenerValorTextInt(capacidadtxt),
+            ConsumoEnWatts = FormHelper.ObtenerValorTextInt(consumotxt),
+            MaximaFrecuencia = FormHelper.ObtenerValorTextInt(frecuenciaMaximatxt),
+            NivelFanIntegrado = FormHelper.ObtenerValorTextInt(nivelFantxt),
+            NivelVideoIntegrado = FormHelper.ObtenerValorTextInt(nivelVideoIntregadotxt),
+            Perfomance = FormHelper.ObtenerValorTextInt(perfomancetxt),
+            Precio = FormHelper.ObtenerValorTextDecimal(preciotxt),
+            Stock = FormHelper.ObtenerValorTextInt(stocktxt),
+            StockLimite = FormHelper.ObtenerValorTextInt(stocktxt),
+            TamanoFan = FormHelper.ObtenerValorTextInt(tamanoFantxt),
+            Nombre = FormHelper.ObtenerValorText(nombretxt),
+            Socket = FormHelper.ObtenerValorText(sockettxt),
+            NecesitaAltaFrecuencia = FormHelper.ObtenerValorCheck(altaFrecuenciaCheck),
+            TieneVideoIntegrado = FormHelper.ObtenerValorCheck(videoIntegradoCheck),
+            Tipo = tiposFormatoDll.SelectedValue,
+            TipoFormato = tiposFormatoDll.SelectedValue,
+            TipoMemoria = tiposMemoriaDll.SelectedValue
+        };
+
+        private IEnumerable<Componente> Componentes => gestorComponente.Todos;
+        private static List<string> TiposDeFormato => new List<string>() { "ATX", "ITX", "MATX" };
+        private static List<string> TiposDeMemoria => new List<string>() { "DDR3", "DDR4", "DDR5" };
+        private static List<string> TiposDeComponente => new List<string>() { "GPU", "CPU", "RAM", "Mother", "PSU", "SSD", "HDD", "Tower", "FAN" };
     }
 }
