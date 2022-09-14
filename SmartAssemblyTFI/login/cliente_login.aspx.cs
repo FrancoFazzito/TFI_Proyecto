@@ -11,9 +11,9 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string correo = TextBox1.Text;
-            string contrasena = TextBox2.Text;
-            bool esExistoso = new Login().IngresarCliente(correo, contrasena);
+            var correo = TextBox1.Text;
+            var contrasena = TextBox2.Text;
+            var esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {
             }

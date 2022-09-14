@@ -7,7 +7,7 @@ namespace Repositorio
     {
         public DynamicParameters Obtener(Componente componente)
         {
-            DynamicParameters parameters = new DynamicParameters();
+            var parameters = new DynamicParameters();
             parameters.Add("@id", componente.Id);
             parameters.Add("@Nombre", componente.Nombre);
             parameters.Add("@Precio", componente.Precio);

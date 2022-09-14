@@ -34,7 +34,6 @@ namespace SmartAssemblyTFI
             {
                 datatable.Columns.Add("Id", typeof(int));
                 datatable.Columns.Add("Nombre", typeof(string));
-                var pageSize = ComponentesGrid.PageSize;
                 foreach (var componente in entrada)
                 {
                     datatable.Rows.Add(componente.Id, componente.Nombre);
@@ -90,7 +89,7 @@ namespace SmartAssemblyTFI
                     Capacidad.Visible = true;
                     break;
 
-                case "Tower":
+                case "TOWER":
                     TamanoFan.Visible = true;
                     TipoFormato.Visible = true;
                     break;
@@ -129,25 +128,15 @@ namespace SmartAssemblyTFI
             ComponentesGrid.DataBind();
         }
 
-        protected void BajaButton_Click(object sender, EventArgs e)
-        {
-            gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
-        }
+        protected void BajaButton_Click(object sender, EventArgs e) => gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
 
         protected void Button2_Click(object sender, EventArgs e) //agregar validaciones
-        {
-            gestorComponente.Agregar(ComponenteCargado);
-        }
+=> gestorComponente.Agregar(ComponenteCargado);
 
         protected void Button3_Click(object sender, EventArgs e) //agregar validaciones
-        {
-            gestorComponente.Modificar(ComponenteCargado);
-        }
+=> gestorComponente.Modificar(ComponenteCargado);
 
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
-        }
+        protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
@@ -167,9 +156,9 @@ namespace SmartAssemblyTFI
             sockettxt.Text = componente.Socket ?? "";
             altaFrecuenciaCheck.Checked = componente.NecesitaAltaFrecuencia;
             videoIntegradoCheck.Checked = componente.TieneVideoIntegrado;
-            tiposComponenteDll.SelectedValue = tiposComponenteDll.Items.FindByValue(componente.Tipo ?? "seleccionar").Value;
-            tiposFormatoDll.SelectedValue = tiposFormatoDll.Items.FindByValue(componente.TipoFormato ?? "seleccionar").Value;
-            tiposMemoriaDll.SelectedValue = tiposMemoriaDll.Items.FindByValue(componente.TipoMemoria ?? "seleccionar").Value;
+            tiposComponenteDll.SelectedValue = tiposComponenteDll.Items.FindByValue(componente.Tipo ?? TiposDeComponente[0]).Value;
+            tiposFormatoDll.SelectedValue = tiposFormatoDll.Items.FindByValue(componente.TipoFormato ?? TiposDeFormato[0]).Value;
+            tiposMemoriaDll.SelectedValue = tiposMemoriaDll.Items.FindByValue(componente.TipoMemoria ?? TiposDeMemoria[0]).Value;
             DropDownList2_SelectedIndexChanged(null, null);
         }
 
@@ -189,9 +178,9 @@ namespace SmartAssemblyTFI
             Precio = FormHelper.ObtenerValorTextDecimal(preciotxt),
             Nombre = FormHelper.ObtenerValorText(nombretxt),
             Socket = FormHelper.ObtenerValorText(sockettxt),
-            NecesitaAltaFrecuencia = FormHelper.ObtenerValorCheck(altaFrecuenciaCheck),
-            TieneVideoIntegrado = FormHelper.ObtenerValorCheck(videoIntegradoCheck),
-            Tipo = tiposFormatoDll.SelectedValue,
+            NecesitaAltaFrecuencia = altaFrecuenciaCheck.Checked,
+            TieneVideoIntegrado = videoIntegradoCheck.Checked,
+            Tipo = tiposComponenteDll.SelectedValue,
             TipoFormato = tiposFormatoDll.SelectedValue,
             TipoMemoria = tiposMemoriaDll.SelectedValue
         };
@@ -201,8 +190,6 @@ namespace SmartAssemblyTFI
         private IEnumerable<Componente> Componentes => gestorComponente.Todos;
         private static List<string> TiposDeFormato => new List<string>() { "ATX", "ITX", "MATX" };
         private static List<string> TiposDeMemoria => new List<string>() { "DDR3", "DDR4", "DDR5" };
-        private static List<string> TiposDeComponente => new List<string>() { "GPU", "CPU", "RAM", "MOTHER", "PSU", "SSD", "HDD", "Tower", "FAN" };
-
-        
+        private static List<string> TiposDeComponente => new List<string>() { "GPU", "CPU", "RAM", "MOTHER", "PSU", "SSD", "HDD", "TOWER", "FAN" };
     }
 }

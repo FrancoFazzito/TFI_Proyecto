@@ -26,13 +26,13 @@ namespace Aplicacion
         {
             get
             {
-                TipoUso especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.Nombre == _requerimientoArmado.TipoUso);
-                IOrderedEnumerable<Componente> componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
+                var especificacion = _repositorioEspecificacion.ObtenerTodos.FirstOrDefault(c => c.Nombre == _requerimientoArmado.TipoUso);
+                var componentes = _repositorioComponente.ObtenerTodos.OrderBy(c => c.Precio);
 
-                IEnumerable<Computadora> computadoras = from cpu in componentes.Where(c => c.Tipo == "CPU")
-                                                        let computer = ArmarComputadora(componentes, _requerimientoArmado.Precio, especificacion, cpu)
-                                                        where computer != null
-                                                        select computer;
+                var computadoras = from cpu in componentes.Where(c => c.Tipo == "CPU")
+                                   let computer = ArmarComputadora(componentes, _requerimientoArmado.Precio, especificacion, cpu)
+                                   where computer != null
+                                   select computer;
 
                 return (_requerimientoArmado.Importancia == "precio"
                        ? computadoras.OrderBy(c => c.Precio)

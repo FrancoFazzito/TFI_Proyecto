@@ -9,8 +9,8 @@ namespace Aplicacion
 
         public string Hashear(string value)
         {
-            StringBuilder hash = new StringBuilder();
-            foreach (byte _byte in new SHA256Managed().ComputeHash(Encoding.UTF8.GetBytes(value)))
+            var hash = new StringBuilder();
+            foreach (var _byte in new SHA256Managed().ComputeHash(Encoding.UTF8.GetBytes(value)))
             {
                 hash.Append(_byte.ToString(Format));
             }

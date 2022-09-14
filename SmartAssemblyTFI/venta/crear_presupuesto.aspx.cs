@@ -37,12 +37,12 @@ namespace SmartAssemblyTFI
         {
             try
             {
-                string tipoUso = DropDownList2.SelectedValue;
-                string importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
-                decimal precio = decimal.Parse(TextBox1.Text);
-                RequerimientoArmado requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
-                DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-                Computadora computadoraArmada = director.Computadora;
+                var tipoUso = DropDownList2.SelectedValue;
+                var importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
+                var precio = decimal.Parse(TextBox1.Text);
+                var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
+                var director = new DirectorArmadorComputadora(requerimiento);
+                var computadoraArmada = director.Computadora;
                 Session["computadoraArmada"] = computadoraArmada;
                 Response.Redirect("crear_pedido.aspx");
                 //cargar pantalla error

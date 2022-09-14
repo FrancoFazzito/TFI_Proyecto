@@ -18,14 +18,14 @@ namespace Aplicacion
 
         public bool IngresarCliente(string correo, string contrasena)
         {
-            Dominio.Cliente cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
+            var cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
             SesionCliente.Ingresar(cliente);
             return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasena);
         }
 
         public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
-            Dominio.Empleado empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
+            var empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
             SesionEmpleado.Ingresar(empleado);
             return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
         }

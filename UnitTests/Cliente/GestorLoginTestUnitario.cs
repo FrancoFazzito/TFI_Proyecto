@@ -13,12 +13,12 @@ namespace UnitTests
         public void IngresarCliente()
         {
             //arrange act
-            int id = GestorCliente.Todos.Max(c => c.Id);
+            var id = GestorCliente.Todos.Max(c => c.Id);
             GestorCliente.Agregar(GetClienteTest(id));
             id = GestorCliente.Todos.Max(c => c.Id);
 
             //assert
-            Cliente cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
+            var cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(cliente);
             Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "test"));
 
@@ -30,12 +30,12 @@ namespace UnitTests
         public void IngresarEmpleado()
         {
             //arrange act
-            int id = GestorEmpleado.Todos.Max(c => c.Id);
+            var id = GestorEmpleado.Todos.Max(c => c.Id);
             GestorEmpleado.Agregar(GetEmpleadoTest(id));
             id = GestorEmpleado.Todos.Max(c => c.Id);
 
             //assert
-            Empleado empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
+            var empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(empleado);
             Assert.IsTrue(new Login().IngresarEmpleado(empleado.Correo, "test"));
 

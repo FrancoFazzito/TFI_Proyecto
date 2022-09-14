@@ -10,14 +10,11 @@ namespace SmartAssemblyTFI
     {
         private Computadora computadora;
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            computadora = (Computadora)Session["computadoraArmada"];
-        }
+        protected void Page_Load(object sender, EventArgs e) => computadora = (Computadora)Session["computadoraArmada"];
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Cliente clienteLogueado = SesionCliente.Logueado;
+            var clienteLogueado = SesionCliente.Logueado;
             if (clienteLogueado == null)
             {
                 Session["vieneDeCrearPedido"] = true;
