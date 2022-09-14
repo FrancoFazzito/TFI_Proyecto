@@ -150,10 +150,7 @@ namespace SmartAssemblyTFI
             ActualizarGrid();
         }
 
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
-        }
+        protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
