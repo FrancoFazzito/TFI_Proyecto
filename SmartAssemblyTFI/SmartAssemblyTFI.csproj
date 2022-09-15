@@ -100,6 +100,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="objetosVistas\ComponenteVista.cs" />
     <Compile Include="gestiones\abmc_componentes.aspx.cs">
       <DependentUpon>abmc_componentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

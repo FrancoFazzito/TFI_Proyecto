@@ -21,7 +21,7 @@ namespace SmartAssemblyTFI
                 Response.Redirect("../login/cliente_login.aspx");
             }
             new GestorPedido().Subir(computadora, clienteLogueado);
-            //creaste tu pedido con exito con numero! pantalla
+            //creaste tu pedido con exito con numero label!
         }
 
         public string NombreCpu => computadora.Componentes.First(c => c.Tipo == "CPU").Nombre;

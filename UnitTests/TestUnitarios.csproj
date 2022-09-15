@@ -58,6 +58,7 @@
     <Compile Include="Empleado\GestorEmpleadoTestUnitario.cs" />
     <Compile Include="Empleado\RepositorioEmpleadoTestUnitarios.cs" />
     <Compile Include="RepositorioEspecificacion\RepositorioTipoUsoTestUnitarios.cs" />
+    <Compile Include="RepositorioPedido\RepositorioPedidoTestUnitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
