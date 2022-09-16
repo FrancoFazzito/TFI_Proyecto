@@ -6,7 +6,7 @@ namespace Repositorio.Repositorios.Pedidos
 {
     public class RepositorioPedidoAlta
     {
-        private const string commandPedido = "INSERT INTO[dbo].[Pedido] VALUES(@idCliente)";
+        private const string commandPedido = "INSERT INTO[dbo].[Pedido] VALUES(@idCliente, GETDATE())";
         private const string commandComputadora = "INSERT INTO[dbo].[computadora] VALUES ((SELECT IDENT_CURRENT('pedido')), @TipoUso)";
         private const string commandComponenteComputadora = "INSERT INTO[dbo].[ComponenteComputadora] VALUES(@idComponente, (SELECT IDENT_CURRENT('computadora')))";
 

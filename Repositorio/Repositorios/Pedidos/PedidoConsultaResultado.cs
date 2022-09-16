@@ -1,4 +1,6 @@
-﻿namespace Repositorio.Repositorios.Pedidos
+﻿using System;
+
+namespace Repositorio.Repositorios.Pedidos
 {
     public class PedidoConsultaResultado
     {
@@ -6,6 +8,6 @@
         public string TipoUso { get; set; }
         public int IdPedido { get; set; }
         public int IdCliente { get; set; }
-
+        public DateTime FechaPedido { get; set; }
     }
 }

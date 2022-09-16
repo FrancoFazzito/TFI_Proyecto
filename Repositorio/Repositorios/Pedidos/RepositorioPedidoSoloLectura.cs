@@ -14,7 +14,7 @@ namespace Repositorio.Repositorios.Pedidos
             get
             {
                 List<Pedido> pedidos = new List<Pedido>();
-                foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsultaResultado>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
+                foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsultaResultado>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
                 {
                     var computadora = new Computadora()
                     {
@@ -31,7 +31,8 @@ namespace Repositorio.Repositorios.Pedidos
                     {
                         Id = pedidoConsulta.IdPedido,
                         Computadora = computadora,
-                        IdCliente = pedidoConsulta.IdCliente
+                        IdCliente = pedidoConsulta.IdCliente,
+                        Fecha = pedidoConsulta.FechaPedido
                     });
                 }
                 return pedidos;
