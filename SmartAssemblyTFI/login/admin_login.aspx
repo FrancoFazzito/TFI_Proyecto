@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <center>
-                            <asp:Label visible="false" runat="server" ID="labelError" Text="Contraseña o usuario invalido!"></asp:Label>
+                            <asp:Label visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Contraseña o usuario invalido!"></asp:Label>
                         </center>
                     </div>
                 </div>
