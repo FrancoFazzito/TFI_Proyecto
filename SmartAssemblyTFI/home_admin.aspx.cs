@@ -1,5 +1,4 @@
 ﻿using Aplicacion;
-using Aplicacion.Pedidos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace SmartAssemblyTFI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public string LineData = "[[1, 1000000], [2, 1500000], [3, 1800000], [4, 1800000], [5, 1200000],[6, 1800000], [7, 1400000], [8, 1800000], [9, 1150000], [10, 1350000], [11, 2000000], [12, 1185000]]";
@@ -26,6 +25,6 @@ namespace SmartAssemblyTFI
                 { "Julio", 1010000 },
                 { "Agosto", 1450000 }
             };
-        public IEnumerable<ComponenteVista> Componentes => new GestorComponente().Todos.Take(5).Select(e => new ComponenteVista() { Id=e.Id, Nombre=e.Nombre});
+        public IEnumerable<ComponenteVista> Componentes => new GestorComponente().Todos.Take(5).Select(e => new ComponenteVista() { Id = e.Id, Nombre = e.Nombre });
     }
 }

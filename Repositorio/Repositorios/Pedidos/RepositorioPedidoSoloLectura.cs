@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace Repositorio.Repositorios.Pedidos
 {
-    public class RepositorioPedidoSoloLectura 
+    public class RepositorioPedidoSoloLectura
     {
         public IEnumerable<Pedido> Todos
         {
             get
             {
-                List<Pedido> pedidos = new List<Pedido>();
+                var pedidos = new List<Pedido>();
                 foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsultaResultado>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
                 {
                     var computadora = new Computadora()
