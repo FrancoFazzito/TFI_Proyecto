@@ -16,6 +16,8 @@ namespace SmartAssemblyTFI
             var esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {
+                labelError.Visible = true;
+                return;
             }
             Session["clienteLogueado"] = SesionCliente.Logueado;
 

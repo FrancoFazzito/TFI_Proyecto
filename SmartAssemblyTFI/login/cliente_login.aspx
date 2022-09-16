@@ -46,6 +46,9 @@
                                 </div>
                             </div>
                         </div>
+                        <center>
+                            <asp:Label visible="false" runat="server" ID="labelError" Text="Contraseña o usuario invalido!"></asp:Label>
+                        </center>
                     </div>
                 </div>
                 <a href="homepage.aspx"><< Atras</a><br>

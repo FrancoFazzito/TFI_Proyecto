@@ -33,15 +33,18 @@
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre de usuario"></asp:TextBox>
                                 </div>
-                                <label>Password</label>
+                                <label>Contraseña</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="contraseña" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />
                                 </div>
                             </div>
                         </div>
+                        <center>
+                            <asp:Label visible="false" runat="server" ID="labelError" Text="Contraseña o usuario invalido!"></asp:Label>
+                        </center>
                     </div>
                 </div>
                 <a href="../home_page.aspx"><< Ir a inicio</a><br>

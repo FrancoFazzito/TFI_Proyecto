@@ -14,8 +14,10 @@ namespace SmartAssemblyTFI
             var nombre = TextBox1.Text;
             var contrasena = TextBox2.Text;
             var esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
-            if (!esExitoso) //mostrar label que le fue mal :(
+            if (!esExitoso)
             {
+                labelError.Visible = true;
+                return;
             }
 
             Session["empleadoLogueado"] = SesionEmpleado.Logueado;

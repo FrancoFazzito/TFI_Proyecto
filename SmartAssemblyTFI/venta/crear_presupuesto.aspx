@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-7 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -47,6 +47,9 @@
                             </div>
                         </div>
                     </div>
+                    <center>
+                        <asp:Label visible="false" runat="server" ID="labelError"></asp:Label>
+                    </center>
                 </div>
                 <a href="../home_page.aspx"><< Atras</a><br>
                 <br>

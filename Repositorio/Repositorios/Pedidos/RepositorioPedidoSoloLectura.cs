@@ -29,6 +29,7 @@ namespace Repositorio.Repositorios.Pedidos
                     }
                     pedidos.Add(new Pedido
                     {
+                        Id = pedidoConsulta.IdPedido,
                         Computadora = computadora,
                         IdCliente = pedidoConsulta.IdCliente
                     });

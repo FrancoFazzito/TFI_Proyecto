@@ -9,6 +9,7 @@ namespace SmartAssemblyTFI
     public partial class Formulario_web14 : System.Web.UI.Page
     {
         private Computadora computadora;
+        private readonly GestorPedido _gestorPedido = new GestorPedido();
 
         protected void Page_Load(object sender, EventArgs e) => computadora = (Computadora)Session["computadoraArmada"];
 
@@ -20,8 +21,9 @@ namespace SmartAssemblyTFI
                 Session["vieneDeCrearPedido"] = true;
                 Response.Redirect("../login/cliente_login.aspx");
             }
-            new GestorPedido().Subir(computadora, clienteLogueado);
-            //creaste tu pedido con exito con numero label!
+            _gestorPedido.Subir(computadora, clienteLogueado);
+            labelConfirmacion.Visible = true;
+            labelConfirmacion.Text = $"Se confirmo el pedido con numero {_gestorPedido.Todos.Max(p => p.Id)}";
         }
 
         public string NombreCpu => computadora.Componentes.First(c => c.Tipo == "CPU").Nombre;
