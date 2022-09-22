@@ -71,9 +71,8 @@
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoBaja.cs" />
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoModificacion.cs" />
     <Compile Include="Repositorios\Especificaciones\RepositorioTipoUsoSoloLectura.cs" />
-    <Compile Include="Repositorios\Pedidos\ParametrosIdComputadora.cs" />
     <Compile Include="Repositorios\Pedidos\ParametrosPedido.cs" />
-    <Compile Include="Repositorios\Pedidos\PedidoConsultaResultado.cs" />
+    <Compile Include="Repositorios\Pedidos\PedidoConsulta.cs" />
     <Compile Include="Repositorios\Pedidos\RepositorioPedidoAlta.cs" />
     <Compile Include="Repositorios\Pedidos\RepositorioPedidoSoloLectura.cs" />
   </ItemGroup>
