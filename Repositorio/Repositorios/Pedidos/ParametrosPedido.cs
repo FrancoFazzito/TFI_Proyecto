@@ -25,5 +25,12 @@ namespace Repositorio.Repositorios.Pedidos
             parameters.Add("@idComponente", componente.Id);
             return parameters;
         }
+
+        public DynamicParameters GetIdComputadora(PedidoConsulta pedido)
+        {
+            var parametros = new DynamicParameters();
+            parametros.Add("@idComputadora", pedido.IdComputadora);
+            return parametros;
+        }
     }
 }
