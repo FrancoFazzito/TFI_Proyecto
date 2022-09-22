@@ -14,7 +14,7 @@ namespace Repositorio.Repositorios.Pedidos
             get
             {
                 var pedidos = new List<Pedido>();
-                foreach (var pedidoConsulta in Db.Conexion.Query<ConsultaPedido>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
+                foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsulta>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
                 {
                     var computadora = new Computadora()
                     {

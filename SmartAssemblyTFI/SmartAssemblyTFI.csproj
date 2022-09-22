@@ -78,6 +78,7 @@
     <Content Include="chartJs\highcharts.js" />
     <Content Include="login\cliente_login.aspx" />
     <Content Include="login\cliente_signup.aspx" />
+    <Content Include="consulta\Mis_pedidos.aspx" />
     <Content Include="venta\crear_pedido.aspx" />
     <Content Include="venta\crear_presupuesto.aspx" />
     <Content Include="css\styles.css" />
@@ -100,6 +101,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="consulta\Mis_pedidos.aspx.cs">
+      <DependentUpon>Mis_pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="consulta\Mis_pedidos.aspx.designer.cs">
+      <DependentUpon>Mis_pedidos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="objetosVistas\ComponenteVista.cs" />
     <Compile Include="gestiones\abmc_componentes.aspx.cs">
       <DependentUpon>abmc_componentes.aspx</DependentUpon>
