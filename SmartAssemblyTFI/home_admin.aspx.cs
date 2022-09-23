@@ -13,7 +13,7 @@ namespace SmartAssemblyTFI
             FormHelper.ChequearAdminLogueado(this);
         }
 
-        public string LineData = "[[1, 1000000], [2, 1500000], [3, 1800000], [4, 1800000], [5, 1200000],[6, 1800000], [7, 1400000], [8, 1800000], [9, 1150000], [10, 1350000], [11, 2000000], [12, 1185000]]";
+        public string LineData => "[[1, 1000000], [2, 1500000], [3, 1800000], [4, 1800000], [5, 1200000],[6, 1800000], [7, 1400000], [8, 1800000], [9, 1150000], [10, 1350000], [11, 2000000], [12, 1185000]]";
 
         public Dictionary<string, int> TiposUso => new Dictionary<string, int>()
         {

@@ -13,17 +13,10 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList1.DataSource = new List<string>()
-                {
-                    "Buenos Aires",
-                    "CABA"
-                };
+                var domicilio = new GestorDomicilio();
+                DropDownList1.DataSource = domicilio.Provincias;
                 DropDownList1.DataBind();
-                DropDownList3.DataSource = new List<string>()
-                {
-                    "San telmo",
-                    "Villa ballester"
-                };
+                DropDownList3.DataSource = domicilio.Barrios;
                 DropDownList3.DataBind();
             }
         }

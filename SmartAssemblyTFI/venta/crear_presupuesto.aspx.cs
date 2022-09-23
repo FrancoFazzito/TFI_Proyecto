@@ -1,34 +1,20 @@
 ﻿using Aplicacion;
 using Dominio;
 using System;
-using System.Collections.Generic;
 using System.Web.UI;
 
 namespace SmartAssemblyTFI
 {
-    public partial class Formulario_web13 : System.Web.UI.Page
+    public partial class Formulario_web13 : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                DropDownList2.DataSource = new List<string>() //cargar tipos de uso con BD y agregar add items para select para que quede como predeterminado
-                {
-                    "Seleccionar",
-                    "Gaming juegos AAA",
-                    "Gaming juegos competitivos",
-                    "Edicion de video",
-                    "Arquitectura",
-                    "Oficina"
-                };
+                DropDownList2.DataSource = new GestorTipoUso().Todos;
                 DropDownList2.DataBind();
 
-                DropDownList3.DataSource = new List<string>() //cargar importancias con BD y agregar add items para select para que quede como predeterminado
-                {
-                    "Seleccionar",
-                    "Precio de los componentes",
-                    "Calidad de los componentes"
-                };
+                DropDownList3.DataSource = new GestorImportancias().Todos;
                 DropDownList3.DataBind();
             }
         }
@@ -38,7 +24,7 @@ namespace SmartAssemblyTFI
             try
             {
                 var tipoUso = DropDownList2.SelectedValue;
-                var importancia = DropDownList3.SelectedValue == "Precio de los componentes" ? "precio" : "calidad";
+                var importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
                 var precio = decimal.Parse(TextBox1.Text);
                 var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
                 var director = new DirectorArmadorComputadora(requerimiento);

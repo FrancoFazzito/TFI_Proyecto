@@ -12,8 +12,6 @@ namespace SmartAssemblyTFI
 
         public static string ObtenerValorText(TextBox textBox) => textBox.Text == "" ? null : textBox.Text;
 
-        public static bool ObtenerValorCheck(CheckBox checkBox) => checkBox.Checked;
-
         public static int ObtenerRowIndexGrid(object sender) => ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
 
         public static void RellenarDropDownList(DropDownList dropDown, object value)
