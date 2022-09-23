@@ -23,6 +23,7 @@ namespace SmartAssemblyTFI
         {
             LinkButton7.Visible = true;
             LinkButton3.Visible = true;
+            LinkButton4.Visible = true;
             LinkButton1.Visible = false;
             LinkButton2.Visible = false;
         }
@@ -45,8 +46,11 @@ namespace SmartAssemblyTFI
         {
             LinkButton7.Visible = false;
             LinkButton3.Visible = false;
+            LinkButton4.Visible = false;
             LinkButton1.Visible = true;
             LinkButton2.Visible = true;
         }
+
+        protected void LinkButton4_Click(object sender, EventArgs e) => Response.Redirect("consulta/mis_pedidos.aspx");
     }
 }

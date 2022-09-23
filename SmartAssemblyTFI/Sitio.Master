@@ -51,6 +51,9 @@
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server" Text="¡Hola nombre usuario!" Visible="false"></asp:LinkButton>
                         </li>
                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" Visible="false">Mis pedidos</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="false">Salir</asp:LinkButton>
                         </li>
                     </ul>
