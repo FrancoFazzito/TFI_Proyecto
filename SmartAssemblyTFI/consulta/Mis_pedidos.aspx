@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="mis_pedidos.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web17" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,7 +26,7 @@
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:Button  OnClick="Button5_Click" class="btn btn-primary" ID="Button5" runat="server" Text="Detallar computadora" />
+                                                <asp:Button OnClick="Button5_Click" class="btn btn-primary" ID="Button5" runat="server" Text="Detallar computadora" />
                                             </ItemTemplate>
                                             <ItemStyle Width="10px" />
                                         </asp:TemplateField>
@@ -55,8 +56,7 @@
                 </div>
             </div>
         </div>
-    <a href="../home_page.aspx"><< Atras</a><br>
-    <br>
+        <a href="../home_page.aspx"><< Atras</a><br>
+        <br>
     </div>
-    
 </asp:Content>
