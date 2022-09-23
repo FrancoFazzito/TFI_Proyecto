@@ -26,15 +26,15 @@ namespace SmartAssemblyTFI
         {
             if (SesionCliente.Logueado == null)
             {
-                page.Response.Redirect("../login/cliente_login.aspx");
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/cliente_login.aspx" : "../login/cliente_login.aspx");
             }
         }
 
         public static void ChequearAdminLogueado(Page page)
         {
-            if (SesionCliente.Logueado == null)
+            if (SesionEmpleado.Logueado == null)
             {
-                page.Response.Redirect("../login/admin_login.aspx");
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/admin_login.aspx" : "../login/admin_login.aspx");
             }
         }
     }

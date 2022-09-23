@@ -40,6 +40,7 @@ namespace SmartAssemblyTFI
             }
             IntercambiarBotonesUsuarioDeslogueado();
             Session.Clear();
+            Response.Redirect(Page.AppRelativeVirtualPath.Contains("home") ? "home_page.aspx" : "../home_page.aspx");
         }
 
         private void IntercambiarBotonesUsuarioDeslogueado()
