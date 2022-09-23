@@ -1,4 +1,5 @@
-﻿using System.Web.UI;
+﻿using Aplicacion;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace SmartAssemblyTFI
@@ -19,6 +20,22 @@ namespace SmartAssemblyTFI
         {
             dropDown.DataSource = value;
             dropDown.DataBind();
+        }
+
+        public static void ChequearClienteLogueado(Page page)
+        {
+            if (SesionCliente.Logueado == null)
+            {
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/cliente_login.aspx" : "../login/cliente_login.aspx");
+            }
+        }
+
+        public static void ChequearAdminLogueado(Page page)
+        {
+            if (SesionEmpleado.Logueado == null)
+            {
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/admin_login.aspx" : "../login/admin_login.aspx");
+            }
         }
     }
 }

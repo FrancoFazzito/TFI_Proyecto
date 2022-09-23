@@ -15,7 +15,7 @@ namespace SmartAssemblyTFI
             FormHelper.ChequearClienteLogueado(this);
             if (!Page.IsPostBack)
             {
-                GridView1.DataSource = _gestorPedido.TodosClienteLogueado.Select(pedido => new { pedido.Id, pedido.Fecha, Precio = $"${pedido.Computadora.Precio}" });
+                GridView1.DataSource = _gestorPedido.TodosClienteLogueado.Select(pedido => new { pedido.Id, Fecha = pedido.Fecha.Date, Precio = $"${pedido.Computadora.Precio}" });
                 GridView1.DataBind();
             }
         }
@@ -24,13 +24,13 @@ namespace SmartAssemblyTFI
         {
             var index = FormHelper.ObtenerRowIndexGrid(sender);
             var computadora = _gestorPedido.TodosClienteLogueado.ElementAt(index).Computadora;
-            var memoria = computadora.Componentes.Where(c => c.Tipo == "RAM").Sum(c => c.Capacidad);
+            var enumerable = computadora.Componentes.Where(c => c.Tipo == "RAM");
             GridViewComputadoraSeleccionada.DataSource = new List<string>
             {
                 $"CPU: {computadora["CPU"].Nombre}",
                 $"Mother: {computadora["MOTHER"].Nombre}",
-                $"GPU: {(computadora["GPU"]== null ? "Video integrado" : computadora["GPU"].Nombre)}",
-                $"Memoria: {memoria}GB",
+                $"GPU: {(computadora["GPU"] == null ? "Video integrado" : computadora["GPU"].Nombre)}",
+                $"Memoria: {enumerable.Sum(c => c.Capacidad)}GB",
                 $"HDD: {computadora["HDD"].Nombre}",
                 $"SSD: {computadora["SSD"].Nombre}"
             };
