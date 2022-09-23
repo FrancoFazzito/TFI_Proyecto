@@ -1,6 +1,7 @@
 ﻿using Aplicacion;
 using Dominio;
 using System;
+using System.Linq;
 using System.Web.UI;
 
 namespace SmartAssemblyTFI
@@ -11,7 +12,7 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList2.DataSource = new GestorTipoUso().Todos;
+                DropDownList2.DataSource = new GestorTipoUso().Todos.Select(t => t.Nombre);
                 DropDownList2.DataBind();
 
                 DropDownList3.DataSource = new GestorImportancias().Todos;
