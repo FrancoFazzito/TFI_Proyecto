@@ -12,6 +12,7 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FormHelper.ChequearClienteLogueado(this);
             if (!Page.IsPostBack)
             {
                 GridView1.DataSource = _gestorPedido.TodosClienteLogueado.Select(pedido => new { pedido.Id, pedido.Fecha, pedido.Computadora.Precio });

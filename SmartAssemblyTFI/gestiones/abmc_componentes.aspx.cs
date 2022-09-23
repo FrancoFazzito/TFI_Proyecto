@@ -15,6 +15,7 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FormHelper.ChequearAdminLogueado(this);
             if (!Page.IsPostBack)
             {
                 FormHelper.RellenarDropDownList(tiposComponenteDll, TiposDeComponente);

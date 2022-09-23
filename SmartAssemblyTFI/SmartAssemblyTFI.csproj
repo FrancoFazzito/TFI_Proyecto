@@ -108,7 +108,6 @@
     <Compile Include="consulta\mis_pedidos.aspx.designer.cs">
       <DependentUpon>mis_pedidos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="objetosVistas\ComponenteVista.cs" />
     <Compile Include="gestiones\abmc_componentes.aspx.cs">
       <DependentUpon>abmc_componentes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
