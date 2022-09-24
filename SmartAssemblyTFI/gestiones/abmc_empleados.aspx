@@ -111,7 +111,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4>Listado de componentes</h4>
+                                    <h4>Listado de empleados</h4>
                                 </center>
                             </div>
                         </div>

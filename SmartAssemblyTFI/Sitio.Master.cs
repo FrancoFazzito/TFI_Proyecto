@@ -32,7 +32,7 @@ namespace SmartAssemblyTFI
         {
             LinkButton7.Visible = true;
             LinkButton3.Visible = true;
-            LinkButton4.Visible = true;
+            LinkButton4.Visible = false;
             LinkButton1.Visible = false;
             LinkButton2.Visible = false;
         }

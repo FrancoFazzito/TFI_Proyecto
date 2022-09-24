@@ -1,6 +1,7 @@
 ﻿using Aplicacion;
 using Dominio;
 using System;
+using System.Web.UI;
 
 namespace SmartAssemblyTFI
 {
@@ -22,6 +23,11 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (!TextboxsValidos)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorCliente.Agregar(new Cliente()
             {
                 Nombre = TextBox1.Text,
@@ -34,5 +40,13 @@ namespace SmartAssemblyTFI
                 Contrasena = TextBox8.Text
             });
         }
+
+        private bool TextboxsValidos => !string.IsNullOrEmpty(TextBox1.Text) 
+                                           && !string.IsNullOrEmpty(TextBox2.Text) 
+                                           && !string.IsNullOrEmpty(TextBox3.Text) 
+                                           && !string.IsNullOrEmpty(TextBox4.Text) 
+                                           && !string.IsNullOrEmpty(TextBox5.Text) 
+                                           && !string.IsNullOrEmpty(TextBox8.Text) 
+                                           && !string.IsNullOrEmpty(TextBox9.Text);
     }
 }

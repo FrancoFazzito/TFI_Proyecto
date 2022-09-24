@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-8 mx-auto">
+                            <div class="col-12 mx-auto">
                                 <center>
                                     <div class="form-group">
                                         <asp:Button class="btn btn-primary btn-block btn-lg" ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click" />
@@ -98,6 +98,9 @@
                                 </center>
                             </div>
                         </div>
+                        <center>
+                            <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Ingresa todos los datos para que poder registrarte"></asp:Label>
+                        </center>
                     </div>
                 </div>
                 <a href="../home_page.aspx"><< Ir a inicio</a><br>
