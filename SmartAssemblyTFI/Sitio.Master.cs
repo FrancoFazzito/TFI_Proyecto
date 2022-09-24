@@ -9,17 +9,26 @@ namespace SmartAssemblyTFI
         {
             if (SesionCliente.Logueado != null)
             {
-                IntercambiarBotonesUsuarioLogueado();
+                IntercambiarBotonesClienteLogueado();
                 LinkButton7.Text = $"¡Hola {SesionCliente.Logueado.Nombre}!";
             }
             if (SesionEmpleado.Logueado != null)
             {
-                IntercambiarBotonesUsuarioLogueado();
+                IntercambiarBotonesEmpleadoLogueado();
                 LinkButton7.Text = $"¡Hola {SesionEmpleado.Logueado.Nombre}!";
             }
         }
 
-        private void IntercambiarBotonesUsuarioLogueado()
+        private void IntercambiarBotonesClienteLogueado()
+        {
+            LinkButton7.Visible = true;
+            LinkButton3.Visible = true;
+            LinkButton4.Visible = true;
+            LinkButton1.Visible = false;
+            LinkButton2.Visible = false;
+        }
+
+        private void IntercambiarBotonesEmpleadoLogueado()
         {
             LinkButton7.Visible = true;
             LinkButton3.Visible = true;

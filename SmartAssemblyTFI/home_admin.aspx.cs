@@ -1,6 +1,8 @@
 ﻿using Aplicacion;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace SmartAssemblyTFI
 {
@@ -29,8 +31,13 @@ namespace SmartAssemblyTFI
 
         public Dictionary<string, string> TiposUsoMasSolicitados => _gestorReporting.TiposUsoMasSolicitados;
 
-        public Dictionary<string, decimal> MesesGanancias => _gestorReporting.GananciasUltimosMeses;
+        public Dictionary<string, decimal> MesesGanancias => _gestorReporting.GananciasUltimosMeses.ToDictionary(x => NumeroDeMesANombre(x), x => x.Value);
 
         public Dictionary<string, string> Componentes => _gestorReporting.ComponentesMasVendidos;
+
+        private static string NumeroDeMesANombre(KeyValuePair<string, decimal> x)
+        {
+            return new CultureInfo("es-ES", false).DateTimeFormat.GetMonthName(int.Parse(x.Key));
+        }
     }
 }
