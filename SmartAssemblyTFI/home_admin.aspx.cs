@@ -1,34 +1,36 @@
 ﻿using Aplicacion;
-using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SmartAssemblyTFI
 {
     public partial class Formulario_web15 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        private readonly GestorReporting _gestorReporting = new GestorReporting();
+
+        protected void Page_Load(object sender, EventArgs e) => FormHelper.ChequearAdminLogueado(this);
+
+        public string LineData
         {
-            FormHelper.ChequearAdminLogueado(this);
+            get
+            {
+                var data = "[";
+                foreach (var valorMes in _gestorReporting.ObtenerValorPedidosDoceMeses)
+                {
+                    data += $"[{valorMes.Key},{valorMes.Value}], ";
+                }
+                data = data.Remove(data.Length - 2);
+                data += "]";
+                return data;
+            }
         }
 
-        public string LineData => "[[1, 1000000], [2, 1500000], [3, 1800000], [4, 1800000], [5, 1200000],[6, 1800000], [7, 1400000], [8, 1800000], [9, 1150000], [10, 1350000], [11, 2000000], [12, 1185000]]";
+        public Dictionary<string, decimal> ClientesSegmentados => _gestorReporting.ClientesSegmentados;
 
-        public Dictionary<string, int> TiposUso => new Dictionary<string, int>()
-        {
-            { "Edicion de video", 145000 },
-            { "Arquitectura", 127000 },
-            { "Gaming", 101000 }
-        };
+        public Dictionary<string, string> TiposUsoMasSolicitados => _gestorReporting.TiposUsoMasSolicitados;
 
-        public Dictionary<string, int> MesesGanancias => new Dictionary<string, int>()
-        {
-            { "Junio", 1270000 },
-            { "Julio", 1010000 },
-            { "Agosto", 1450000 }
-        };
+        public Dictionary<string, decimal> MesesGanancias => _gestorReporting.GananciasUltimosMeses;
 
-        public IEnumerable<Componente> Componentes => new GestorComponente().Todos.Take(3);
+        public Dictionary<string, string> Componentes => _gestorReporting.ComponentesMasVendidos;
     }
 }

@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <center>
-                        <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError"></asp:Label>
+                        <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Error al crear tu presupuesto, intente con un presupuesto mayor"></asp:Label>
                     </center>
                 </div>
                 <a href="../home_page.aspx"><< Atras</a><br>
