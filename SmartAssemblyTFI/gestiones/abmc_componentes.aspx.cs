@@ -135,23 +135,37 @@ namespace SmartAssemblyTFI
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
+            //ValidarTextbox(idtxt)
             gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
             ActualizarGrid();
         }
 
         protected void Button2_Click(object sender, EventArgs e) //agregar validaciones
         {
+            //validacion
             gestorComponente.Agregar(ComponenteCargado);
             ActualizarGrid();
         }
 
         protected void Button3_Click(object sender, EventArgs e) //agregar validaciones
         {
+            //validacion
             gestorComponente.Modificar(ComponenteCargado);
             ActualizarGrid();
         }
 
         protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+
+        public bool ValidacionTextboxs()
+        {
+            return ValidarTextbox(idtxt) && ValidarTextbox(canalestxt) && ValidarTextbox(capacidadtxt)
+                && ValidarTextbox(consumotxt) && ValidarTextbox(frecuenciaMaximatxt) && ValidarTextbox(nivelFantxt)
+                && ValidarTextbox(nivelVideoIntregadotxt) && ValidarTextbox(perfomancetxt) && ValidarTextbox(stocktxt)
+                && ValidarTextbox(limiteStocktxt) && ValidarTextbox(tamanoFantxt) && ValidarTextbox(preciotxt)
+                && ValidarTextbox(nombretxt) && ValidarTextbox(sockettxt);
+        }
+
+        private bool ValidarTextbox(TextBox txt) => txt.Visible && !string.IsNullOrEmpty(txt.Text); //mover esto a helper
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
