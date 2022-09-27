@@ -35,5 +35,7 @@ namespace SmartAssemblyTFI
                 page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/admin_login.aspx" : "../login/admin_login.aspx");
             }
         }
+
+        public static bool ValidarTextbox(TextBox txt) => txt.Visible && !string.IsNullOrEmpty(txt.Text); //mover esto a helper
     }
 }

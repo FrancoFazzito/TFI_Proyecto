@@ -16,6 +16,7 @@ namespace SmartAssemblyTFI
         protected void Page_Load(object sender, EventArgs e)
         {
             FormHelper.ChequearAdminLogueado(this);
+            labelError.Visible = false;
             if (!Page.IsPostBack)
             {
                 FormHelper.RellenarDropDownList(tiposComponenteDll, TiposDeComponente);
@@ -135,37 +136,48 @@ namespace SmartAssemblyTFI
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
-            //ValidarTextbox(idtxt)
             gestorComponente.Eliminar(GetComponenteDataGrid(sender).Id);
             ActualizarGrid();
         }
 
-        protected void Button2_Click(object sender, EventArgs e) //agregar validaciones
+        protected void Button2_Click(object sender, EventArgs e)
         {
-            //validacion
+            if (!ValidacionTextboxs)
+            {
+                labelError.Visible = true;
+                return;
+            }
             gestorComponente.Agregar(ComponenteCargado);
             ActualizarGrid();
         }
 
-        protected void Button3_Click(object sender, EventArgs e) //agregar validaciones
+        protected void Button3_Click(object sender, EventArgs e)
         {
-            //validacion
+            if (!ValidacionTextboxs)
+            {
+                labelError.Visible = true;
+                return;
+            }
             gestorComponente.Modificar(ComponenteCargado);
             ActualizarGrid();
         }
 
         protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
 
-        public bool ValidacionTextboxs()
-        {
-            return ValidarTextbox(idtxt) && ValidarTextbox(canalestxt) && ValidarTextbox(capacidadtxt)
-                && ValidarTextbox(consumotxt) && ValidarTextbox(frecuenciaMaximatxt) && ValidarTextbox(nivelFantxt)
-                && ValidarTextbox(nivelVideoIntregadotxt) && ValidarTextbox(perfomancetxt) && ValidarTextbox(stocktxt)
-                && ValidarTextbox(limiteStocktxt) && ValidarTextbox(tamanoFantxt) && ValidarTextbox(preciotxt)
-                && ValidarTextbox(nombretxt) && ValidarTextbox(sockettxt);
-        }
-
-        private bool ValidarTextbox(TextBox txt) => txt.Visible && !string.IsNullOrEmpty(txt.Text); //mover esto a helper
+        public bool ValidacionTextboxs => FormHelper.ValidarTextbox(idtxt)
+                && FormHelper.ValidarTextbox(canalestxt)
+                && FormHelper.ValidarTextbox(capacidadtxt)
+                && FormHelper.ValidarTextbox(consumotxt)
+                && FormHelper.ValidarTextbox(frecuenciaMaximatxt)
+                && FormHelper.ValidarTextbox(nivelFantxt)
+                && FormHelper.ValidarTextbox(nivelVideoIntregadotxt)
+                && FormHelper.ValidarTextbox(perfomancetxt)
+                && FormHelper.ValidarTextbox(stocktxt)
+                && FormHelper.ValidarTextbox(limiteStocktxt)
+                && FormHelper.ValidarTextbox(tamanoFantxt)
+                && FormHelper.ValidarTextbox(preciotxt)
+                && FormHelper.ValidarTextbox(nombretxt)
+                && FormHelper.ValidarTextbox(sockettxt);
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
