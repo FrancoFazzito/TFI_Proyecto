@@ -36,6 +36,17 @@ namespace SmartAssemblyTFI
             }
         }
 
-        public static bool ValidarTextbox(TextBox txt) => txt.Visible && !string.IsNullOrEmpty(txt.Text); //mover esto a helper
+        public static bool ValidarTextbox(TextBox txt)
+        {
+            if (!txt.Visible)
+            {
+                return true;
+            }
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

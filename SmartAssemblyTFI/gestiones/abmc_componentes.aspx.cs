@@ -165,19 +165,19 @@ namespace SmartAssemblyTFI
         protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
 
         public bool ValidacionTextboxs => FormHelper.ValidarTextbox(idtxt)
-                && FormHelper.ValidarTextbox(canalestxt)
-                && FormHelper.ValidarTextbox(capacidadtxt)
-                && FormHelper.ValidarTextbox(consumotxt)
-                && FormHelper.ValidarTextbox(frecuenciaMaximatxt)
-                && FormHelper.ValidarTextbox(nivelFantxt)
-                && FormHelper.ValidarTextbox(nivelVideoIntregadotxt)
-                && FormHelper.ValidarTextbox(perfomancetxt)
-                && FormHelper.ValidarTextbox(stocktxt)
-                && FormHelper.ValidarTextbox(limiteStocktxt)
-                && FormHelper.ValidarTextbox(tamanoFantxt)
-                && FormHelper.ValidarTextbox(preciotxt)
-                && FormHelper.ValidarTextbox(nombretxt)
-                && FormHelper.ValidarTextbox(sockettxt);
+                    && FormHelper.ValidarTextbox(canalestxt)
+                    && FormHelper.ValidarTextbox(capacidadtxt)
+                    && FormHelper.ValidarTextbox(consumotxt)
+                    && FormHelper.ValidarTextbox(frecuenciaMaximatxt)
+                    && FormHelper.ValidarTextbox(nivelFantxt)
+                    && FormHelper.ValidarTextbox(nivelVideoIntregadotxt)
+                    && FormHelper.ValidarTextbox(perfomancetxt)
+                    && FormHelper.ValidarTextbox(stocktxt)
+                    && FormHelper.ValidarTextbox(limiteStocktxt)
+                    && FormHelper.ValidarTextbox(tamanoFantxt)
+                    && FormHelper.ValidarTextbox(preciotxt)
+                    && FormHelper.ValidarTextbox(nombretxt)
+                    && FormHelper.ValidarTextbox(sockettxt);
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {
