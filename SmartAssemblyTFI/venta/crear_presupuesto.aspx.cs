@@ -24,6 +24,10 @@ namespace SmartAssemblyTFI
         {
             try
             {
+                if (string.IsNullOrEmpty(TextBox1.Text))
+                {
+                    throw new ExcepcionRequerimientoInvalido();
+                }
                 var tipoUso = DropDownList2.SelectedValue;
                 var importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
                 var precio = decimal.Parse(TextBox1.Text);
