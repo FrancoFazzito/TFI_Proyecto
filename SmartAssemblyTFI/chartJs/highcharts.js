@@ -149,7 +149,7 @@
                 }, footerFormat: "", headerShape: "callout", hideDelay: 500, padding: 8, shape: "callout", shared: !1, snap: A.isTouchDevice ? 25 : 10, headerFormat: '<span style="font-size: 10px">{point.key}</span><br/>', pointFormat: '<span style="color:{point.color}">\u25cf</span> {series.name}: <b>{point.y}</b><br/>', backgroundColor: f("#f7f7f7").setOpacity(.85).get(), borderWidth: 1, shadow: !0, stickOnContact: !1, style: { color: "#333333", cursor: "default", fontSize: "12px", whiteSpace: "nowrap" }, useHTML: !1
             }, credits: {
                 enabled: !0,
-                href: "https://www.highcharts.com?credits", position: { align: "right", x: -10, verticalAlign: "bottom", y: -5 }, style: { cursor: "pointer", color: "#999999", fontSize: "9px" }, text: "Highcharts.com"
+                href: "https://localhost:44379/home_page.aspx", position: { align: "right", x: -10, verticalAlign: "bottom", y: -5 }, style: { cursor: "pointer", color: "#999999", fontSize: "9px" }, text: "FSolutions.com"
             }
         }; v.chart.styledMode = !1; ""; var r = new y(B(v.global, v.time)); a = { defaultOptions: v, defaultTime: r, getOptions: function () { return v }, setOptions: function (a) { B(!0, v, a); if (a.time || a.global) A.time ? A.time.update(B(v.global, v.time, a.global, a.time)) : A.time = r; return v } }; ""; return a
     }); L(f, "Core/Animation/Fx.js", [f["Core/Color/Color.js"],
