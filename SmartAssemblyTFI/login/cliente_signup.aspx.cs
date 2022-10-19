@@ -1,7 +1,7 @@
 ﻿using Aplicacion;
 using Dominio;
 using System;
-using System.Collections.Generic;
+using System.Web.UI;
 
 namespace SmartAssemblyTFI
 {
@@ -13,23 +13,21 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList1.DataSource = new List<string>()
-                {
-                    "Buenos Aires",
-                    "CABA"
-                };
+                var domicilio = new GestorDomicilio();
+                DropDownList1.DataSource = domicilio.Provincias;
                 DropDownList1.DataBind();
-                DropDownList3.DataSource = new List<string>()
-                {
-                    "San telmo",
-                    "Villa ballester"
-                };
+                DropDownList3.DataSource = domicilio.Barrios;
                 DropDownList3.DataBind();
             }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            if (!TextboxsValidos)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorCliente.Agregar(new Cliente()
             {
                 Nombre = TextBox1.Text,
@@ -42,5 +40,13 @@ namespace SmartAssemblyTFI
                 Contrasena = TextBox8.Text
             });
         }
+
+        private bool TextboxsValidos => !string.IsNullOrEmpty(TextBox1.Text) 
+                                           && !string.IsNullOrEmpty(TextBox2.Text) 
+                                           && !string.IsNullOrEmpty(TextBox3.Text) 
+                                           && !string.IsNullOrEmpty(TextBox4.Text) 
+                                           && !string.IsNullOrEmpty(TextBox5.Text) 
+                                           && !string.IsNullOrEmpty(TextBox8.Text) 
+                                           && !string.IsNullOrEmpty(TextBox9.Text);
     }
 }

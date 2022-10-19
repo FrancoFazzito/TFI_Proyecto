@@ -79,12 +79,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% for (int i = 0; i < TiposUso.Count(); i++)
+                                    <% for (int i = 0; i < ClientesSegmentados.Count(); i++)
                                         {%>
                                     <tr>
                                         <th scope="row" class="text-center"><%=i%></th>
-                                        <td class="text-center"><%=TiposUso.ElementAt(i).Key%></td>
-                                        <td class="text-center">$<%=TiposUso[TiposUso.ElementAt(i).Key]%></td>
+                                        <td class="text-center"><%=ClientesSegmentados.ElementAt(i).Key%></td>
+                                        <td class="text-center">$<%=ClientesSegmentados[ClientesSegmentados.ElementAt(i).Key]%></td>
                                     </tr>
                                     <% } %>
                                 </tbody>
@@ -115,7 +115,7 @@
                             <ul class="list-group list-group-flush">
                                 <% foreach (var componente in Componentes)
                                     { %>
-                                <li class="list-group-item"><%Response.Write(componente.Nombre);%> (cantidad:<%Response.Write(new Random(DateTime.Now.Millisecond).Next(100, 150) * componente.Nombre.Length);%>)</li>
+                                <li class="list-group-item"><%Response.Write(componente.Key);%> (cantidad:<%Response.Write(componente.Value);%>)</li>
                                 <% } %>
                             </ul>
                         </div>
@@ -143,9 +143,9 @@
                                 <h4>Tipos de uso mas solicitados</h4>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <% foreach (var tipoUso in TiposUso.Take(5))
+                                <% foreach (var tipoUso in TiposUsoMasSolicitados)
                                     { %>
-                                <li class="list-group-item"><%Response.Write(tipoUso.Key);%> (cantidad:<%Response.Write(new Random(DateTime.Now.Millisecond).Next(100, 150) * tipoUso.Key.Length);%>)</li>
+                                <li class="list-group-item"><%Response.Write(tipoUso.Key);%> (cantidad:<%Response.Write(tipoUso.Value);%>)</li>
                                 <% } %>
                             </ul>
                         </div>

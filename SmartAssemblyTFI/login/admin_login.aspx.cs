@@ -13,6 +13,12 @@ namespace SmartAssemblyTFI
         {
             var nombre = TextBox1.Text;
             var contrasena = TextBox2.Text;
+            if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(contrasena))
+            {
+                labelError.Visible = true;
+                return;
+            }
+
             var esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
             if (!esExitoso)
             {

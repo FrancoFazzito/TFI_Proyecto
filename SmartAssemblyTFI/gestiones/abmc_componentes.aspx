@@ -201,17 +201,6 @@
                                 </div>
                             </div>
                         </div>
-                        <%--<div class="row">
-                            <div class="col-md-10 mx-auto">
-                                <label>Imagen del componente</label>
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <asp:Button ID="Button4" class="form-control-file" runat="server" Text="Seleccionar archivo" />
-                                        <asp:Label Text="Archivo seleccionado: " class="labelAclaracion" runat="server"></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>--%>
                         <div class="row">
                             <div class="col-6">
                                 <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" OnClick="Button2_Click" />
@@ -222,6 +211,9 @@
                         </div>
                     </div>
                 </div>
+                <center>
+                    <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelError" Text="Ingrese todos los datos validos para realizar la gestion"></asp:Label>
+                </center>
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>
             </div>

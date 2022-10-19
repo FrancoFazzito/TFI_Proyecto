@@ -14,7 +14,8 @@ namespace Repositorio.Repositorios.Pedidos
             get
             {
                 var pedidos = new List<Pedido>();
-                foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsultaResultado>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
+                var repositorioComponentes = new RepositorioComponenteSoloLectura().ObtenerTodos;
+                foreach (var pedidoConsulta in Db.Conexion.Query<PedidoConsulta>("SELECT c.Id as idComputadora, c.TipoUso, p.Id as IdPedido, p.IdCliente, p.FechaPedido FROM Pedido p inner join Computadora c on p.Id = c.Id_Pedido"))
                 {
                     var computadora = new Computadora()
                     {
@@ -23,9 +24,9 @@ namespace Repositorio.Repositorios.Pedidos
                         CostoArmado = decimal.Parse(ConfigurationManager.AppSettings["costoArmado"]),
                     };
 
-                    foreach (var idComponente in Db.Conexion.Query<int>("SELECT cc.Id_Component FROM Computadora c inner join ComponenteComputadora cc on cc.Id_Computer = c.Id where c.Id = @idComputadora", new ParametrosIdComputadora().GetIdComputadora(pedidoConsulta)))
+                    foreach (var idComponente in Db.Conexion.Query<int>("SELECT cc.Id_Component FROM Computadora c inner join ComponenteComputadora cc on cc.Id_Computer = c.Id where c.Id = @idComputadora", new ParametrosPedido().GetIdComputadora(pedidoConsulta)))
                     {
-                        computadora.Add(new RepositorioComponenteSoloLectura().ObtenerTodos.First(e => e.Id == idComponente), 1);
+                        computadora.Add(repositorioComponentes.First(e => e.Id == idComponente), 1);
                     }
                     pedidos.Add(new Pedido
                     {

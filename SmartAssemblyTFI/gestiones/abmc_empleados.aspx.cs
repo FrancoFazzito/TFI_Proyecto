@@ -15,6 +15,8 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FormHelper.ChequearAdminLogueado(this);
+            labelError.Visible = false;
             if (!Page.IsPostBack)
             {
                 ActualizarGrid();
@@ -64,12 +66,35 @@ namespace SmartAssemblyTFI
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if (!ValidacionTextboxsAgregar)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorEmpleado.Agregar(EmpleadoCargado);
             ActualizarGrid();
         }
 
+        public bool ValidacionTextboxs => FormHelper.ValidarTextbox(TextBox1)
+                && FormHelper.ValidarTextbox(TextBox2)
+                && FormHelper.ValidarTextbox(TextBox3)
+                && FormHelper.ValidarTextbox(TextBox4)
+                && FormHelper.ValidarTextbox(TextBox5);
+
+        public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextbox(TextBox1)
+                && FormHelper.ValidarTextbox(TextBox2)
+                && FormHelper.ValidarTextbox(TextBox3)
+                && FormHelper.ValidarTextbox(TextBox4)
+                && FormHelper.ValidarTextbox(TextBox5)
+                && FormHelper.ValidarTextbox(TextBox7);
+
         protected void Button3_Click(object sender, EventArgs e)
         {
+            if (!ValidacionTextboxs)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorEmpleado.Modificar(EmpleadoCargado);
             ActualizarGrid();
         }

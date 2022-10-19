@@ -111,7 +111,9 @@
                         </div>
                     </div>
                 </div>
-
+                <center>
+                    <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelError" Text="Ingrese todos los datos validos para realizar la gestion"></asp:Label>
+                </center>
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>
             </div>

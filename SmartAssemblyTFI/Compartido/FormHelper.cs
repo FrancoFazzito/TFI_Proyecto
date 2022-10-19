@@ -1,4 +1,5 @@
-﻿using System.Web.UI;
+﻿using Aplicacion;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace SmartAssemblyTFI
@@ -11,14 +12,41 @@ namespace SmartAssemblyTFI
 
         public static string ObtenerValorText(TextBox textBox) => textBox.Text == "" ? null : textBox.Text;
 
-        public static bool ObtenerValorCheck(CheckBox checkBox) => checkBox.Checked;
-
         public static int ObtenerRowIndexGrid(object sender) => ((GridViewRow)((Control)sender).NamingContainer).RowIndex;
 
         public static void RellenarDropDownList(DropDownList dropDown, object value)
         {
             dropDown.DataSource = value;
             dropDown.DataBind();
+        }
+
+        public static void ChequearClienteLogueado(Page page)
+        {
+            if (SesionCliente.Logueado == null)
+            {
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/cliente_login.aspx" : "../login/cliente_login.aspx");
+            }
+        }
+
+        public static void ChequearAdminLogueado(Page page)
+        {
+            if (SesionEmpleado.Logueado == null)
+            {
+                page.Response.Redirect(page.AppRelativeVirtualPath.Contains("home") ? "login/admin_login.aspx" : "../login/admin_login.aspx");
+            }
+        }
+
+        public static bool ValidarTextbox(TextBox txt)
+        {
+            if (!txt.Visible)
+            {
+                return true;
+            }
+            if (!string.IsNullOrEmpty(txt.Text))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Repositorio.Repositorios.Pedidos
 {
-    public class PedidoConsultaResultado
+    public class ConsultaPedido
     {
         public int IdComputadora { get; set; }
         public string TipoUso { get; set; }

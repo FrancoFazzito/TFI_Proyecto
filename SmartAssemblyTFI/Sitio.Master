@@ -37,6 +37,9 @@
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton7" runat="server" Text="¡Hola nombre usuario!" Visible="false"></asp:LinkButton>
                         </li>
                         <li class="nav-item active">
+                            <asp:LinkButton class="nav-link itemNav" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click" Visible="false">Mis pedidos</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
                             <asp:LinkButton class="nav-link itemNav" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click" Visible="false">Salir</asp:LinkButton>
                         </li>
                     </ul>
@@ -58,7 +61,7 @@
                             <h6 class="text-uppercase fw-bold mb-4">Administracion
                             </h6>
                             <p>
-                                <a href="login/admin_login.aspx" class="text-reset">Login admin</a>
+                                <a href="login/admin_login.aspx" class="text-reset">Ingreso admin</a>
                             </p>
                         </div>
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
@@ -89,9 +92,9 @@
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-6">
 
                             <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                            <p>Direccion: Buenos Aires, Mercedes 3808, Argentina</p>
-                            <p>Correo: cliente@fsolutions.com</p>
-                            <p>Telefono: + 54 11 1234-5678</p>
+                            <p>Direccion: Mercedes 3808, San Andres, Buenos Aires, Argentina</p>
+                            <p>Correo: atencioncliente@fsolutions.com</p>
+                            <p>Telefono: +54 11 1234-5678</p>
                         </div>
                     </div>
                 </div>

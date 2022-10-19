@@ -55,7 +55,7 @@
                                     <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Crear tu pedido con esta computadora" PostBackUrl="/venta/crear_pedido.aspx" OnClick="Button1_Click" />
                                 </div>
                                 <center>
-                                    <asp:Label visible="false" ForeColor="Green" runat="server" ID="labelConfirmacion" Text="Error de presupuesto! intenta con un presupuesto mayor u otro tipo de uso"></asp:Label>
+                                    <asp:Label Visible="false" ForeColor="Green" runat="server" ID="labelConfirmacion" Text="Error de presupuesto! intenta con un presupuesto mayor u otro tipo de uso"></asp:Label>
                                 </center>
                             </div>
                         </div>

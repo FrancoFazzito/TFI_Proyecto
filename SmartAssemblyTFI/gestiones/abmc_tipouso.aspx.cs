@@ -14,6 +14,8 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            FormHelper.ChequearAdminLogueado(this);
+            labelError.Visible = false;
             if (!Page.IsPostBack)
             {
                 ActualizarDataGrid();
@@ -69,12 +71,22 @@ namespace SmartAssemblyTFI
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            if (!ValidacionTextboxs)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorTipoUso.Agregar(TipoUsoCargado);
             ActualizarGrid();
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            if (!ValidacionTextboxs)
+            {
+                labelError.Visible = true;
+                return;
+            }
             _gestorTipoUso.Modificar(TipoUsoCargado);
             ActualizarGrid();
         }
@@ -89,6 +101,14 @@ namespace SmartAssemblyTFI
             TextBox6.Text = tipoUso.Hdd.ToString();
             TextBox7.Text = tipoUso.Ssd.ToString();
         }
+
+        public bool ValidacionTextboxs => FormHelper.ValidarTextbox(TextBox1)
+                && FormHelper.ValidarTextbox(TextBox2)
+                && FormHelper.ValidarTextbox(TextBox3)
+                && FormHelper.ValidarTextbox(TextBox4)
+                && FormHelper.ValidarTextbox(TextBox5)
+                && FormHelper.ValidarTextbox(TextBox6)
+                && FormHelper.ValidarTextbox(TextBox7);
 
         private TipoUso TipoUsoCargado => new TipoUso()
         {

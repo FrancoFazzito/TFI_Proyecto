@@ -48,12 +48,15 @@
     <Compile Include="ArmadoComputadoras\Compatibilidades\FactoryCompatibilidad.cs" />
     <Compile Include="Clientes\GestorCliente.cs" />
     <Compile Include="Componentes\GestorComponente.cs" />
+    <Compile Include="Domicilios\GestorDomicilio.cs" />
     <Compile Include="Empleados\GestorEmpleado.cs" />
+    <Compile Include="Importancias\GestorImportancias.cs" />
     <Compile Include="Login\SesionCliente.cs" />
     <Compile Include="Login\SesionEmpleado.cs" />
     <Compile Include="Login\GestorContrasena.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="Pedidos\GestorPedido.cs" />
+    <Compile Include="Reportes\GestorReporting.cs" />
     <Compile Include="TiposDeUso\GestorTipoUso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

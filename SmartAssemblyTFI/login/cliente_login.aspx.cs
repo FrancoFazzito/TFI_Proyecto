@@ -13,6 +13,12 @@ namespace SmartAssemblyTFI
         {
             var correo = TextBox1.Text;
             var contrasena = TextBox2.Text;
+            if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contrasena))
+            {
+                labelError.Visible = true;
+                return;
+            }
+
             var esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {
