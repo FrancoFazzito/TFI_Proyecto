@@ -20,10 +20,12 @@
 .containerBienvenida {
     margin-top: 150px;
     margin-bottom: 150px;
+    padding: 15px;
 }
 
 .containerBienvenidaAdmin {
     margin-top: 125px;
+    padding: 15px;
 }
 
 .tituloHome {
