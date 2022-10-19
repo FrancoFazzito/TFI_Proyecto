@@ -26,6 +26,9 @@ namespace Repositorio
                                            "[StockLimite] = @StockLimite " +
                                        "WHERE ID = @id";
 
-        public int Modificar(Componente componente) => Db.Conexion.Execute(command, new ParametrosComponente().Obtener(componente));
+        public int Modificar(Componente componente)
+        {
+            return Db.Conexion.Execute(command, new ParametrosComponente().Obtener(componente));
+        }
     }
 }

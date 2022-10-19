@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="cliente_login.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-        <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--popper js--%>
     <script src="../bootstrap/js/popper.min.js"></script>
     <%--bootstrap js--%>

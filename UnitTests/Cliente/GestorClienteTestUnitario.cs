@@ -14,7 +14,7 @@ namespace UnitTests
         {
             //arrange act
             Gestor.Agregar(ClienteTest);
-            var id = Gestor.Todos.Max(c => c.Id);
+            int id = Gestor.Todos.Max(c => c.Id);
 
             //assert
             Assert.IsNotNull(Gestor.Todos.FirstOrDefault(c => c.Id == id));
@@ -28,7 +28,7 @@ namespace UnitTests
         {
             //arrange
             Gestor.Agregar(ClienteTest);
-            var id = Gestor.Todos.Max(c => c.Id);
+            int id = Gestor.Todos.Max(c => c.Id);
 
             //act assert
             Assert.IsNotNull(Gestor.Todos.FirstOrDefault(c => c.Id == id));
@@ -40,9 +40,9 @@ namespace UnitTests
         {
             //arrange
             Gestor.Agregar(ClienteTest);
-            var cliente = ClienteTest;
+            Cliente cliente = ClienteTest;
             cliente.Nombre = "testModificado";
-            var id = Gestor.Todos.Max(c => c.Id);
+            int id = Gestor.Todos.Max(c => c.Id);
             cliente.Id = id;
 
             //act
@@ -56,9 +56,11 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener() =>
+        public void Obtener()
+        {
             //arrange act assert
             Assert.IsTrue(Gestor.Todos.Any());
+        }
 
         private GestorCliente Gestor => new GestorCliente();
 

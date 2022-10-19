@@ -22,6 +22,9 @@
         public int Stock { get; set; }
         public int StockLimite { get; set; }
 
-        public bool EsCompatible(ICompatibilidad compatibilidad, Componente componente) => compatibilidad.EsCompatible(this, componente);
+        public bool EsCompatible(ICompatibilidad compatibilidad, Componente componente)
+        {
+            return compatibilidad.EsCompatible(this, componente);
+        }
     }
 }

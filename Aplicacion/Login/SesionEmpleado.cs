@@ -10,8 +10,14 @@ namespace Aplicacion
 
         public static Empleado Logueado { get; private set; }
 
-        public static void Ingresar(Empleado empleado) => Logueado = empleado;
+        public static void Ingresar(Empleado empleado)
+        {
+            Logueado = empleado;
+        }
 
-        public static void Salir() => Logueado = null;
+        public static void Salir()
+        {
+            Logueado = null;
+        }
     }
 }

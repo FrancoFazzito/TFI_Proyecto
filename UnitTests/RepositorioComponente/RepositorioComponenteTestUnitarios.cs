@@ -33,7 +33,7 @@ namespace UnitTests
         {
             //arrange
             RepositorioAlta.Agregar(ComponenteTest);
-            var componente = ComponenteTest;
+            Componente componente = ComponenteTest;
             componente.Nombre = "testModificado";
             componente.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
 
@@ -45,9 +45,11 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener() =>
+        public void Obtener()
+        {
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
+        }
 
         private RepositorioComponenteSoloLectura RepositorioLectura => new RepositorioComponenteSoloLectura();
         private RepositorioComponenteBaja RepositorioBaja => new RepositorioComponenteBaja();

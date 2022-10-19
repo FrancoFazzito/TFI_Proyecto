@@ -23,19 +23,19 @@ namespace Aplicacion
         {
             get
             {
-                var diccionario = new Dictionary<string, int>();
-                foreach (var componente in _pedidos.SelectMany(pedido => pedido.Computadora.Componentes))
+                Dictionary<string, int> componenteCantidad = new Dictionary<string, int>();
+                foreach (Componente componente in _pedidos.SelectMany(pedido => pedido.Computadora.Componentes))
                 {
-                    if (diccionario.ContainsKey(componente.Nombre))
+                    if (componenteCantidad.ContainsKey(componente.Nombre))
                     {
-                        diccionario[componente.Nombre] += 1;
+                        componenteCantidad[componente.Nombre] += 1;
                     }
                     else
                     {
-                        diccionario.Add(componente.Nombre, 1);
+                        componenteCantidad.Add(componente.Nombre, 1);
                     }
                 }
-                return diccionario.OrderByDescending(x => x.Value).Take(3).ToDictionary(x => x.Key, x => x.Value.ToString());
+                return componenteCantidad.OrderByDescending(x => x.Value).Take(3).ToDictionary(x => x.Key, x => x.Value.ToString());
             }
         }
 
@@ -43,8 +43,8 @@ namespace Aplicacion
         {
             get
             {
-                var diccionario = new Dictionary<string, int>();
-                foreach (var tipoUso in _pedidos.Select(pedido => pedido.Computadora.TipoUso))
+                Dictionary<string, int> diccionario = new Dictionary<string, int>();
+                foreach (string tipoUso in _pedidos.Select(pedido => pedido.Computadora.TipoUso))
                 {
                     if (diccionario.ContainsKey(tipoUso))
                     {

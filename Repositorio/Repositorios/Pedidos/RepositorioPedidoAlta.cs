@@ -12,15 +12,15 @@ namespace Repositorio.Repositorios.Pedidos
 
         public int Agregar(Computadora computadora, Cliente clienteLogueado)
         {
-            using (var conexion = Db.Conexion)
+            using (System.Data.IDbConnection conexion = Db.Conexion)
             {
                 conexion.Open();
 
-                using (var transaction = conexion.BeginTransaction())
+                using (System.Data.IDbTransaction transaction = conexion.BeginTransaction())
                 {
-                    var rows = transaction.Execute(commandPedido, new ParametrosPedido().ObtenerIdCliente(clienteLogueado));
+                    int rows = transaction.Execute(commandPedido, new ParametrosPedido().ObtenerIdCliente(clienteLogueado));
                     rows += transaction.Execute(commandComputadora, new ParametrosPedido().ObtenerTipoUso(computadora.TipoUso));
-                    foreach (var componente in computadora.Componentes)
+                    foreach (Componente componente in computadora.Componentes)
                     {
                         transaction.Execute(commandComponenteComputadora, new ParametrosPedido().ObtenerIdComponente(componente));
                     }

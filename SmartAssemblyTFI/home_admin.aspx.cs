@@ -10,14 +10,17 @@ namespace SmartAssemblyTFI
     {
         private readonly GestorReporting _gestorReporting = new GestorReporting();
 
-        protected void Page_Load(object sender, EventArgs e) => FormHelper.ChequearAdminLogueado(this);
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            FormHelper.ChequearAdminLogueado(this);
+        }
 
         public string LineData
         {
             get
             {
-                var data = "[";
-                foreach (var valorMes in _gestorReporting.ObtenerValorPedidosDoceMeses)
+                string data = "[";
+                foreach (KeyValuePair<string, decimal> valorMes in _gestorReporting.ObtenerValorPedidosDoceMeses)
                 {
                     data += $"[{valorMes.Key},{valorMes.Value}], ";
                 }
