@@ -46,21 +46,21 @@
             <div class="row">
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/sign-up.png" />
+                        <img class="homeCard" src="imgs/sign-up.png" alt="imgs/pc.png"/>
                         <h4>Registrate</h4>
                         <p class="text-justify">Registrate o logueate para acceder a nuestros servicios</p>
                     </center>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/search-online.png" />
+                        <img class="homeCard" src="imgs/search-online.png" alt="imgs/pc.png"/>
                         <h4>Armamos tu computadora</h4>
                         <p class="text-justify">Nos indicas cuanto queres gastar y para que queres usar tu PC, despues nosotros hacemos todo el trabajo (?</p>
                     </center>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/pc.png" />
+                        <img class="homeCard" src="imgs/pc.png" alt="imgs/pc1.png"/>
                         <h4>¡Tu computadora ya esta lista!</h4>
                         <p class="text-justify">Te ofrecemos la mejor computadora para vos y podes realizar el pedido dentro de la misma pagina</p>
                     </center>
@@ -82,7 +82,7 @@
                 <div class="col-md-3">
                     <center>
                         <div class="card">
-                            <img class="card-img-top" src="imgs/pc1.png">
+                            <img class="card-img-top" src="imgs/pc1.png" alt="imgs/pc.png">
                             <div class="card-body">
                                 <h4 class="card-title">PC gaming I7 12900K</h4>
                             </div>
@@ -99,7 +99,7 @@
                     <center>
 
                         <div class="card">
-                            <img class="card-img-top" src="imgs/pc2.png" />
+                            <img class="card-img-top" src="imgs/pc2.png" alt="imgs/pc.png"/>
                             <div class="card-body">
                                 <h4>PC gaming R9 6900X</h4>
                             </div>
@@ -115,7 +115,7 @@
                 <div class="col-md-3">
                     <center>
                         <div class="card">
-                            <img class="card-img-top" src="imgs/pc3.png" />
+                            <img class="card-img-top" src="imgs/pc3.png" alt="imgs/pc.png"/>
                             <div class="card-body">
                                 <h4>Work station R7 5800x</h4>
                             </div>
@@ -131,7 +131,7 @@
                 <div class="col-md-3">
                     <center>
                         <div class="card">
-                            <img class="card-img-top" src="imgs/pc4.png" />
+                            <img class="card-img-top" src="imgs/pc4.png" alt="imgs/pc.png"/>
                             <div class="card-body">
                                 <h4>PC streamer i9 9900k</h4>
                             </div>
