@@ -1,5 +1,6 @@
 ﻿using Aplicacion.Pedidos;
 using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -13,11 +14,16 @@ namespace Aplicacion
         public Dictionary<string, decimal> ObtenerValorPedidosDoceMeses
             => _pedidos.OrderBy(x => x.Fecha)
                        .GroupBy(x => x.Fecha.Month)
-                       .ToDictionary(x => x.Key.ToString(), x => x.Sum(p => p.Computadora.Precio));
+                       .ToDictionary(x => x.Key.ToString(), x => RedondearPrecio(x.Sum(p => p.Computadora.Precio)));
 
         public Dictionary<string, decimal> ClientesSegmentados
             => _pedidos.GroupBy(x => x.Computadora.TipoUso)
-                       .ToDictionary(x => x.Key.ToString(), x => x.Average(p => p.Computadora.Precio));
+                       .ToDictionary(x => x.Key.ToString(), x => RedondearPrecio(x.Average(p => p.Computadora.Precio)));
+
+        private static decimal RedondearPrecio(decimal precio)
+        {
+            return Math.Truncate(100 * precio) / 100;
+        }
 
         public Dictionary<string, string> ComponentesMasVendidos
         {
@@ -62,6 +68,6 @@ namespace Aplicacion
         public Dictionary<string, decimal> GananciasUltimosMeses
             => ObtenerValorPedidosDoceMeses.OrderByDescending(x => x.Key)
                                            .Take(3)
-                                           .ToDictionary(x => x.Key, x => x.Value * decimal.Parse(ConfigurationManager.AppSettings["divisorGanancia"]));
+                                           .ToDictionary(x => x.Key, x => RedondearPrecio(x.Value * decimal.Parse(ConfigurationManager.AppSettings["divisorGanancia"])));
     }
 }
