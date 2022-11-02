@@ -53,7 +53,7 @@ namespace SmartAssemblyTFI
             return !txt.Visible || decimal.TryParse(txt.Text, out _);
         }
 
-        public static bool ValidarStringTextbox(TextBox txt)
+        public static bool ValidarTextoTextbox(TextBox txt)
         {
             return !txt.Visible || !string.IsNullOrEmpty(txt.Text);
         }
