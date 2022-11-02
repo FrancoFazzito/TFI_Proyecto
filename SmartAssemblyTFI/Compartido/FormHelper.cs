@@ -48,17 +48,14 @@ namespace SmartAssemblyTFI
             }
         }
 
-        public static bool ValidarTextbox(TextBox txt)
+        public static bool ValidarNumeroTextbox(TextBox txt)
         {
-            if (!txt.Visible)
-            {
-                return true;
-            }
-            if (!string.IsNullOrEmpty(txt.Text))
-            {
-                return true;
-            }
-            return false;
+            return !txt.Visible || decimal.TryParse(txt.Text, out _);
+        }
+
+        public static bool ValidarStringTextbox(TextBox txt)
+        {
+            return !txt.Visible || !string.IsNullOrEmpty(txt.Text);
         }
     }
 }
