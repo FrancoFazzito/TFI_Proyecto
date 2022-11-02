@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_tipouso.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web16" %>
+﻿<%@ Page Title="Tipos de uso" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_tipouso.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web16" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

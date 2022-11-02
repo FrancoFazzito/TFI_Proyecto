@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_componentes.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web19" %>
+﻿<%@ Page Title="Componentes" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="abmc_componentes.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web19" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

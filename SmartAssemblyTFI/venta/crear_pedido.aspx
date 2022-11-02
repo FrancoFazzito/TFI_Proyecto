@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="crear_pedido.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web14" %>
+﻿<%@ Page Title="Crear pedido" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="crear_pedido.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web14" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

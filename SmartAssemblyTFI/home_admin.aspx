@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="home_admin.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web15" %>
+﻿<%@ Page Title="Inicio Administracion" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="home_admin.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web15" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
