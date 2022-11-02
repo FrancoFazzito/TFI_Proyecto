@@ -75,18 +75,18 @@ namespace SmartAssemblyTFI
             ActualizarGrid();
         }
 
-        public bool ValidacionTextboxs => FormHelper.ValidarStringTextbox(TextBox1)
-                && FormHelper.ValidarStringTextbox(TextBox2)
+        public bool ValidacionTextboxs => FormHelper.ValidarTextoTextbox(TextBox1)
+                && FormHelper.ValidarTextoTextbox(TextBox2)
                 && FormHelper.ValidarNumeroTextbox(TextBox3)
-                && FormHelper.ValidarStringTextbox(TextBox4)
-                && FormHelper.ValidarStringTextbox(TextBox5);
+                && FormHelper.ValidarTextoTextbox(TextBox4)
+                && FormHelper.ValidarTextoTextbox(TextBox5);
 
-        public bool ValidacionTextboxsAgregar => FormHelper.ValidarStringTextbox(TextBox1)
-                && FormHelper.ValidarStringTextbox(TextBox2)
+        public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextoTextbox(TextBox1)
+                && FormHelper.ValidarTextoTextbox(TextBox2)
                 && FormHelper.ValidarNumeroTextbox(TextBox3)
-                && FormHelper.ValidarStringTextbox(TextBox4)
-                && FormHelper.ValidarStringTextbox(TextBox5)
-                && FormHelper.ValidarStringTextbox(TextBox7);
+                && FormHelper.ValidarTextoTextbox(TextBox4)
+                && FormHelper.ValidarTextoTextbox(TextBox5)
+                && FormHelper.ValidarTextoTextbox(TextBox7);
 
         protected void Button3_Click(object sender, EventArgs e)
         {

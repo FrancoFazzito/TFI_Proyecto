@@ -179,8 +179,8 @@ namespace SmartAssemblyTFI
                     && FormHelper.ValidarNumeroTextbox(limiteStocktxt)
                     && FormHelper.ValidarNumeroTextbox(tamanoFantxt)
                     && FormHelper.ValidarNumeroTextbox(preciotxt)
-                    && FormHelper.ValidarStringTextbox(nombretxt)
-                    && FormHelper.ValidarStringTextbox(sockettxt);
+                    && FormHelper.ValidarTextoTextbox(nombretxt)
+                    && FormHelper.ValidarTextoTextbox(sockettxt);
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {

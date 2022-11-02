@@ -102,7 +102,7 @@ namespace SmartAssemblyTFI
             TextBox7.Text = tipoUso.Ssd.ToString();
         }
 
-        public bool ValidacionTextboxs => FormHelper.ValidarStringTextbox(TextBox1)
+        public bool ValidacionTextboxs => FormHelper.ValidarTextoTextbox(TextBox1)
                 && FormHelper.ValidarNumeroTextbox(TextBox2)
                 && FormHelper.ValidarNumeroTextbox(TextBox3)
                 && FormHelper.ValidarNumeroTextbox(TextBox4)
