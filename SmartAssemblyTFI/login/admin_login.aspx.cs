@@ -11,15 +11,15 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            var nombre = TextBox1.Text;
-            var contrasena = TextBox2.Text;
+            string nombre = TextBox1.Text;
+            string contrasena = TextBox2.Text;
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(contrasena))
             {
                 labelError.Visible = true;
                 return;
             }
 
-            var esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
+            bool esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
             if (!esExitoso)
             {
                 labelError.Visible = true;

@@ -1,6 +1,18 @@
 ﻿<%@ Page Title="Inicio Administracion" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="home_admin.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web15" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--our custom css--%>
+    <link href="css/styles.css" rel="stylesheet" />
+    <%--charts js--%>
+    <script src="chartJs/highcharts.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>

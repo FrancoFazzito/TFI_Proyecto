@@ -8,6 +8,9 @@ namespace UnitTests
     public class RepositorioPedidoTestUnitarios
     {
         [TestMethod]
-        public void ObtenerTodos() => Assert.IsTrue(new RepositorioPedidoSoloLectura().Todos.Any());
+        public void ObtenerTodos()
+        {
+            Assert.IsTrue(new RepositorioPedidoSoloLectura().Todos.Any());
+        }
     }
 }

@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="Mis pedidos" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="mis_pedidos.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web17" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="../bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <%--bootstrap css--%>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--our custom css--%>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <%--charts js--%>
+    <script src="../chartJs/highcharts.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -22,7 +33,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"  AllowPaging="True" OnPageIndexChanging="GridViewComputadoraSeleccionada_PageIndexChanging" PageSize="6">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>

@@ -5,20 +5,6 @@
 <html>
 <head runat="server" id="headerMaster">
     <title></title>
-
-    <%--bootstrap css--%>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <%--our custom css--%>
-    <link href="css/styles.css" rel="stylesheet" />
-    <%--jquery--%>
-    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
-    <%--popper js--%>
-    <script src="bootstrap/js/popper.min.js"></script>
-    <%--bootstrap js--%>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-
-    <script src="chartJs/highcharts.js"></script>
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -106,9 +92,9 @@
                         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-6">
 
                             <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                            <p>Direccion: Buenos Aires, Mercedes 3808, Argentina</p>
-                            <p>Correo: cliente@fsolutions.com</p>
-                            <p>Telefono: + 54 11 1234-5678</p>
+                            <p>Direccion: Mercedes 1234, San Andres, Buenos Aires, Argentina</p>
+                            <p>Correo: atencioncliente@fsolutions.com</p>
+                            <p>Telefono: +54 11 1234-5678</p>
                         </div>
                     </div>
                 </div>

@@ -6,11 +6,20 @@ namespace Aplicacion
 {
     public class GestorCliente
     {
-        public void Agregar(Cliente cliente) => new RepositorioClienteAlta().Agregar(GetClienteHasheado(cliente));
+        public void Agregar(Cliente cliente)
+        {
+            new RepositorioClienteAlta().Agregar(GetClienteHasheado(cliente));
+        }
 
-        public void Eliminar(int id) => new RepositorioClienteBaja().Eliminar(id);
+        public void Eliminar(int id)
+        {
+            new RepositorioClienteBaja().Eliminar(id);
+        }
 
-        public void Modificar(Cliente cliente, string nuevaContrasena = null) => new RepositorioClienteModificacion().Modificar(GetClienteHasheadoModificado(cliente, nuevaContrasena));
+        public void Modificar(Cliente cliente, string nuevaContrasena = null)
+        {
+            new RepositorioClienteModificacion().Modificar(GetClienteHasheadoModificado(cliente, nuevaContrasena));
+        }
 
         public IEnumerable<Cliente> Todos => new RepositorioClienteSoloLectura().Todos;
 

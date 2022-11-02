@@ -36,11 +36,11 @@ namespace SmartAssemblyTFI
 
         private DataTable ObtenterDatatableComponentes(IEnumerable<Componente> entrada)
         {
-            using (var datatable = new DataTable())
+            using (DataTable datatable = new DataTable())
             {
                 datatable.Columns.Add("Id", typeof(int));
                 datatable.Columns.Add("Nombre", typeof(string));
-                foreach (var componente in entrada)
+                foreach (Componente componente in entrada)
                 {
                     datatable.Rows.Add(componente.Id, componente.Nombre);
                 }
@@ -162,7 +162,10 @@ namespace SmartAssemblyTFI
             ActualizarGrid();
         }
 
-        protected void Button5_Click(object sender, EventArgs e) => DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        }
 
         public bool ValidacionTextboxs => FormHelper.ValidarTextbox(idtxt)
                     && FormHelper.ValidarTextbox(canalestxt)
@@ -226,7 +229,10 @@ namespace SmartAssemblyTFI
             TipoMemoria = tiposMemoriaDll.SelectedValue
         };
 
-        private Componente GetComponenteDataGrid(object sender) => Componentes.ElementAt(ComponentesGrid.PageIndex * ComponentesGrid.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
+        private Componente GetComponenteDataGrid(object sender)
+        {
+            return Componentes.ElementAt(ComponentesGrid.PageIndex * ComponentesGrid.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
+        }
 
         private IEnumerable<Componente> Componentes => gestorComponente.Todos;
         private static List<string> TiposDeFormato => new List<string>() { "ATX", "ITX", "MATX" };

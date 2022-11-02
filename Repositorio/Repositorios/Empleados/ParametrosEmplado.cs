@@ -7,7 +7,7 @@ namespace Repositorio
     {
         public DynamicParameters Obtener(Empleado empleado)
         {
-            var parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@id", empleado.Id);
             parameters.Add("@NombreUsuario", empleado.NombreUsuario);
             parameters.Add("@correo", empleado.Correo);

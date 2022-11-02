@@ -13,7 +13,7 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                var domicilio = new GestorDomicilio();
+                GestorDomicilio domicilio = new GestorDomicilio();
                 DropDownList1.DataSource = domicilio.Provincias;
                 DropDownList1.DataBind();
                 DropDownList3.DataSource = domicilio.Barrios;
@@ -41,12 +41,12 @@ namespace SmartAssemblyTFI
             });
         }
 
-        private bool TextboxsValidos => !string.IsNullOrEmpty(TextBox1.Text) 
-                                           && !string.IsNullOrEmpty(TextBox2.Text) 
-                                           && !string.IsNullOrEmpty(TextBox3.Text) 
-                                           && !string.IsNullOrEmpty(TextBox4.Text) 
-                                           && !string.IsNullOrEmpty(TextBox5.Text) 
-                                           && !string.IsNullOrEmpty(TextBox8.Text) 
+        private bool TextboxsValidos => !string.IsNullOrEmpty(TextBox1.Text)
+                                           && !string.IsNullOrEmpty(TextBox2.Text)
+                                           && !string.IsNullOrEmpty(TextBox3.Text)
+                                           && !string.IsNullOrEmpty(TextBox4.Text)
+                                           && !string.IsNullOrEmpty(TextBox5.Text)
+                                           && !string.IsNullOrEmpty(TextBox8.Text)
                                            && !string.IsNullOrEmpty(TextBox9.Text);
     }
 }

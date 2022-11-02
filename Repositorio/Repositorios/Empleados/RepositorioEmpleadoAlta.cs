@@ -7,6 +7,9 @@ namespace Repositorio
     {
         private const string command = "INSERT INTO [dbo].[Empleado] VALUES (@nombreUsuario,@correo,@nombre,@apellido,@contrasena)";
 
-        public int Agregar(Empleado empleado) => Db.Conexion.Execute(command, new ParametrosEmplado().Obtener(empleado));
+        public int Agregar(Empleado empleado)
+        {
+            return Db.Conexion.Execute(command, new ParametrosEmplado().Obtener(empleado));
+        }
     }
 }

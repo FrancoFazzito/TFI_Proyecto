@@ -18,20 +18,26 @@ namespace Aplicacion
 
         public bool IngresarCliente(string correo, string contrasena)
         {
-            var cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
+            Dominio.Cliente cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
             SesionCliente.Ingresar(cliente);
             return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasena);
         }
 
         public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
-            var empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
+            Dominio.Empleado empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
             SesionEmpleado.Ingresar(empleado);
             return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
         }
 
-        public void SalirEmpleado() => SesionEmpleado.Salir();
+        public void SalirEmpleado()
+        {
+            SesionEmpleado.Salir();
+        }
 
-        public void SalirCliente() => SesionCliente.Salir();
+        public void SalirCliente()
+        {
+            SesionCliente.Salir();
+        }
     }
 }

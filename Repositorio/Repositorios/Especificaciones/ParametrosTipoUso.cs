@@ -7,7 +7,7 @@ namespace Repositorio
     {
         public DynamicParameters Obtener(TipoUso especificacion)
         {
-            var parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@id", especificacion.Id);
             parameters.Add("@Nombre", especificacion.Nombre);
             parameters.Add("@cpu", especificacion.Cpu);
