@@ -24,9 +24,9 @@ namespace SmartAssemblyTFI
         {
             try
             {
-                if (string.IsNullOrEmpty(TextBox1.Text))
+                if (!FormHelper.ValidarNumeroTextbox(TextBox1))
                 {
-                    throw new ExcepcionRequerimientoInvalido();
+                    labelErrorValidacion.Visible = true;
                 }
                 string tipoUso = DropDownList2.SelectedValue;
                 string importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
@@ -39,7 +39,7 @@ namespace SmartAssemblyTFI
             }
             catch (ExcepcionRequerimientoInvalido)
             {
-                labelError.Visible = true;
+                labelErrorPresupuesto.Visible = true;
             }
         }
     }

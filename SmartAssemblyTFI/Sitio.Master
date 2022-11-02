@@ -56,7 +56,7 @@
                 <div class="container text-center text-md-start mt-5">
 
                     <div class="row mt-3">
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-6">
+                        <div class="col-md-3 col-lg-2 mx-auto mb-6">
 
                             <h6 class="text-uppercase fw-bold mb-4">Administracion
                             </h6>
@@ -64,7 +64,7 @@
                                 <a href="login/admin_login.aspx" class="text-reset">Ingreso admin</a>
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <div class="col-md-3 col-lg-4 mx-auto mb-4">
 
                             <h6 class="text-uppercase fw-bold mb-4">FSolutions
                             </h6>
@@ -72,7 +72,7 @@
                                 Nos dedicamos a ofrecer las mejores computadoras personalizadas al mejor precio.
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-6">
+                        <div class="col-md-3 col-lg-2 mx-auto mb-6">
 
                             <h6 class="text-uppercase fw-bold mb-4">Productos
                             </h6>
@@ -89,10 +89,14 @@
                                 <a href="/venta/crear_presupuesto.aspx"" class="text-reset">Arquitectura</a>
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-6">
+                        <div class="col-md-3 col-lg-4 mx-auto mb-md-0 mb-6">
 
                             <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
-                            <p>Direccion: Mercedes 1234, San Andres, Buenos Aires, Argentina</p>
+                            <p>
+                            Direccion: Mercedes 1234<br>
+                            San Andres, Buenos Aires<br>
+                            Argentina
+                            </p>
                             <p>Correo: atencioncliente@fsolutions.com</p>
                             <p>Telefono: +54 11 1234-5678</p>
                         </div>

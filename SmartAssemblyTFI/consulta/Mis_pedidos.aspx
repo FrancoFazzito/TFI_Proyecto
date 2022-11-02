@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Mis pedidos" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="mis_pedidos.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web17" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--icono--%>
+    <link runat="server" rel="icon" href="../imgs/icono.ico" type="image/ico"/>
+    <%--jquery--%>
     <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--popper js--%>
     <script src="../bootstrap/js/popper.min.js"></script>

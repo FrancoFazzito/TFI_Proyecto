@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="cliente_login.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--icono--%>
+    <link runat="server" rel="icon" href="../imgs/icono.ico" type="image/ico"/>
+    <%--jquery--%>
     <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--popper js--%>
     <script src="../bootstrap/js/popper.min.js"></script>
@@ -44,7 +47,7 @@
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Correo Electronico"></asp:TextBox>
                                 </div>
-                                <label>Password</label>
+                                <label>Contraseña</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                                 </div>

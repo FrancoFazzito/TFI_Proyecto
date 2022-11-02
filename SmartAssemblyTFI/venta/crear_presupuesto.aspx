@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Crear presupuesto" Language="C#" MasterPageFile="~/Sitio.Master" AutoEventWireup="true" CodeBehind="crear_presupuesto.aspx.cs" Inherits="SmartAssemblyTFI.Formulario_web13" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%--icono--%>
+    <link runat="server" rel="icon" href="../imgs/icono.ico" type="image/ico"/>
+    <%--jquery--%>
     <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--popper js--%>
     <script src="../bootstrap/js/popper.min.js"></script>
@@ -59,7 +62,8 @@
                         </div>
                     </div>
                     <center>
-                        <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Error al crear tu presupuesto, intente con un presupuesto mayor"></asp:Label>
+                        <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelErrorPresupuesto" Text="Error al crear tu presupuesto, intente con un presupuesto mayor"></asp:Label>
+                        <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelErrorValidacion" Text="Error al crear tu presupuesto, intente con un presupuesto valido"></asp:Label>
                     </center>
                 </div>
                 <a href="../home_page.aspx"><< Atras</a><br>

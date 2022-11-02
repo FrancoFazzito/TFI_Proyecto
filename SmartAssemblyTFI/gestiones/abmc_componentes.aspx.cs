@@ -167,20 +167,20 @@ namespace SmartAssemblyTFI
             DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
         }
 
-        public bool ValidacionTextboxs => FormHelper.ValidarTextbox(idtxt)
-                    && FormHelper.ValidarTextbox(canalestxt)
-                    && FormHelper.ValidarTextbox(capacidadtxt)
-                    && FormHelper.ValidarTextbox(consumotxt)
-                    && FormHelper.ValidarTextbox(frecuenciaMaximatxt)
-                    && FormHelper.ValidarTextbox(nivelFantxt)
-                    && FormHelper.ValidarTextbox(nivelVideoIntregadotxt)
-                    && FormHelper.ValidarTextbox(perfomancetxt)
-                    && FormHelper.ValidarTextbox(stocktxt)
-                    && FormHelper.ValidarTextbox(limiteStocktxt)
-                    && FormHelper.ValidarTextbox(tamanoFantxt)
-                    && FormHelper.ValidarTextbox(preciotxt)
-                    && FormHelper.ValidarTextbox(nombretxt)
-                    && FormHelper.ValidarTextbox(sockettxt);
+        public bool ValidacionTextboxs => FormHelper.ValidarNumeroTextbox(idtxt)
+                    && FormHelper.ValidarNumeroTextbox(canalestxt)
+                    && FormHelper.ValidarNumeroTextbox(capacidadtxt)
+                    && FormHelper.ValidarNumeroTextbox(consumotxt)
+                    && FormHelper.ValidarNumeroTextbox(frecuenciaMaximatxt)
+                    && FormHelper.ValidarNumeroTextbox(nivelFantxt)
+                    && FormHelper.ValidarNumeroTextbox(nivelVideoIntregadotxt)
+                    && FormHelper.ValidarNumeroTextbox(perfomancetxt)
+                    && FormHelper.ValidarNumeroTextbox(stocktxt)
+                    && FormHelper.ValidarNumeroTextbox(limiteStocktxt)
+                    && FormHelper.ValidarNumeroTextbox(tamanoFantxt)
+                    && FormHelper.ValidarNumeroTextbox(preciotxt)
+                    && FormHelper.ValidarStringTextbox(nombretxt)
+                    && FormHelper.ValidarStringTextbox(sockettxt);
 
         private void DetallarComponenteEnFormulario(Componente componente)
         {

@@ -33,7 +33,7 @@ namespace UnitTests
         {
             //arrange
             RepositorioAlta.Agregar(TipoUsoTest);
-            TipoUso tipoUso = TipoUsoTest;
+            var tipoUso = TipoUsoTest;
             tipoUso.Nombre = "testModificado";
             tipoUso.Id = RepositorioLectura.ObtenerTodos.Max(c => c.Id);
 
@@ -45,11 +45,9 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Obtener()
-        {
+        public void Obtener() =>
             //arrange act assert
             Assert.IsTrue(RepositorioLectura.ObtenerTodos.Any());
-        }
 
         private RepositorioTipoUsoSoloLectura RepositorioLectura => new RepositorioTipoUsoSoloLectura();
         private RepositorioTipoUsoBaja RepositorioBaja => new RepositorioTipoUsoBaja();

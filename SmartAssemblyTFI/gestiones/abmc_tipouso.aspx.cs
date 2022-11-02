@@ -102,13 +102,13 @@ namespace SmartAssemblyTFI
             TextBox7.Text = tipoUso.Ssd.ToString();
         }
 
-        public bool ValidacionTextboxs => FormHelper.ValidarTextbox(TextBox1)
-                && FormHelper.ValidarTextbox(TextBox2)
-                && FormHelper.ValidarTextbox(TextBox3)
-                && FormHelper.ValidarTextbox(TextBox4)
-                && FormHelper.ValidarTextbox(TextBox5)
-                && FormHelper.ValidarTextbox(TextBox6)
-                && FormHelper.ValidarTextbox(TextBox7);
+        public bool ValidacionTextboxs => FormHelper.ValidarStringTextbox(TextBox1)
+                && FormHelper.ValidarNumeroTextbox(TextBox2)
+                && FormHelper.ValidarNumeroTextbox(TextBox3)
+                && FormHelper.ValidarNumeroTextbox(TextBox4)
+                && FormHelper.ValidarNumeroTextbox(TextBox5)
+                && FormHelper.ValidarNumeroTextbox(TextBox6)
+                && FormHelper.ValidarNumeroTextbox(TextBox7);
 
         private TipoUso TipoUsoCargado => new TipoUso()
         {

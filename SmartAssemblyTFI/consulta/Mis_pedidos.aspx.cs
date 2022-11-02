@@ -1,8 +1,6 @@
 ﻿using Aplicacion.Pedidos;
-using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web.UI;
 
@@ -17,34 +15,15 @@ namespace SmartAssemblyTFI
             FormHelper.ChequearClienteLogueado(this);
             if (!Page.IsPostBack)
             {
-                ActualizarGrid();
-            }
-        }
-
-        private void ActualizarGrid()
-        {
-            GridView1.DataSource = ObtenterDatatableComponentes(_gestorPedido.TodosClienteLogueado);
-            GridView1.DataBind();
-        }
-
-        private DataTable ObtenterDatatableComponentes(IEnumerable<Pedido> entrada)
-        {
-            using (DataTable datatable = new DataTable())
-            {
-                datatable.Columns.Add("Id", typeof(int));
-                datatable.Columns.Add("Fecha", typeof(DateTime));
-                datatable.Columns.Add("Precio", typeof(string));
-                foreach (Pedido pedido in entrada)
-                {
-                    datatable.Rows.Add(pedido.Id, pedido.Fecha, $"${pedido.Computadora.Precio}");
-                }
-                return datatable;
+                GridView1.DataSource = _gestorPedido.TodosClienteLogueado.Select(pedido => new { pedido.Id, Fecha = pedido.Fecha.Date, Precio = $"${pedido.Computadora.Precio}" });
+                GridView1.DataBind();
             }
         }
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            Dominio.Computadora computadora = GetPedidoDataGrid(sender).Computadora;
+            int index = FormHelper.ObtenerRowIndexGrid(sender);
+            Dominio.Computadora computadora = _gestorPedido.TodosClienteLogueado.ElementAt(index).Computadora;
             IEnumerable<Dominio.Componente> enumerable = computadora.Componentes.Where(c => c.Tipo == "RAM");
             GridViewComputadoraSeleccionada.DataSource = new List<string>
             {
@@ -56,18 +35,6 @@ namespace SmartAssemblyTFI
                 $"SSD: {computadora["SSD"].Nombre}"
             };
             GridViewComputadoraSeleccionada.DataBind();
-        }
-
-        protected void GridViewComputadoraSeleccionada_PageIndexChanging(object sender, System.Web.UI.WebControls.GridViewPageEventArgs e)
-        {
-            GridView1.PageIndex = e.NewPageIndex;
-            GridView1.DataSource = ObtenterDatatableComponentes(_gestorPedido.TodosClienteLogueado);
-            GridView1.DataBind();
-        }
-
-        private Pedido GetPedidoDataGrid(object sender)
-        {
-            return _gestorPedido.TodosClienteLogueado.ElementAt(GridView1.PageIndex * GridView1.PageSize + FormHelper.ObtenerRowIndexGrid(sender));
         }
     }
 }

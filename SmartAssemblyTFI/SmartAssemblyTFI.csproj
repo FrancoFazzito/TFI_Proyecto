@@ -70,6 +70,7 @@
     <Content Include="gestiones\abmc_componentes.aspx" />
     <Content Include="gestiones\abmc_empleados.aspx" />
     <Content Include="gestiones\abmc_tipouso.aspx" />
+    <Content Include="imgs\icono.ico" />
     <Content Include="login\admin_login.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
