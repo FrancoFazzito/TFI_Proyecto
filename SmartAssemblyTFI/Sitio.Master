@@ -50,13 +50,13 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <footer class="text-center text-lg-start bg-light text-muted">
-            <section class="">
+        <footer class="text-center bg-light text-muted">
+            <section>
                 <br />
-                <div class="container text-center text-md-start mt-5">
+                <div class="container text-center text-md-start">
 
                     <div class="row mt-3">
-                        <div class="col-md-3 col-lg-2 mx-auto mb-6">
+                        <div class="col-md-3 col-lg-2 mx-auto">
 
                             <h6 class="text-uppercase fw-bold mb-4">Administracion
                             </h6>
@@ -64,7 +64,7 @@
                                 <a href="login/admin_login.aspx" class="text-reset">Ingreso admin</a>
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-4 mx-auto mb-4">
+                        <div class="col-md-3 col-lg-4 mx-auto">
 
                             <h6 class="text-uppercase fw-bold mb-4">FSolutions
                             </h6>
@@ -72,7 +72,7 @@
                                 Nos dedicamos a ofrecer las mejores computadoras personalizadas al mejor precio.
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-2 mx-auto mb-6">
+                        <div class="col-md-3 col-lg-2 mx-auto">
 
                             <h6 class="text-uppercase fw-bold mb-4">Productos
                             </h6>
@@ -89,7 +89,7 @@
                                 <a href="/venta/crear_presupuesto.aspx"" class="text-reset">Arquitectura</a>
                             </p>
                         </div>
-                        <div class="col-md-3 col-lg-4 mx-auto mb-md-0 mb-6">
+                        <div class="col-md-3 col-lg-4 mx-auto">
 
                             <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
                             <p>
@@ -104,7 +104,7 @@
                 </div>
             </section>
 
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            <div class="text-center p-4" id="copyright">
                 © 2022 Copyright:
                 <a class="text-reset fw-bold">FSolutions.com</a>
             </div>
