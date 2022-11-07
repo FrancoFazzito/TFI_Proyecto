@@ -28,7 +28,6 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
-
             Cliente cliente = new Cliente()
             {
                 Nombre = TextBox1.Text,
@@ -40,6 +39,11 @@ namespace SmartAssemblyTFI
                 Correo = TextBox4.Text,
                 Contrasena = TextBox8.Text
             };
+            if (TextBox9.Text != cliente.Contrasena)
+            {
+                labelErrorContrasenaCoincidente.Visible = true;
+                return;
+            }
             if (new GestorContrasena().ValidarRequerimientos(cliente.Contrasena))
             {
                 labelErrorContrasena.Visible = true;
@@ -48,12 +52,12 @@ namespace SmartAssemblyTFI
             _gestorCliente.Agregar(cliente);
         }
 
-        private bool TextboxsValidos => !FormHelper.ValidarTextoTextbox(TextBox1)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox2)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox3)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox4)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox5)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox8)
-                                           && !FormHelper.ValidarTextoTextbox(TextBox9);
+        private bool TextboxsValidos => FormHelper.ValidarTextoTextbox(TextBox1)
+                                        && FormHelper.ValidarTextoTextbox(TextBox2)
+                                        && FormHelper.ValidarTextoTextbox(TextBox3)
+                                        && FormHelper.ValidarTextoTextbox(TextBox4)
+                                        && FormHelper.ValidarTextoTextbox(TextBox5)
+                                        && FormHelper.ValidarTextoTextbox(TextBox8)
+                                        && FormHelper.ValidarTextoTextbox(TextBox9);
     }
 }
