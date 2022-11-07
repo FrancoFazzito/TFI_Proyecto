@@ -20,7 +20,7 @@ namespace UnitTests
             //assert
             Cliente cliente = GestorCliente.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(cliente);
-            Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "test"));
+            Assert.IsTrue(new Login().IngresarCliente(cliente.Correo, "Test123"));
 
             //exit
             GestorCliente.Eliminar(cliente.Id);
@@ -37,7 +37,7 @@ namespace UnitTests
             //assert
             Empleado empleado = GestorEmpleado.Todos.FirstOrDefault(c => c.Id == id);
             Assert.IsNotNull(empleado);
-            Assert.IsTrue(new Login().IngresarEmpleado(empleado.Correo, "test"));
+            Assert.IsTrue(new Login().IngresarEmpleado(empleado.Correo, "Test123"));
 
             //exit
             GestorEmpleado.Eliminar(empleado.Id);
@@ -52,7 +52,7 @@ namespace UnitTests
                 Id = 1,
                 Nombre = "test",
                 Apellido = "test",
-                Contrasena = "test",
+                Contrasena = "Test123",
                 Correo = $"test {rng}",
                 Barrio = "test",
                 FechaNacimiento = DateTime.Now,

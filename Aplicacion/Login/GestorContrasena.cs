@@ -25,7 +25,7 @@ namespace Aplicacion
 
         public bool ValidarRequerimientos(string contrasena)
         {
-            return contrasena.Any(x => char.IsDigit(x)) && contrasena.Any(x => char.IsUpper(x)) && contrasena.Any(x => char.IsLower(x));
+            return contrasena.Any(x => char.IsDigit(x)) && contrasena.Any(x => char.IsUpper(x)) && contrasena.Any(x => char.IsLower(x)) && contrasena.Length >= 8;
         }
     }
 }
