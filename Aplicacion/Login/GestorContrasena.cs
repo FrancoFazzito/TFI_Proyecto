@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Aplicacion
@@ -20,6 +21,11 @@ namespace Aplicacion
         public bool Verificar(string contrasenaGuardada, string contrasenaIngresada)
         {
             return Hashear(contrasenaIngresada) == contrasenaGuardada;
+        }
+
+        public bool ValidarRequerimientos(string contrasena)
+        {
+            return contrasena.Any(x => char.IsDigit(x)) && contrasena.Any(x => char.IsUpper(x)) && contrasena.Any(x => char.IsLower(x));
         }
     }
 }

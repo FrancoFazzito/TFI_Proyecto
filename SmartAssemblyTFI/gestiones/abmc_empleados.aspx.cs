@@ -71,6 +71,11 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
+            if (new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
+            {
+                labelErrorContrasena.Visible = true;
+                return;
+            }
             _gestorEmpleado.Agregar(EmpleadoCargado);
             ActualizarGrid();
         }
@@ -93,6 +98,11 @@ namespace SmartAssemblyTFI
             if (!ValidacionTextboxs)
             {
                 labelError.Visible = true;
+                return;
+            }
+            if (new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
+            {
+                labelErrorContrasena.Visible = true;
                 return;
             }
             _gestorEmpleado.Modificar(EmpleadoCargado);

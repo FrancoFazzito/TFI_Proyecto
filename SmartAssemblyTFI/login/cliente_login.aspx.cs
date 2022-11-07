@@ -11,14 +11,14 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string correo = TextBox1.Text;
-            string contrasena = TextBox2.Text;
-            if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contrasena))
+            if (FormHelper.ValidarTextoTextbox(TextBox1) || FormHelper.ValidarTextoTextbox(TextBox2))
             {
                 labelError.Visible = true;
                 return;
             }
 
+            string correo = FormHelper.ObtenerValorText(TextBox1);
+            string contrasena = FormHelper.ObtenerValorText(TextBox2);
             bool esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {

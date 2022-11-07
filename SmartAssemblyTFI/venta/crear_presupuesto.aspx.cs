@@ -30,7 +30,7 @@ namespace SmartAssemblyTFI
                 }
                 string tipoUso = DropDownList2.SelectedValue;
                 string importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
-                decimal precio = decimal.Parse(TextBox1.Text);
+                decimal precio = decimal.Parse(FormHelper.ObtenerValorText(TextBox1));
                 RequerimientoArmado requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
                 DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
                 Computadora computadoraArmada = director.Computadora;

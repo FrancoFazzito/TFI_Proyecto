@@ -28,7 +28,8 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
-            _gestorCliente.Agregar(new Cliente()
+
+            Cliente cliente = new Cliente()
             {
                 Nombre = TextBox1.Text,
                 Apellido = TextBox2.Text,
@@ -38,15 +39,21 @@ namespace SmartAssemblyTFI
                 Provincia = DropDownList1.SelectedValue,
                 Correo = TextBox4.Text,
                 Contrasena = TextBox8.Text
-            });
+            };
+            if (new GestorContrasena().ValidarRequerimientos(cliente.Contrasena))
+            {
+                labelErrorContrasena.Visible = true;
+                return;
+            }
+            _gestorCliente.Agregar(cliente);
         }
 
-        private bool TextboxsValidos => !string.IsNullOrEmpty(TextBox1.Text)
-                                           && !string.IsNullOrEmpty(TextBox2.Text)
-                                           && !string.IsNullOrEmpty(TextBox3.Text)
-                                           && !string.IsNullOrEmpty(TextBox4.Text)
-                                           && !string.IsNullOrEmpty(TextBox5.Text)
-                                           && !string.IsNullOrEmpty(TextBox8.Text)
-                                           && !string.IsNullOrEmpty(TextBox9.Text);
+        private bool TextboxsValidos => !FormHelper.ValidarTextoTextbox(TextBox1)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox2)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox3)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox4)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox5)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox8)
+                                           && !FormHelper.ValidarTextoTextbox(TextBox9);
     }
 }
