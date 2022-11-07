@@ -61,7 +61,7 @@ namespace UnitTests
             Nombre = "test",
             Apellido = "test",
             Barrio = "test",
-            Contrasena = "test",
+            Contrasena = "Test123",
             Correo = "test",
             FechaNacimiento = DateTime.Now,
             Provincia = "test",

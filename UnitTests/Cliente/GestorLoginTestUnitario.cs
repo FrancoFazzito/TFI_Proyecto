@@ -70,7 +70,7 @@ namespace UnitTests
                 Id = 1,
                 Nombre = "test",
                 Apellido = "test",
-                Contrasena = "test",
+                Contrasena = "Test123",
                 Correo = $"test {rng}",
                 NombreUsuario = $"test {rng}"
             };

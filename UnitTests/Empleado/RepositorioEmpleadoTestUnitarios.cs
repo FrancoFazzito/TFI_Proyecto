@@ -60,7 +60,7 @@ namespace UnitTests
             Nombre = "test",
             Apellido = "test",
             NombreUsuario = "test",
-            Contrasena = "test",
+            Contrasena = "Test123",
             Correo = "test",
         };
     }
