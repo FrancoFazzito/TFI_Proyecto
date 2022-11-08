@@ -96,7 +96,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-9 mx-auto">
-                                <label>Contraseña</label>
+                                <label>Confirmar contraseña</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Nueva Contraseña"></asp:TextBox>
@@ -117,6 +117,7 @@
                     </div>
                 </div>
                 <center>
+                    <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasenaCoincidente" Text="La contraseñas deben ser iguales"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasena" Text="La contraseña debe tener al menos una mayuscula, una minuscula, un numero y al menos 8 caracteres"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelError" Text="Ingrese todos los datos validos para realizar la gestion"></asp:Label>
                 </center>

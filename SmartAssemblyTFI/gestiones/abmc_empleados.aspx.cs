@@ -23,22 +23,6 @@ namespace SmartAssemblyTFI
             }
         }
 
-        private IEnumerable<Empleado> Empleados => _gestorEmpleado.Todos;
-
-        private DataTable ObtenerDatatableEmpleados(IEnumerable<Empleado> entrada)
-        {
-            using (DataTable datatable = new DataTable())
-            {
-                datatable.Columns.Add("Id", typeof(int));
-                datatable.Columns.Add("Nombre", typeof(string));
-                foreach (Empleado empleado in entrada)
-                {
-                    datatable.Rows.Add(empleado.Id, empleado.Nombre);
-                }
-                return datatable;
-            }
-        }
-
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             EmpleadosGrid.PageIndex = e.NewPageIndex;
@@ -76,22 +60,14 @@ namespace SmartAssemblyTFI
                 labelErrorContrasena.Visible = true;
                 return;
             }
+            if (TextBox6.Text == TextBox7.Text)
+            {
+                labelErrorContrasenaCoincidente.Visible = true;
+                return;
+            }
             _gestorEmpleado.Agregar(EmpleadoCargado);
             ActualizarGrid();
         }
-
-        public bool ValidacionTextboxs => FormHelper.ValidarTextoTextbox(TextBox1)
-                && FormHelper.ValidarTextoTextbox(TextBox2)
-                && FormHelper.ValidarNumeroTextbox(TextBox3)
-                && FormHelper.ValidarTextoTextbox(TextBox4)
-                && FormHelper.ValidarTextoTextbox(TextBox5);
-
-        public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextoTextbox(TextBox1)
-                && FormHelper.ValidarTextoTextbox(TextBox2)
-                && FormHelper.ValidarNumeroTextbox(TextBox3)
-                && FormHelper.ValidarTextoTextbox(TextBox4)
-                && FormHelper.ValidarTextoTextbox(TextBox5)
-                && FormHelper.ValidarTextoTextbox(TextBox7);
 
         protected void Button3_Click(object sender, EventArgs e)
         {
@@ -103,6 +79,11 @@ namespace SmartAssemblyTFI
             if (new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
             {
                 labelErrorContrasena.Visible = true;
+                return;
+            }
+            if (TextBox6.Text == TextBox7.Text)
+            {
+                labelErrorContrasenaCoincidente.Visible = true;
                 return;
             }
             _gestorEmpleado.Modificar(EmpleadoCargado);
@@ -132,5 +113,34 @@ namespace SmartAssemblyTFI
         {
             return _gestorEmpleado.Todos.ElementAt((EmpleadosGrid.PageIndex * EmpleadosGrid.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
         }
+
+        private IEnumerable<Empleado> Empleados => _gestorEmpleado.Todos;
+
+        private DataTable ObtenerDatatableEmpleados(IEnumerable<Empleado> entrada)
+        {
+            using (DataTable datatable = new DataTable())
+            {
+                datatable.Columns.Add("Id", typeof(int));
+                datatable.Columns.Add("Nombre", typeof(string));
+                foreach (Empleado empleado in entrada)
+                {
+                    datatable.Rows.Add(empleado.Id, empleado.Nombre);
+                }
+                return datatable;
+            }
+        }
+
+        public bool ValidacionTextboxs => FormHelper.ValidarTextoTextbox(TextBox1)
+                && FormHelper.ValidarTextoTextbox(TextBox2)
+                && FormHelper.ValidarNumeroTextbox(TextBox3)
+                && FormHelper.ValidarTextoTextbox(TextBox4)
+                && FormHelper.ValidarTextoTextbox(TextBox5);
+
+        public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextoTextbox(TextBox1)
+                && FormHelper.ValidarTextoTextbox(TextBox2)
+                && FormHelper.ValidarNumeroTextbox(TextBox3)
+                && FormHelper.ValidarTextoTextbox(TextBox4)
+                && FormHelper.ValidarTextoTextbox(TextBox5)
+                && FormHelper.ValidarTextoTextbox(TextBox7);
     }
 }

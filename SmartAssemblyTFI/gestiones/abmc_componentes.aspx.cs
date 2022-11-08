@@ -111,22 +111,6 @@ namespace SmartAssemblyTFI
             }
         }
 
-        private void LimpiarFiltro()
-        {
-            Socket.Visible = false;
-            TieneVideoIntegrado.Visible = false;
-            Canales.Visible = false;
-            AltaFrecuencia.Visible = false;
-            TipoMemoria.Visible = false;
-            NivelVideoIntegrado.Visible = false;
-            NivelFan.Visible = false;
-            FrecuenciaMaxima.Visible = false;
-            Capacidad.Visible = false;
-            TipoFormato.Visible = false;
-            TieneVideoIntegrado.Visible = false;
-            TamanoFan.Visible = false;
-        }
-
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             ComponentesGrid.PageIndex = e.NewPageIndex;
@@ -165,6 +149,21 @@ namespace SmartAssemblyTFI
         protected void Button5_Click(object sender, EventArgs e)
         {
             DetallarComponenteEnFormulario(GetComponenteDataGrid(sender));
+        }
+        private void LimpiarFiltro()
+        {
+            Socket.Visible = false;
+            TieneVideoIntegrado.Visible = false;
+            Canales.Visible = false;
+            AltaFrecuencia.Visible = false;
+            TipoMemoria.Visible = false;
+            NivelVideoIntegrado.Visible = false;
+            NivelFan.Visible = false;
+            FrecuenciaMaxima.Visible = false;
+            Capacidad.Visible = false;
+            TipoFormato.Visible = false;
+            TieneVideoIntegrado.Visible = false;
+            TamanoFan.Visible = false;
         }
 
         public bool ValidacionTextboxs => FormHelper.ValidarNumeroTextbox(idtxt)
