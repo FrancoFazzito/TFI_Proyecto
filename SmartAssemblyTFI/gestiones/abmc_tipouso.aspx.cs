@@ -71,12 +71,12 @@ namespace SmartAssemblyTFI
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (!ValidacionTextboxs)
+            if (!ValidacionTextboxsAgregar)
             {
                 labelError.Visible = true;
                 return;
             }
-            _gestorTipoUso.Agregar(TipoUsoCargado);
+            _gestorTipoUso.Agregar(TipoUsoCargadoAgregar);
             ActualizarGrid();
         }
 
@@ -110,9 +110,27 @@ namespace SmartAssemblyTFI
                 && FormHelper.ValidarNumeroTextbox(TextBox6)
                 && FormHelper.ValidarNumeroTextbox(TextBox7);
 
+        public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextoTextbox(TextBox1)
+                && FormHelper.ValidarNumeroTextbox(TextBox2)
+                && FormHelper.ValidarNumeroTextbox(TextBox4)
+                && FormHelper.ValidarNumeroTextbox(TextBox5)
+                && FormHelper.ValidarNumeroTextbox(TextBox6)
+                && FormHelper.ValidarNumeroTextbox(TextBox7);
+
         private TipoUso TipoUsoCargado => new TipoUso()
         {
             Id = int.Parse(TextBox3.Text),
+            Nombre = TextBox1.Text,
+            Cpu = int.Parse(TextBox2.Text),
+            Gpu = int.Parse(TextBox4.Text),
+            Ram = int.Parse(TextBox5.Text),
+            Hdd = int.Parse(TextBox6.Text),
+            Ssd = int.Parse(TextBox7.Text)
+        };
+
+        private TipoUso TipoUsoCargadoAgregar => new TipoUso()
+        {
+            Id = 0,
             Nombre = TextBox1.Text,
             Cpu = int.Parse(TextBox2.Text),
             Gpu = int.Parse(TextBox4.Text),

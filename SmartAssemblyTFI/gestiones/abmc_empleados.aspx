@@ -39,7 +39,7 @@
                                 <label>ID del empleado</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del empleado"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del empleado" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 <label>Correo electronico</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Correo electronico"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" TextMode="Email" placeholder="Correo electronico"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -106,7 +106,6 @@
                         </div>
                         <br>
                         <div class="row">
-
                             <div class="col-6">
                                 <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Agregar" OnClick="Button2_Click" />
                             </div>
@@ -120,6 +119,7 @@
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasenaCoincidente" Text="La contraseñas deben ser iguales"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasena" Text="La contraseña debe tener al menos una mayuscula, una minuscula, un numero y al menos 8 caracteres"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelError" Text="Ingrese todos los datos validos para realizar la gestion"></asp:Label>
+                    <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorEliminacion" Text="No puedes eliminar este usuario"></asp:Label>
                 </center>
                 <a href="../home_admin.aspx"><< Atras</a><br>
                 <br>

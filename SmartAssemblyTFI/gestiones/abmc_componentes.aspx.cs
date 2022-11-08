@@ -126,7 +126,7 @@ namespace SmartAssemblyTFI
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (!ValidacionTextboxs)
+            if (!ValidacionTextboxsAgregar)
             {
                 labelError.Visible = true;
                 return;
@@ -168,6 +168,20 @@ namespace SmartAssemblyTFI
 
         public bool ValidacionTextboxs => FormHelper.ValidarNumeroTextbox(idtxt)
                     && FormHelper.ValidarNumeroTextbox(canalestxt)
+                    && FormHelper.ValidarNumeroTextbox(capacidadtxt)
+                    && FormHelper.ValidarNumeroTextbox(consumotxt)
+                    && FormHelper.ValidarNumeroTextbox(frecuenciaMaximatxt)
+                    && FormHelper.ValidarNumeroTextbox(nivelFantxt)
+                    && FormHelper.ValidarNumeroTextbox(nivelVideoIntregadotxt)
+                    && FormHelper.ValidarNumeroTextbox(perfomancetxt)
+                    && FormHelper.ValidarNumeroTextbox(stocktxt)
+                    && FormHelper.ValidarNumeroTextbox(limiteStocktxt)
+                    && FormHelper.ValidarNumeroTextbox(tamanoFantxt)
+                    && FormHelper.ValidarNumeroTextbox(preciotxt)
+                    && FormHelper.ValidarTextoTextbox(nombretxt)
+                    && FormHelper.ValidarTextoTextbox(sockettxt);
+
+        public bool ValidacionTextboxsAgregar => FormHelper.ValidarNumeroTextbox(canalestxt)
                     && FormHelper.ValidarNumeroTextbox(capacidadtxt)
                     && FormHelper.ValidarNumeroTextbox(consumotxt)
                     && FormHelper.ValidarNumeroTextbox(frecuenciaMaximatxt)

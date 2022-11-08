@@ -55,8 +55,9 @@
                                     <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Ingresar" OnClick="Button1_Click" />
                                 </div>
                                 <div class="form-group">
-                                    <a href="usersignup.aspx">
-                                        <input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse" href="clientesignup.aspx" /></a>
+                                    <a href="cliente_signup.aspx">
+                                        <input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse"/>
+                                    </a>
                                 </div>
                             </div>
                         </div>

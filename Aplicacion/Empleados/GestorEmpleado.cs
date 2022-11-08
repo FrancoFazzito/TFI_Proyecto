@@ -18,7 +18,12 @@ namespace Aplicacion
 
         public void Modificar(Empleado empleado, string nuevaContrasena = null)
         {
-            new RepositorioEmpleadoModificacion().Modificar(GetEmpleadoHasheadoModificado(empleado, nuevaContrasena));
+            if (nuevaContrasena != null)
+            {
+                new RepositorioEmpleadoModificacion().ModificarConContrasena(GetEmpleadoHasheadoModificado(empleado, nuevaContrasena));
+                return;
+            }
+            new RepositorioEmpleadoModificacion().Modificar(empleado);
         }
 
         public IEnumerable<Empleado> Todos => new RepositorioEmpleadoSoloLectura().Todos;
@@ -31,10 +36,6 @@ namespace Aplicacion
 
         private Empleado GetEmpleadoHasheadoModificado(Empleado empleado, string nuevaContrasena = null)
         {
-            if (nuevaContrasena == null)
-            {
-                return empleado;
-            }
             empleado.Contrasena = new GestorContrasena().Hashear(nuevaContrasena);
             return empleado;
         }

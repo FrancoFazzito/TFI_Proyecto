@@ -5,7 +5,7 @@ using System.Web.UI;
 
 namespace SmartAssemblyTFI
 {
-    public partial class Formulario_web12 : System.Web.UI.Page
+    public partial class Formulario_web12 : Page
     {
         private readonly GestorCliente _gestorCliente = new GestorCliente();
 
@@ -44,12 +44,14 @@ namespace SmartAssemblyTFI
                 labelErrorContrasenaCoincidente.Visible = true;
                 return;
             }
-            if (new GestorContrasena().ValidarRequerimientos(cliente.Contrasena))
+            if (!new GestorContrasena().ValidarRequerimientos(cliente.Contrasena))
             {
                 labelErrorContrasena.Visible = true;
                 return;
             }
             _gestorCliente.Agregar(cliente);
+            new Login().IngresarCliente(cliente.Correo, TextBox8.Text);
+            Response.Redirect("../home_page.aspx");
         }
 
         private bool TextboxsValidos => FormHelper.ValidarTextoTextbox(TextBox1)

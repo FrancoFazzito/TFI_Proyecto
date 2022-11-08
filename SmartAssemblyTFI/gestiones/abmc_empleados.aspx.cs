@@ -32,7 +32,13 @@ namespace SmartAssemblyTFI
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
-            _gestorEmpleado.Eliminar(GetEmpleadoDataGrid(sender).Id);
+            int id = GetEmpleadoDataGrid(sender).Id;
+            if (id == SesionEmpleado.Logueado.Id || new GestorEmpleado().Todos.Count() == 1)
+            {
+                labelErrorEliminacion.Visible = true;
+                return;
+            }
+            _gestorEmpleado.Eliminar(id);
             ActualizarGrid();
         }
 
@@ -55,17 +61,17 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
-            if (new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
+            if (!new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
             {
                 labelErrorContrasena.Visible = true;
                 return;
             }
-            if (TextBox6.Text == TextBox7.Text)
+            if (TextBox6.Text != TextBox7.Text)
             {
                 labelErrorContrasenaCoincidente.Visible = true;
                 return;
             }
-            _gestorEmpleado.Agregar(EmpleadoCargado);
+            _gestorEmpleado.Agregar(EmpleadoCargadoAgregar);
             ActualizarGrid();
         }
 
@@ -76,17 +82,23 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
-            if (new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
+            if (TextBox7.Text == "")
+            {
+                _gestorEmpleado.Modificar(EmpleadoCargado);
+                ActualizarGrid();
+                return;
+            }
+            if (!new GestorContrasena().ValidarRequerimientos(TextBox7.Text))
             {
                 labelErrorContrasena.Visible = true;
                 return;
             }
-            if (TextBox6.Text == TextBox7.Text)
+            if (TextBox6.Text != TextBox7.Text)
             {
                 labelErrorContrasenaCoincidente.Visible = true;
                 return;
             }
-            _gestorEmpleado.Modificar(EmpleadoCargado);
+            _gestorEmpleado.Modificar(EmpleadoCargado, TextBox7.Text);
             ActualizarGrid();
         }
 
@@ -98,6 +110,16 @@ namespace SmartAssemblyTFI
             TextBox4.Text = empleado.Nombre;
             TextBox5.Text = empleado.Apellido;
         }
+
+        private Empleado EmpleadoCargadoAgregar => new Empleado()
+        {
+            Id = 0,
+            Apellido = TextBox5.Text,
+            Contrasena = TextBox7.Text,
+            Correo = TextBox2.Text,
+            Nombre = TextBox4.Text,
+            NombreUsuario = TextBox1.Text
+        };
 
         private Empleado EmpleadoCargado => new Empleado()
         {
@@ -138,7 +160,6 @@ namespace SmartAssemblyTFI
 
         public bool ValidacionTextboxsAgregar => FormHelper.ValidarTextoTextbox(TextBox1)
                 && FormHelper.ValidarTextoTextbox(TextBox2)
-                && FormHelper.ValidarNumeroTextbox(TextBox3)
                 && FormHelper.ValidarTextoTextbox(TextBox4)
                 && FormHelper.ValidarTextoTextbox(TextBox5)
                 && FormHelper.ValidarTextoTextbox(TextBox7);

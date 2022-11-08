@@ -11,7 +11,7 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (FormHelper.ValidarTextoTextbox(TextBox1) || FormHelper.ValidarTextoTextbox(TextBox2))
+            if (!FormHelper.ValidarTextoTextbox(TextBox1) || !FormHelper.ValidarTextoTextbox(TextBox2))
             {
                 labelError.Visible = true;
                 return;

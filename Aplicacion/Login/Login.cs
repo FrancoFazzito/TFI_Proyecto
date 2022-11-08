@@ -19,15 +19,23 @@ namespace Aplicacion
         public bool IngresarCliente(string correo, string contrasena)
         {
             Dominio.Cliente cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo == correo);
+            if (cliente == null || !_gestorContrasena.Verificar(cliente.Contrasena, contrasena))
+            {
+                return false;
+            }
             SesionCliente.Ingresar(cliente);
-            return cliente != null && _gestorContrasena.Verificar(cliente.Contrasena, contrasena);
+            return true;
         }
 
         public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
             Dominio.Empleado empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario == nombreUsuario);
+            if (empleado == null || !_gestorContrasena.Verificar(empleado.Contrasena, contrasena))
+            {
+                return false;
+            }
             SesionEmpleado.Ingresar(empleado);
-            return empleado != null && _gestorContrasena.Verificar(empleado.Contrasena, contrasena);
+            return true;
         }
 
         public void SalirEmpleado()

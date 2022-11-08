@@ -39,7 +39,7 @@
                                 <label>ID del componente</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="idtxt" runat="server" placeholder="ID"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="idtxt" runat="server" placeholder="ID" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
