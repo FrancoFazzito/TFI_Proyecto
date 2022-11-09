@@ -57,7 +57,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4>Detalle de computadora pedida</h4>
+                                    <h4>Detalle de la computadora pedida</h4>
                                 </center>
                             </div>
                         </div>

@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h3>Ingreso usuario</h3>
+                                    <h3>Ingreso cliente</h3>
                                 </center>
                             </div>
                         </div>
