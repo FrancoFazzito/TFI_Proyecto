@@ -20,10 +20,7 @@ namespace Aplicacion
             return cliente;
         }
 
-        private Cliente GetClienteHasheadoModificado(Cliente cliente, string nuevaContrasena)
-        {
-            return nuevaContrasena == null ? cliente : ObtenerClienteContrasenaModificada(cliente, nuevaContrasena);
-        }
+        private Cliente GetClienteHasheadoModificado(Cliente cliente, string nuevaContrasena) => nuevaContrasena == null ? cliente : ObtenerClienteContrasenaModificada(cliente, nuevaContrasena);
 
         private static Cliente ObtenerClienteContrasenaModificada(Cliente cliente, string nuevaContrasena)
         {
