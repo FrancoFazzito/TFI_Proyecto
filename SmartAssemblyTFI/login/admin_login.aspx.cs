@@ -17,15 +17,15 @@ namespace SmartAssemblyTFI
                 return;
             }
 
-            string nombre = FormHelper.ObtenerValorText(TextBox1);
-            string contrasena = FormHelper.ObtenerValorText(TextBox2);
-            bool esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
+            var nombre = FormHelper.ObtenerValorText(TextBox1);
+            var contrasena = FormHelper.ObtenerValorText(TextBox2);
+            var esExitoso = new Login().IngresarEmpleado(nombre, contrasena);
             if (!esExitoso)
             {
                 labelError.Visible = true;
                 return;
             }
-
+            SesionCliente.Salir();
             Session["empleadoLogueado"] = SesionEmpleado.Logueado;
             Response.Redirect("../home_admin.aspx");
         }

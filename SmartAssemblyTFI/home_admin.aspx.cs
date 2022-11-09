@@ -10,17 +10,14 @@ namespace SmartAssemblyTFI
     {
         private readonly GestorReporting _gestorReporting = new GestorReporting();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            FormHelper.ChequearAdminLogueado(this);
-        }
+        protected void Page_Load(object sender, EventArgs e) => FormHelper.ChequearAdminLogueado(this);
 
         public string LineData
         {
             get
             {
-                string data = "[";
-                foreach (KeyValuePair<string, decimal> valorMes in _gestorReporting.ObtenerValorPedidosDoceMeses)
+                var data = "[";
+                foreach (var valorMes in _gestorReporting.ObtenerValorPedidosDoceMeses)
                 {
                     data += $"[{valorMes.Key},{valorMes.Value}], ";
                 }
@@ -38,9 +35,6 @@ namespace SmartAssemblyTFI
 
         public Dictionary<string, string> Componentes => _gestorReporting.ComponentesMasVendidos;
 
-        private static string NumeroDeMesANombre(KeyValuePair<string, decimal> x)
-        {
-            return new CultureInfo("es-ES", false).DateTimeFormat.GetMonthName(int.Parse(x.Key));
-        }
+        private static string NumeroDeMesANombre(KeyValuePair<string, decimal> x) => new CultureInfo("es-ES", false).DateTimeFormat.GetMonthName(int.Parse(x.Key));
     }
 }

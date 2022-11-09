@@ -6,20 +6,11 @@ namespace Aplicacion
 {
     public class GestorComponente
     {
-        public void Agregar(Componente componente)
-        {
-            new RepositorioComponenteAlta().Agregar(componente);
-        }
+        public void Agregar(Componente componente) => new RepositorioComponenteAlta().Agregar(componente);
 
-        public void Eliminar(int id)
-        {
-            new RepositorioComponenteBaja().Eliminar(id);
-        }
+        public void Eliminar(int id) => new RepositorioComponenteBaja().Eliminar(id);
 
-        public void Modificar(Componente componente)
-        {
-            new RepositorioComponenteModificacion().Modificar(componente);
-        }
+        public void Modificar(Componente componente) => new RepositorioComponenteModificacion().Modificar(componente);
 
         public IEnumerable<Componente> Todos => new RepositorioComponenteSoloLectura().ObtenerTodos;
     }

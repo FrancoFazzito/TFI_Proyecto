@@ -11,9 +11,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaBajaPrecio()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Gaming juegos competitivos", "precio", 150000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Gaming juegos competitivos", "precio", 150000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
@@ -23,9 +23,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaBajaCalidad()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Gaming juegos competitivos", "calidad", 150000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Gaming juegos competitivos", "calidad", 150000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
@@ -35,9 +35,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaMediaPrecio()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Arquitectura", "precio", 350000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Arquitectura", "precio", 350000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
@@ -47,9 +47,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaMediaCalidad()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Arquitectura", "calidad", 350000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Arquitectura", "calidad", 350000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
@@ -59,9 +59,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaAltaPrecio()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Arquitectura", "precio", 450000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Arquitectura", "precio", 450000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);
@@ -71,9 +71,9 @@ namespace UnitTests
         [TestMethod]
         public void ArmarComputadoraGamaAltaCalidad()
         {
-            RequerimientoArmado requerimiento = new RequerimientoArmado("Edicion de video", "calidad", 450000);
-            DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-            Computadora computadora = director.Computadora;
+            var requerimiento = new RequerimientoArmado("Edicion de video", "calidad", 450000);
+            var director = new DirectorArmadorComputadora(requerimiento);
+            var computadora = director.Computadora;
 
             Assert.IsNotNull(computadora);
             Assert.IsTrue(computadora.Componentes.Count() > 6);

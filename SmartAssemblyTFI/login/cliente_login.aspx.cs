@@ -17,9 +17,9 @@ namespace SmartAssemblyTFI
                 return;
             }
 
-            string correo = FormHelper.ObtenerValorText(TextBox1);
-            string contrasena = FormHelper.ObtenerValorText(TextBox2);
-            bool esExistoso = new Login().IngresarCliente(correo, contrasena);
+            var correo = FormHelper.ObtenerValorText(TextBox1);
+            var contrasena = FormHelper.ObtenerValorText(TextBox2);
+            var esExistoso = new Login().IngresarCliente(correo, contrasena);
             if (!esExistoso)
             {
                 labelError.Visible = true;
@@ -31,7 +31,7 @@ namespace SmartAssemblyTFI
             {
                 Response.Redirect("../venta/crear_pedido.aspx");
             }
-
+            SesionEmpleado.Salir();
             Response.Redirect("../home_page.aspx");
         }
     }

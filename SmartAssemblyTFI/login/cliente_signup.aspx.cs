@@ -13,7 +13,7 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                GestorDomicilio domicilio = new GestorDomicilio();
+                var domicilio = new GestorDomicilio();
                 DropDownList1.DataSource = domicilio.Provincias;
                 DropDownList1.DataBind();
                 DropDownList3.DataSource = domicilio.Barrios;
@@ -28,7 +28,7 @@ namespace SmartAssemblyTFI
                 labelError.Visible = true;
                 return;
             }
-            Cliente cliente = new Cliente()
+            var cliente = new Cliente()
             {
                 Nombre = TextBox1.Text,
                 Apellido = TextBox2.Text,

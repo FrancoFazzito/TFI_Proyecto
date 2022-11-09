@@ -32,11 +32,11 @@ namespace SmartAssemblyTFI
 
         private DataTable ObtenerDatatableTiposUso(IEnumerable<TipoUso> entrada)
         {
-            using (DataTable datatable = new DataTable())
+            using (var datatable = new DataTable())
             {
                 datatable.Columns.Add("Id", typeof(int));
                 datatable.Columns.Add("Nombre", typeof(string));
-                foreach (TipoUso tipoUso in entrada)
+                foreach (var tipoUso in entrada)
                 {
                     datatable.Rows.Add(tipoUso.Id, tipoUso.Nombre);
                 }
@@ -139,9 +139,6 @@ namespace SmartAssemblyTFI
             Ssd = int.Parse(TextBox7.Text)
         };
 
-        private TipoUso GetTiposUsoDataGrid(object sender)
-        {
-            return _gestorTipoUso.Todos.ElementAt((GridView1.PageIndex * GridView1.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
-        }
+        private TipoUso GetTiposUsoDataGrid(object sender) => _gestorTipoUso.Todos.ElementAt((GridView1.PageIndex * GridView1.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
     }
 }

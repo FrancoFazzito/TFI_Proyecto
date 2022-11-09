@@ -61,9 +61,6 @@ namespace SmartAssemblyTFI
             LinkButton2.Visible = true;
         }
 
-        protected void LinkButton4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect(Page.AppRelativeVirtualPath.Contains("home") ? "consulta/mis_pedidos.aspx" : "../consulta/mis_pedidos.aspx");
-        }
+        protected void LinkButton4_Click(object sender, EventArgs e) => Response.Redirect(Page.AppRelativeVirtualPath.Contains("home") ? "consulta/mis_pedidos.aspx" : "../consulta/mis_pedidos.aspx");
     }
 }

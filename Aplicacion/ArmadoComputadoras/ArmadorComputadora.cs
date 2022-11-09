@@ -58,7 +58,7 @@ namespace Aplicacion
         {
             if (_cpu.NivelFanIntegrado < _tipoUso.Fan)
             {
-                ICompatibilidad compatibilidadFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.FanCpu);
+                var compatibilidadFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.FanCpu);
                 _fan = _componentes.Where(c => c.Tipo == "FAN")
                                    .Where(c => c.EsCompatible(compatibilidadFan, _cpu))
                                    .FirstOrDefault(c => c.Perfomance >= _tipoUso.Fan);
@@ -69,7 +69,7 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarGpu()
         {
-            ICompatibilidad compatibleVideoIntegrado = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.VideoIntegrado);
+            var compatibleVideoIntegrado = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.VideoIntegrado);
             if (_cpu.NivelVideoIntegrado >= _tipoUso.Gpu && _cpu.EsCompatible(compatibleVideoIntegrado, _mother))
             {
                 return this;
@@ -96,7 +96,7 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarMother()
         {
-            ICompatibilidad compatibilidadMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.MotherCpu);
+            var compatibilidadMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.MotherCpu);
             _mother = _componentes.Where(c => c.Tipo == "MOTHER")
                                   .Where(c => c.EsCompatible(compatibilidadMother, _cpu))
                                   .FirstOrDefault(c => c.Perfomance >= _tipoUso.Mother);
@@ -114,9 +114,9 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarRam()
         {
-            ICompatibilidad compatibilidadRamCpu = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamCpu);
-            ICompatibilidad compatibilidadRamMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamMother);
-            int cantidadRams = Math.Min(_cpu.Canales, _mother.Canales);
+            var compatibilidadRamCpu = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamCpu);
+            var compatibilidadRamMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.RamMother);
+            var cantidadRams = Math.Min(_cpu.Canales, _mother.Canales);
             _ram = _componentes.Where(c => c.Tipo == "RAM")
                                .Where(c => c.EsCompatible(compatibilidadRamCpu, _cpu))
                                .Where(c => c.EsCompatible(compatibilidadRamMother, _mother))
@@ -140,8 +140,8 @@ namespace Aplicacion
 
         public ArmadorComputadora AgregarTower()
         {
-            ICompatibilidad compatibleTowerMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerMother);
-            ICompatibilidad compatibleTowerFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerFan);
+            var compatibleTowerMother = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerMother);
+            var compatibleTowerFan = _factoryCompatibilidad.GetCompatibilidadPorNombre(Compatibilidades.TowerFan);
             _tower = _componentes.Where(c => c.Tipo == "TOWER")
                                  .Where(c => c.EsCompatible(compatibleTowerFan, _fan))
                                  .FirstOrDefault(c => c.EsCompatible(compatibleTowerMother, _mother));
@@ -158,24 +158,12 @@ namespace Aplicacion
             _computadora.Add(componente, cantidad);
         }
 
-        private bool EsAgregadoInvalido(Componente componente, int cantidad)
-        {
-            return componente == null || EsPresupuestoInvalido(componente) || EsStockInvalido(componente, cantidad);
-        }
+        private bool EsAgregadoInvalido(Componente componente, int cantidad) => componente == null || EsPresupuestoInvalido(componente) || EsStockInvalido(componente, cantidad);
 
-        private bool EsPresupuestoInvalido(Componente componente)
-        {
-            return (_computadora.Precio + componente.Precio + _costoArmado) >= _precio;
-        }
+        private bool EsPresupuestoInvalido(Componente componente) => (_computadora.Precio + componente.Precio + _costoArmado) >= _precio;
 
-        private bool EsStockInvalido(Componente componente, int cantidad)
-        {
-            return componente.Stock < cantidad;
-        }
+        private bool EsStockInvalido(Componente componente, int cantidad) => componente.Stock < cantidad;
 
-        public Computadora ArmarComputadora()
-        {
-            return _computadora;
-        }
+        public Computadora ArmarComputadora() => _computadora;
     }
 }

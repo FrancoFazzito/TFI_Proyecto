@@ -22,9 +22,9 @@ namespace SmartAssemblyTFI
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            int index = FormHelper.ObtenerRowIndexGrid(sender);
-            Dominio.Computadora computadora = _gestorPedido.TodosClienteLogueado.ElementAt(index).Computadora;
-            IEnumerable<Dominio.Componente> enumerable = computadora.Componentes.Where(c => c.Tipo == "RAM");
+            var index = FormHelper.ObtenerRowIndexGrid(sender);
+            var computadora = _gestorPedido.TodosClienteLogueado.ElementAt(index).Computadora;
+            var enumerable = computadora.Componentes.Where(c => c.Tipo == "RAM");
             GridViewComputadoraSeleccionada.DataSource = new List<string>
             {
                 $"CPU: {computadora["CPU"].Nombre}",

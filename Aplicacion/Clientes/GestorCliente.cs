@@ -6,20 +6,11 @@ namespace Aplicacion
 {
     public class GestorCliente
     {
-        public void Agregar(Cliente cliente)
-        {
-            new RepositorioClienteAlta().Agregar(GetClienteHasheado(cliente));
-        }
+        public void Agregar(Cliente cliente) => new RepositorioClienteAlta().Agregar(GetClienteHasheado(cliente));
 
-        public void Eliminar(int id)
-        {
-            new RepositorioClienteBaja().Eliminar(id);
-        }
+        public void Eliminar(int id) => new RepositorioClienteBaja().Eliminar(id);
 
-        public void Modificar(Cliente cliente, string nuevaContrasena = null)
-        {
-            new RepositorioClienteModificacion().Modificar(GetClienteHasheadoModificado(cliente, nuevaContrasena));
-        }
+        public void Modificar(Cliente cliente, string nuevaContrasena = null) => new RepositorioClienteModificacion().Modificar(GetClienteHasheadoModificado(cliente, nuevaContrasena));
 
         public IEnumerable<Cliente> Todos => new RepositorioClienteSoloLectura().Todos;
 
@@ -31,10 +22,11 @@ namespace Aplicacion
 
         private Cliente GetClienteHasheadoModificado(Cliente cliente, string nuevaContrasena)
         {
-            if (nuevaContrasena == null)
-            {
-                return cliente;
-            }
+            return nuevaContrasena == null ? cliente : ObtenerClienteContrasenaModificada(cliente, nuevaContrasena);
+        }
+
+        private static Cliente ObtenerClienteContrasenaModificada(Cliente cliente, string nuevaContrasena)
+        {
             cliente.Contrasena = new GestorContrasena().Hashear(nuevaContrasena);
             return cliente;
         }

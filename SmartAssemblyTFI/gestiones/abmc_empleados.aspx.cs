@@ -32,7 +32,7 @@ namespace SmartAssemblyTFI
 
         protected void BajaButton_Click(object sender, EventArgs e)
         {
-            int id = GetEmpleadoDataGrid(sender).Id;
+            var id = GetEmpleadoDataGrid(sender).Id;
             if (id == SesionEmpleado.Logueado.Id || new GestorEmpleado().Todos.Count() == 1)
             {
                 labelErrorEliminacion.Visible = true;
@@ -131,20 +131,17 @@ namespace SmartAssemblyTFI
             NombreUsuario = TextBox1.Text
         };
 
-        private Empleado GetEmpleadoDataGrid(object sender)
-        {
-            return _gestorEmpleado.Todos.ElementAt((EmpleadosGrid.PageIndex * EmpleadosGrid.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
-        }
+        private Empleado GetEmpleadoDataGrid(object sender) => _gestorEmpleado.Todos.ElementAt((EmpleadosGrid.PageIndex * EmpleadosGrid.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
 
         private IEnumerable<Empleado> Empleados => _gestorEmpleado.Todos;
 
         private DataTable ObtenerDatatableEmpleados(IEnumerable<Empleado> entrada)
         {
-            using (DataTable datatable = new DataTable())
+            using (var datatable = new DataTable())
             {
                 datatable.Columns.Add("Id", typeof(int));
                 datatable.Columns.Add("Nombre", typeof(string));
-                foreach (Empleado empleado in entrada)
+                foreach (var empleado in entrada)
                 {
                     datatable.Rows.Add(empleado.Id, empleado.Nombre);
                 }

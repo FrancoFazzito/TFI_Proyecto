@@ -25,9 +25,6 @@ namespace Repositorio
                                                                     "@ConsumoEnWatts," +
                                                                     "@StockLimite)";
 
-        public int Agregar(Componente componente)
-        {
-            return Db.Conexion.Execute(command, new ParametrosComponente().Obtener(componente));
-        }
+        public int Agregar(Componente componente) => Db.Conexion.Execute(command, new ParametrosComponente().Obtener(componente));
     }
 }

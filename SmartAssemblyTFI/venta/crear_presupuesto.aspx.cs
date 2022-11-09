@@ -28,12 +28,12 @@ namespace SmartAssemblyTFI
                 {
                     labelErrorValidacion.Visible = true;
                 }
-                string tipoUso = DropDownList2.SelectedValue;
-                string importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
-                decimal precio = decimal.Parse(FormHelper.ObtenerValorText(TextBox1));
-                RequerimientoArmado requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
-                DirectorArmadorComputadora director = new DirectorArmadorComputadora(requerimiento);
-                Computadora computadoraArmada = director.Computadora;
+                var tipoUso = DropDownList2.SelectedValue;
+                var importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
+                var precio = decimal.Parse(FormHelper.ObtenerValorText(TextBox1));
+                var requerimiento = new RequerimientoArmado(tipoUso, importancia, precio);
+                var director = new DirectorArmadorComputadora(requerimiento);
+                var computadoraArmada = director.Computadora;
                 Session["computadoraArmada"] = computadoraArmada;
                 Response.Redirect("crear_pedido.aspx");
             }

@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <%--icono--%>
-    <link runat="server" rel="icon" href="../imgs/icono.ico" type="image/ico"/>
+    <link runat="server" rel="icon" href="../imgs/icono.ico" type="image/ico" />
     <%--jquery--%>
     <script src="../bootstrap/js/jquery-3.3.1.slim.min.js"></script>
     <%--popper js--%>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="form-group">
                                     <a href="cliente_signup.aspx">
-                                        <input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse"/>
+                                        <input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse" />
                                     </a>
                                 </div>
                             </div>
