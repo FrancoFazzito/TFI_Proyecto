@@ -50,7 +50,7 @@
                     <center>
                         <img class="homeCard" src="imgs/sign-up.png" alt="imgs/pc.png" />
                         <h4>Registrate</h4>
-                        <p class="text-justify">Registrate o logueate para acceder a nuestros servicios</p>
+                        <p class="text-justify">Registrate o ingresa para acceder a nuestros servicios</p>
                     </center>
                 </div>
                 <div class="col-md-4">
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-12">
                     <center>
-                        <h2>Aca te mostramos algunas PCs que armamos</h2>
+                        <h2>Aca te mostramos algunas de las PCs que armamos</h2>
                         <br />
                     </center>
                 </div>
