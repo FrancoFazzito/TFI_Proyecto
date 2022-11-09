@@ -36,7 +36,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging" PageSize="6">
                                     <Columns>
                                         <asp:TemplateField>
                                             <ItemTemplate>
