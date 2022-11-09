@@ -11,7 +11,7 @@ namespace Repositorio
             parameters.Add("@id", cliente.Id);
             parameters.Add("@Nombre", cliente.Nombre);
             parameters.Add("@apellido", cliente.Apellido);
-            parameters.Add("@fechaNacimiento", cliente.FechaNacimiento);
+            parameters.Add("@fechaNacimiento", cliente.FechaNacimiento.Date);
             parameters.Add("@telefono", cliente.Telefono);
             parameters.Add("@correo", cliente.Correo);
             parameters.Add("@provincia", cliente.Provincia);
