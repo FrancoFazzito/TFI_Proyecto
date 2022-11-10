@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-12">
                     <center>
-                        <h1 class="tituloHome">Armamos tu PC al mejor precio</h1>
+                        <h1 class="tituloHome">Armamos tu PC al mejor precio 💻​</h1>
                     </center>
                 </div>
             </div>
@@ -40,31 +40,42 @@
             <div class="row">
                 <div class="col-12">
                     <center>
-                        <h2>Nuestro proceso de armado</h2>
-                        <p><b>Contamos con un excelente proceso de 3 pasos</b></p>
+                        <h1>Tu PC ideal en 3 simples pasos</h1>
                     </center>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/sign-up.png" alt="imgs/pc.png" />
-                        <h4>Registrate</h4>
-                        <p class="text-justify">Registrate o ingresa para acceder a nuestros servicios</p>
+                        <div class="card border-0">
+                            <center>
+                                <img class="homeCard" src="imgs/sign-up.png" alt="imgs/pc.png" />
+                            </center>
+                            <h4>Registrate</h4>
+                            <p class="text-justify">Registrate o ingresa para acceder a nuestros servicios</p>
+                        </div>
                     </center>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/search-online.png" alt="imgs/pc.png" />
-                        <h4>Armamos tu computadora</h4>
-                        <p class="text-justify">Nos indicas cuanto queres gastar y para que queres usar tu PC, despues nosotros hacemos todo el trabajo (?</p>
+                        <div class="card border-0">
+                            <center>
+                                <img class="homeCard" src="imgs/search-online.png" alt="imgs/pc.png" />
+                            </center>
+                            <h4>Armamos tu computadora</h4>
+                            <p class="text-justify">Nos indicas cuanto queres gastar y para que queres usar tu PC, despues nosotros hacemos todo el trabajo 😉​</p>
+                        </div>
                     </center>
                 </div>
                 <div class="col-md-4">
                     <center>
-                        <img class="homeCard" src="imgs/pc.png" alt="imgs/pc1.png" />
-                        <h4>¡Tu computadora ya esta lista!</h4>
-                        <p class="text-justify">Te ofrecemos la mejor computadora para vos y podes realizar el pedido dentro de la misma pagina</p>
+                        <div class="card border-0">
+                            <center>
+                                <img class="homeCard" src="imgs/pc.png" alt="imgs/pc1.png" />
+                            </center>
+                            <h4>¡Tu computadora ya esta lista!</h4>
+                            <p class="text-justify">Te ofrecemos la mejor computadora para vos y podes realizar el pedido dentro de la misma pagina</p>
+                        </div>
                     </center>
                 </div>
             </div>
