@@ -12,11 +12,8 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList2.DataSource = new GestorTipoUso().Todos.Select(t => t.Nombre);
-                DropDownList2.DataBind();
-
-                DropDownList3.DataSource = new GestorImportancias().Todos;
-                DropDownList3.DataBind();
+                FormHelper.RellenarDropDownList(DropDownList2, new GestorTipoUso().Todos.Select(t => t.Nombre));
+                FormHelper.RellenarDropDownList(DropDownList3, new GestorImportancias().Todos);
             }
         }
 

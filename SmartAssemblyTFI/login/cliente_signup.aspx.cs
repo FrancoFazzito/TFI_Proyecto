@@ -15,8 +15,7 @@ namespace SmartAssemblyTFI
         {
             if (!Page.IsPostBack)
             {
-                DropDownList1.DataSource = _gestorDomicilio.Provincias.Select(x => x.Nombre);
-                DropDownList1.DataBind();
+                FormHelper.RellenarDropDownList(DropDownList1, _gestorDomicilio.Provincias.Select(x => x.Nombre));
                 DropDownList1_SelectedIndexChanged(null, null);
             }
         }
@@ -54,11 +53,7 @@ namespace SmartAssemblyTFI
             Response.Redirect("../home_page.aspx");
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DropDownList3.DataSource = _gestorDomicilio.Provincias.First(x => x.Nombre == DropDownList1.SelectedValue).Barrios.Select(x => x.Nombre);
-            DropDownList3.DataBind();
-        }
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e) => FormHelper.RellenarDropDownList(DropDownList1, _gestorDomicilio.Provincias.First(x => x.Nombre == DropDownList1.SelectedValue).Barrios.Select(x => x.Nombre));
 
         private bool TextboxsValidos => FormHelper.ValidarTextoTextbox(TextBox1)
                                         && FormHelper.ValidarTextoTextbox(TextBox2)
