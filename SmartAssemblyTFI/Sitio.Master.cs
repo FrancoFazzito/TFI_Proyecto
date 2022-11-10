@@ -39,13 +39,14 @@ namespace SmartAssemblyTFI
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
+            var login = new Login();
             if (SesionCliente.Logueado != null)
             {
-                new Login().SalirCliente();
+                login.SalirCliente();
             }
             if (SesionEmpleado.Logueado != null)
             {
-                new Login().SalirEmpleado();
+                login.SalirEmpleado();
             }
             IntercambiarBotonesUsuarioDeslogueado();
             Session.Clear();

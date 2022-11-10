@@ -26,12 +26,11 @@ namespace SmartAssemblyTFI
                 return;
             }
             Session["clienteLogueado"] = SesionCliente.Logueado;
-
+            SesionEmpleado.Salir();
             if (Session["vieneDeCrearPedido"] != null && (bool)Session["vieneDeCrearPedido"])
             {
                 Response.Redirect("../venta/crear_pedido.aspx");
             }
-            SesionEmpleado.Salir();
             Response.Redirect("../home_page.aspx");
         }
     }
