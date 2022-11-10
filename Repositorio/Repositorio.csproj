@@ -62,7 +62,6 @@
     <Compile Include="Repositorios\Componentes\RepositorioComponenteSoloLectura.cs" />
     <Compile Include="Repositorios\Clientes\RepositorioClienteSoloLectura.cs" />
     <Compile Include="Repositorios\Empleados\ParametrosEmplado.cs" />
-    <Compile Include="Repositorios\Domicilio\RepositorioBarrioSoloLectura.cs" />
     <Compile Include="Repositorios\Empleados\RepositorioEmpleadoAlta.cs" />
     <Compile Include="Repositorios\Empleados\RepositorioEmpleadoBaja.cs" />
     <Compile Include="Repositorios\Empleados\RepositorioEmpleadoModificacion.cs" />

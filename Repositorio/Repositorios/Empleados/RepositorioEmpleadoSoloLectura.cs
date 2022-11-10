@@ -6,6 +6,8 @@ namespace Repositorio
 {
     public class RepositorioEmpleadoSoloLectura
     {
-        public IEnumerable<Empleado> Todos => Db.Conexion.Query<Empleado>("SELECT * FROM Empleado");
+        private const string command = "SELECT * FROM Empleado";
+
+        public IEnumerable<Empleado> Todos => Db.Conexion.Query<Empleado>(command);
     }
 }

@@ -9,16 +9,15 @@ namespace SmartAssemblyTFI
     public partial class Formulario_web12 : Page
     {
         private readonly GestorCliente _gestorCliente = new GestorCliente();
+        private readonly GestorDomicilio _gestorDomicilio = new GestorDomicilio();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
-                var domicilio = new GestorDomicilio();
-                DropDownList1.DataSource = domicilio.Provincias.Select(x => x.Nombre);
+                DropDownList1.DataSource = _gestorDomicilio.Provincias.Select(x => x.Nombre);
                 DropDownList1.DataBind();
-                DropDownList3.DataSource = domicilio.Barrios.Select(x => x.Nombre);
-                DropDownList3.DataBind();
+                DropDownList1_SelectedIndexChanged(null, null);
             }
         }
 
@@ -53,6 +52,12 @@ namespace SmartAssemblyTFI
             _gestorCliente.Agregar(cliente);
             new Login().IngresarCliente(cliente.Correo, TextBox8.Text);
             Response.Redirect("../home_page.aspx");
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList3.DataSource = _gestorDomicilio.Provincias.First(x => x.Nombre == DropDownList1.SelectedValue).Barrios.Select(x => x.Nombre);
+            DropDownList3.DataBind();
         }
 
         private bool TextboxsValidos => FormHelper.ValidarTextoTextbox(TextBox1)

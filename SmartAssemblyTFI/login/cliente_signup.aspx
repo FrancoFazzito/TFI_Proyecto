@@ -79,7 +79,7 @@
                             <div class="col-md-6">
                                 <label>Provincia</label>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="DropDownList1" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList class="form-control" ID="DropDownList1" AutoPostBack="true" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
                                 </div>
                             </div>
                             <div class="col-md-6">
