@@ -8,8 +8,11 @@ namespace UnitTests
     public class GestorDomicilioTestUnitario
     {
         [TestMethod]
-        public void ObtenerProvincias() =>
+        public void ObtenerProvincias()
+        {
             //arrange act assert
             Assert.IsTrue(new GestorDomicilio().Provincias.Any());
+            Assert.IsTrue(new GestorDomicilio().Provincias.ElementAt(0).Barrios.Any());
+        }
     }
 }
