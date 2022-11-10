@@ -1,19 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using Dominio;
+using Repositorio;
+using System.Collections.Generic;
 
 namespace Aplicacion
 {
     public class GestorDomicilio
     {
-        public List<string> Barrios => new List<string>()
-        {
-            "San telmo",
-            "Villa ballester"
-        };
+        public IEnumerable<Barrio> Barrios => new RepositorioBarrioSoloLectura().Todos;
 
-        public List<string> Provincias => new List<string>()
-        {
-            "Buenos aires",
-            "CABA"
-        };
+        public IEnumerable<Provincia> Provincias => new RepositorioProvinciaSoloLectura().Todos;
     }
 }

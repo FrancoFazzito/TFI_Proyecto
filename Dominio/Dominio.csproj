@@ -53,8 +53,10 @@
     <Compile Include="Computadora\Componente.cs" />
     <Compile Include="Computadora\Computadora.cs" />
     <Compile Include="Compatibilidades\ICompatibilidad.cs" />
+    <Compile Include="Domicilio\Barrio.cs" />
     <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="Pedido\Pedido.cs" />
+    <Compile Include="Domicilio\Provincia.cs" />
     <Compile Include="Requerimientos\TipoUso.cs" />
     <Compile Include="Excepciones\ExcepcionAgregadoInvalido.cs" />
     <Compile Include="Excepciones\ExcepcionRequerimientoInvalido.cs" />

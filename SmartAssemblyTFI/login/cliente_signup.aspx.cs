@@ -1,6 +1,7 @@
 ﻿using Aplicacion;
 using Dominio;
 using System;
+using System.Linq;
 using System.Web.UI;
 
 namespace SmartAssemblyTFI
@@ -14,9 +15,9 @@ namespace SmartAssemblyTFI
             if (!Page.IsPostBack)
             {
                 var domicilio = new GestorDomicilio();
-                DropDownList1.DataSource = domicilio.Provincias;
+                DropDownList1.DataSource = domicilio.Provincias.Select(x => x.Nombre);
                 DropDownList1.DataBind();
-                DropDownList3.DataSource = domicilio.Barrios;
+                DropDownList3.DataSource = domicilio.Barrios.Select(x => x.Nombre);
                 DropDownList3.DataBind();
             }
         }
