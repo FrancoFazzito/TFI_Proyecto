@@ -97,11 +97,11 @@
                         <div class="card">
                             <img class="card-img-top" src="imgs/pc1.png" alt="imgs/pc.png">
                             <div class="card-body">
-                                <h4 class="card-title">PC gaming I7 12900K</h4>
+                                <h4 class="card-title">PC gaming I5 11600K</h4>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">CPU: I5 11600K</li>
-                                <li class="list-group-item">RAM: 16GB</li>
+                                <li class="list-group-item">RAM: 8GB DDR4</li>
                                 <li class="list-group-item">SSD: 250GB</li>
                                 <li class="list-group-item">HDD: 1TB</li>
                             </ul>
@@ -118,9 +118,9 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">CPU: R9 6900X</li>
-                                <li class="list-group-item">RAM: 16GB</li>
+                                <li class="list-group-item">RAM: 16GB DDR4</li>
                                 <li class="list-group-item">SSD: 500GB</li>
-                                <li class="list-group-item">HDD: 1TB</li>
+                                <li class="list-group-item">HDD: 2TB</li>
                             </ul>
                         </div>
                     </center>
@@ -134,7 +134,7 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">CPU: R7 5800x</li>
-                                <li class="list-group-item">RAM: 16GB</li>
+                                <li class="list-group-item">RAM: 16GB DDR4</li>
                                 <li class="list-group-item">SSD: 500GB</li>
                                 <li class="list-group-item">HDD: 1TB</li>
                             </ul>
@@ -150,9 +150,9 @@
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">CPU: i9 9900k</li>
-                                <li class="list-group-item">RAM: 16GB</li>
+                                <li class="list-group-item">RAM: 32GB DDR4</li>
                                 <li class="list-group-item">SSD: 1TB</li>
-                                <li class="list-group-item">HDD: 1TB</li>
+                                <li class="list-group-item">HDD: 2TB</li>
                             </ul>
                         </div>
                     </center>
