@@ -30,6 +30,7 @@ namespace Aplicacion
                 TipoUso = especificacion.Nombre
             });
         }
+
         private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraVacia)
         {
             _componentes = componentes;
