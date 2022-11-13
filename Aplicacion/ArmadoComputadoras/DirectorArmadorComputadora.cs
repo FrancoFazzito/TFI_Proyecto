@@ -34,10 +34,11 @@ namespace Aplicacion
                                    where computer != null
                                    select computer;
 
-                return (_requerimientoArmado.Importancia == "precio"
-                       ? computadoras.OrderBy(c => c.Precio)
-                       : computadoras.OrderByDescending(c => c.Perfomance))
-                       .FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
+                var computadorasOrdenadas = _requerimientoArmado.Importancia == "precio"
+                                            ? computadoras.OrderBy(c => c.Precio)
+                                            : computadoras.OrderByDescending(c => c.Perfomance);
+
+                return computadorasOrdenadas.FirstOrDefault() ?? throw new ExcepcionRequerimientoInvalido();
             }
         }
 
@@ -45,12 +46,12 @@ namespace Aplicacion
         {
             try
             {
-                return ArmadorComputadora.Inicializar(componentes,
-                                                      precio,
-                                                      especificacion,
-                                                      _costoArmado,
-                                                      _factoryCompatibilidad,
-                                                      cpuParaIterar)
+                return ArmadorComputadora.IniciarArmado(componentes,
+                                                        precio,
+                                                        especificacion,
+                                                        _costoArmado,
+                                                        _factoryCompatibilidad,
+                                                        cpuParaIterar)
                                          .AgregarCpu()
                                          .AgregarMother()
                                          .AgregarRam()
@@ -60,7 +61,7 @@ namespace Aplicacion
                                          .AgregarSsd()
                                          .AgregarTower()
                                          .AgregarPsu()
-                                         .ArmarComputadora();
+                                         .ComputadoraArmada;
             }
             catch (ExcepcionAgregadoInvalido)
             {

@@ -12,7 +12,6 @@ namespace Aplicacion
         private readonly decimal _precio;
         private readonly FactoryCompatibilidad _factoryCompatibilidad;
         private readonly TipoUso _tipoUso;
-        private readonly Computadora _computadora;
         private readonly Componente _cpu;
         private Componente _fan;
         private Componente _mother;
@@ -23,7 +22,15 @@ namespace Aplicacion
         private Componente _ssd;
         private Componente _ram;
 
-        private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraArmada)
+        public static ArmadorComputadora IniciarArmado(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu)
+        {
+            return new ArmadorComputadora(componentes, precio, especificacion, costoArmado, factoryCompatibilidad, cpu, new Computadora()
+            {
+                CostoArmado = costoArmado,
+                TipoUso = especificacion.Nombre
+            });
+        }
+        private ArmadorComputadora(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu, Computadora computadoraVacia)
         {
             _componentes = componentes;
             _precio = precio;
@@ -31,16 +38,7 @@ namespace Aplicacion
             _costoArmado = costoArmado;
             _factoryCompatibilidad = factoryCompatibilidad;
             _cpu = cpu;
-            _computadora = computadoraArmada;
-        }
-
-        public static ArmadorComputadora Inicializar(IEnumerable<Componente> componentes, decimal precio, TipoUso especificacion, decimal costoArmado, FactoryCompatibilidad factoryCompatibilidad, Componente cpu)
-        {
-            return new ArmadorComputadora(componentes, precio, especificacion, costoArmado, factoryCompatibilidad, cpu, new Computadora()
-            {
-                CostoArmado = costoArmado,
-                TipoUso = especificacion.Nombre
-            });
+            ComputadoraArmada = computadoraVacia;
         }
 
         public ArmadorComputadora AgregarCpu()
@@ -107,7 +105,7 @@ namespace Aplicacion
         public ArmadorComputadora AgregarPsu()
         {
             _psu = _componentes.Where(c => c.Tipo == "PSU")
-                               .FirstOrDefault(c => c.Capacidad >= _computadora.ConsumoTotal);
+                               .FirstOrDefault(c => c.Capacidad >= ComputadoraArmada.ConsumoTotal);
             AgregarComponente(_psu);
             return this;
         }
@@ -151,19 +149,19 @@ namespace Aplicacion
 
         private void AgregarComponente(Componente componente, int cantidad = 1)
         {
-            if (EsAgregadoInvalido(componente, cantidad))
+            if (AgregadoInvalido(componente, cantidad))
             {
                 throw new ExcepcionAgregadoInvalido();
             }
-            _computadora.Add(componente, cantidad);
+            ComputadoraArmada.Add(componente, cantidad);
         }
 
-        private bool EsAgregadoInvalido(Componente componente, int cantidad) => componente == null || EsPresupuestoInvalido(componente) || EsStockInvalido(componente, cantidad);
+        private bool AgregadoInvalido(Componente componente, int cantidad) => componente == null || PresupuestoInvalido(componente) || StockInvalido(componente, cantidad);
 
-        private bool EsPresupuestoInvalido(Componente componente) => (_computadora.Precio + componente.Precio + _costoArmado) >= _precio;
+        private bool PresupuestoInvalido(Componente componente) => (ComputadoraArmada.Precio + componente.Precio + _costoArmado) >= _precio;
 
-        private bool EsStockInvalido(Componente componente, int cantidad) => componente.Stock < cantidad;
+        private bool StockInvalido(Componente componente, int cantidad) => componente.Stock < cantidad;
 
-        public Computadora ArmarComputadora() => _computadora;
+        public Computadora ComputadoraArmada { get; }
     }
 }

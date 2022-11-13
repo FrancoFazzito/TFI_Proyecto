@@ -16,7 +16,6 @@ namespace SmartAssemblyTFI
         protected void Page_Load(object sender, EventArgs e)
         {
             FormHelper.ChequearAdminLogueado(this);
-            labelError.Visible = false;
             if (!Page.IsPostBack)
             {
                 ActualizarGrid();

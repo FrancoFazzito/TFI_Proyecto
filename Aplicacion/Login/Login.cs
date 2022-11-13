@@ -19,7 +19,7 @@ namespace Aplicacion
         public bool IngresarCliente(string correo, string contrasena)
         {
             var cliente = _repositorioClienteSoloLectura.Todos.FirstOrDefault(c => c.Correo.ToLower() == correo.ToLower());
-            if (cliente == null || !_gestorContrasena.Verificar(cliente.Contrasena, contrasena))
+            if (ClienteInvalido(contrasena, cliente))
             {
                 return false;
             }
@@ -27,16 +27,20 @@ namespace Aplicacion
             return true;
         }
 
+        private bool ClienteInvalido(string contrasena, Dominio.Cliente cliente) => cliente == null || !_gestorContrasena.Verificar(cliente.Contrasena, contrasena);
+
         public bool IngresarEmpleado(string nombreUsuario, string contrasena)
         {
             var empleado = _repositorioEmpleadoSoloLectura.Todos.FirstOrDefault(c => c.NombreUsuario.ToLower() == nombreUsuario.ToLower());
-            if (empleado == null || !_gestorContrasena.Verificar(empleado.Contrasena, contrasena))
+            if (EmpleadoInvalido(contrasena, empleado))
             {
                 return false;
             }
             SesionEmpleado.Ingresar(empleado);
             return true;
         }
+
+        private bool EmpleadoInvalido(string contrasena, Dominio.Empleado empleado) => empleado == null || !_gestorContrasena.Verificar(empleado.Contrasena, contrasena);
 
         public void SalirEmpleado() => SesionEmpleado.Salir();
 

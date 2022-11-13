@@ -115,7 +115,7 @@
                         <center>
                             <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasenaCoincidente" Text="La contraseñas deben ser iguales"></asp:Label>
                             <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasena" Text="La contraseña debe tener al menos una mayuscula, una minuscula, un numero y al menos 8 caracteres"></asp:Label>
-                            <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Ingresa todos los datos para que poder registrarte"></asp:Label>
+                            <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelError" Text="Ingresa todos los datos validos para que poder registrarte"></asp:Label>
                         </center>
                     </div>
                 </div>

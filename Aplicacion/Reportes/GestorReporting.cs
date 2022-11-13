@@ -30,11 +30,9 @@ namespace Aplicacion
                     if (componenteCantidad.ContainsKey(componente.Nombre))
                     {
                         componenteCantidad[componente.Nombre] += 1;
+                        continue;
                     }
-                    else
-                    {
-                        componenteCantidad.Add(componente.Nombre, 1);
-                    }
+                    componenteCantidad.Add(componente.Nombre, 1);
                 }
                 return componenteCantidad.OrderByDescending(x => x.Value).Take(3).ToDictionary(x => x.Key, x => x.Value.ToString());
             }
@@ -50,11 +48,9 @@ namespace Aplicacion
                     if (tipoUsoCantidad.ContainsKey(tipoUso))
                     {
                         tipoUsoCantidad[tipoUso] += 1;
+                        continue;
                     }
-                    else
-                    {
-                        tipoUsoCantidad.Add(tipoUso, 1);
-                    }
+                    tipoUsoCantidad.Add(tipoUso, 1);
                 }
                 return tipoUsoCantidad.OrderByDescending(x => x.Value).Take(3).ToDictionary(x => x.Key, x => x.Value.ToString());
             }

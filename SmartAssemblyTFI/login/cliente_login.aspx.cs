@@ -11,27 +11,24 @@ namespace SmartAssemblyTFI
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (!FormHelper.ValidarTextoTextbox(TextBox1) || !FormHelper.ValidarTextoTextbox(TextBox2))
-            {
-                labelError.Visible = true;
-                return;
-            }
-
-            var correo = FormHelper.ObtenerValorText(TextBox1);
-            var contrasena = FormHelper.ObtenerValorText(TextBox2);
-            var esExistoso = new Login().IngresarCliente(correo, contrasena);
-            if (!esExistoso)
+            if (!CorreoContrasenaValido || !ContrasenaValida)
             {
                 labelError.Visible = true;
                 return;
             }
             Session["clienteLogueado"] = SesionCliente.Logueado;
             SesionEmpleado.Salir();
-            if (Session["vieneDeCrearPedido"] != null && (bool)Session["vieneDeCrearPedido"])
+            if (VieneDeCrearPedido)
             {
                 Response.Redirect("../venta/crear_pedido.aspx");
             }
             Response.Redirect("../home_page.aspx");
         }
+
+        private bool ContrasenaValida => new Login().IngresarCliente(FormHelper.ObtenerValorText(TextBox1), FormHelper.ObtenerValorText(TextBox2));
+
+        private bool VieneDeCrearPedido => Session["vieneDeCrearPedido"] != null && (bool)Session["vieneDeCrearPedido"];
+
+        private bool CorreoContrasenaValido => FormHelper.ValidarTextoTextbox(TextBox1) && FormHelper.ValidarTextoTextbox(TextBox2);
     }
 }

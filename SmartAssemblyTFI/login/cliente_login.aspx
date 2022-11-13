@@ -45,7 +45,7 @@
                             <div class="col">
                                 <label>Correo electronico</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Correo Electronico"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Correo Electronico" TextMode="Email"></asp:TextBox>
                                 </div>
                                 <label>Contraseña</label>
                                 <div class="form-group">
