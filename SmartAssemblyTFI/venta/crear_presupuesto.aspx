@@ -45,7 +45,7 @@
                             <div class="col">
                                 <label>Cantidad de dinero en pesos</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" TextMode="Number" step="1000" placeholder="Cantidad de dinero"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<10" CssClass="form-control" ID="TextBox1" runat="server" TextMode="Number" step="1000" placeholder="Cantidad de dinero"></asp:TextBox>
                                 </div>
                                 <label>Para que vas a usar la PC</label>
                                 <div class="form-group">

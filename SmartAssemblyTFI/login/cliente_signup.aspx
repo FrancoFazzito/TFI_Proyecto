@@ -45,13 +45,13 @@
                             <div class="col-md-4">
                                 <label>Nombre</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <label>Apellido</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Apellido"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox2" runat="server" placeholder="Apellido"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -65,13 +65,13 @@
                             <div class="col-md-6">
                                 <label>Numero de telefono</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Numero de telefono" TextMode="Phone"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<15" CssClass="form-control" ID="TextBox3" runat="server" placeholder="Numero de telefono" TextMode="Phone"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Correo electronico</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Correo electronico" TextMode="Email"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<50" CssClass="form-control" ID="TextBox4" runat="server" placeholder="Correo electronico" TextMode="Email"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -93,13 +93,13 @@
                             <div class="col-md-6">
                                 <label>Contraseña</label>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="TextBox8" runat="server" TextMode="Password" placeholder="contraseña"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" class="form-control" ID="TextBox8" runat="server" TextMode="Password" placeholder="contraseña"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Repita su contraseña</label>
                                 <div class="form-group">
-                                    <asp:TextBox class="form-control" ID="TextBox9" runat="server" TextMode="Password" placeholder="repita su contraseña"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" class="form-control" ID="TextBox9" runat="server" TextMode="Password" placeholder="repita su contraseña"></asp:TextBox>
                                 </div>
                             </div>
                         </div>

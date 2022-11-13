@@ -39,7 +39,7 @@
                                 <label>ID del tipo de uso</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del tipo de uso" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<3" CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del tipo de uso" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <label>Nombre</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                             <div class="col-md-9 mx-auto">
                                 <label>Calidad minima del CPU para el tipo de uso</label>
                                 <div class="input-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" TextMode="Number" placeholder="Calidad del 1 al 100"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<3" CssClass="form-control" ID="TextBox2" runat="server" TextMode="Number" placeholder="Calidad del 1 al 100"></asp:TextBox>
                                 </div>
                                 <label class="labelAclaracion">(1 muy baja - 100 muy alta)</label>
                             </div>
@@ -67,7 +67,7 @@
                             <div class="col-md-9 mx-auto">
                                 <label>Calidad minima del GPU para el tipo de uso</label>
                                 <div class="input-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" TextMode="Number" placeholder="Calidad del 1 al 100"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<3" CssClass="form-control" ID="TextBox4" runat="server" TextMode="Number" placeholder="Calidad del 1 al 100"></asp:TextBox>
                                 </div>
                                 <label class="labelAclaracion">(1 muy baja - 100 muy alta)</label>
                             </div>
@@ -77,7 +77,7 @@
                                 <label>Cantidad de RAM en GB</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" TextMode="Number" Step="4" placeholder="Cantidad de GB"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<3" CssClass="form-control" ID="TextBox5" runat="server" TextMode="Number" Step="4" placeholder="Cantidad de GB"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                 <label>Cantidad de HDD en GB</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Number" Step="10" placeholder="Cantidad de GB"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" CssClass="form-control" ID="TextBox6" runat="server" TextMode="Number" Step="10" placeholder="Cantidad de GB"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <label>Cantidad de SSD en GB</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" TextMode="Number" Step="10" placeholder="Cantidad de GB"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" CssClass="form-control" ID="TextBox7" runat="server" TextMode="Number" Step="10" placeholder="Cantidad de GB"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

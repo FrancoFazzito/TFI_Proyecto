@@ -39,7 +39,7 @@
                                 <label>ID del empleado</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del empleado" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<6" CssClass="form-control" ID="TextBox3" runat="server" placeholder="ID del empleado" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 <label>Nombre usuario</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre usuario"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre usuario"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 <label>Correo electronico</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" TextMode="Email" placeholder="Correo electronico"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<50" CssClass="form-control" ID="TextBox2" runat="server" TextMode="Email" placeholder="Correo electronico"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                 <label>Nombre</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Nombre"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox4" runat="server" placeholder="Nombre"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <label>Apellido</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Apellido"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox5" runat="server" placeholder="Apellido"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                                 <label>Contraseña</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox7" runat="server" TextMode="Password" placeholder="Contraseña"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                 <label>Confirmar contraseña</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Nueva Contraseña"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox6" runat="server" TextMode="Password" placeholder="Nueva Contraseña"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>

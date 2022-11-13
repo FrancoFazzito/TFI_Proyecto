@@ -45,11 +45,11 @@
                             <div class="col">
                                 <label>Nombre de usuario</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre de usuario"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox1" runat="server" placeholder="Nombre de usuario"></asp:TextBox>
                                 </div>
                                 <label>Contraseña</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="contraseña" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox onkeypress="return this.value.length<20" CssClass="form-control" ID="TextBox2" runat="server" placeholder="contraseña" TextMode="Password"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click" />

@@ -39,7 +39,7 @@
                                 <label>ID del componente</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="idtxt" runat="server" placeholder="ID" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<7" CssClass="form-control" ID="idtxt" runat="server" placeholder="ID" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <label>Nombre</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="nombretxt" runat="server" placeholder="Nombre"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<30" CssClass="form-control" ID="nombretxt" runat="server" placeholder="Nombre"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 <label>Perfomance</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="perfomancetxt" runat="server" TextMode="Number" placeholder="Perfomance"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<3" CssClass="form-control" ID="perfomancetxt" runat="server" TextMode="Number" placeholder="Perfomance"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                 <label>Stock</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="stocktxt" runat="server" TextMode="Number" placeholder="Stock"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" CssClass="form-control" ID="stocktxt" runat="server" TextMode="Number" placeholder="Stock"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                 <label>Limite de stock</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="limiteStocktxt" runat="server" TextMode="Number" placeholder="Limite de stock"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" CssClass="form-control" ID="limiteStocktxt" runat="server" TextMode="Number" placeholder="Limite de stock"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@
                                 <label>Precio</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="preciotxt" runat="server" placeholder="Precio"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<9" CssClass="form-control" ID="preciotxt" runat="server" placeholder="Precio"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                 <label>Consumo en Watts</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="consumotxt" runat="server" TextMode="Number" Step="10" placeholder="Consumo en watts"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<4" CssClass="form-control" ID="consumotxt" runat="server" TextMode="Number" Step="10" placeholder="Consumo en watts"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
                                 <asp:Label runat="server" ID="LabelSocket">Socket</asp:Label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="sockettxt" AutoPostBack="true" runat="server" placeholder="Socket"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<30" CssClass="form-control" ID="sockettxt" AutoPostBack="true" runat="server" placeholder="Socket"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                                 <label>Canales</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="canalestxt" runat="server" TextMode="Number" placeholder="Canales"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<2" CssClass="form-control" ID="canalestxt" runat="server" TextMode="Number" placeholder="Canales"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                 <label>Tamaño de FAN</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="tamanoFantxt" runat="server" TextMode="Number" Step="40" placeholder="Tamaño de FAN"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<4" CssClass="form-control" ID="tamanoFantxt" runat="server" TextMode="Number" Step="40" placeholder="Tamaño de FAN"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                 <label>Nivel de FAN (fan stock)</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="nivelFantxt" runat="server" TextMode="Number" placeholder="Nivel de FAN"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<4" CssClass="form-control" ID="nivelFantxt" runat="server" TextMode="Number" placeholder="Nivel de FAN"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                 <label>Frecuencia maxima</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox class="form-control" ID="frecuenciaMaximatxt" TextMode="Number" runat="server"> </asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" class="form-control" ID="frecuenciaMaximatxt" TextMode="Number" runat="server"> </asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@
                                 <label>Capacidad</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="capacidadtxt" runat="server" TextMode="Number" placeholder="Capacidad"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<5" CssClass="form-control" ID="capacidadtxt" runat="server" TextMode="Number" placeholder="Capacidad"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +199,7 @@
                                 <label>Nivel de video (video integrado)</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox CssClass="form-control" ID="nivelVideoIntregadotxt" runat="server" TextMode="Number" placeholder="Nivel de video"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<4" CssClass="form-control" ID="nivelVideoIntregadotxt" runat="server" TextMode="Number" placeholder="Nivel de video"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
