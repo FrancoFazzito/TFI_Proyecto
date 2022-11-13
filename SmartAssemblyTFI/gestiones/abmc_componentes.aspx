@@ -93,7 +93,7 @@
                                 <label>Precio</label>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <asp:TextBox onkeypress="return this.value.length<9" CssClass="form-control" ID="preciotxt" runat="server" placeholder="Precio"></asp:TextBox>
+                                        <asp:TextBox onkeypress="return this.value.length<10" CssClass="form-control" ID="preciotxt" runat="server" placeholder="Precio"></asp:TextBox>
                                     </div>
                                 </div>
                             </div>
