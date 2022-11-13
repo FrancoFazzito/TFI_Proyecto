@@ -15,6 +15,11 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            labelError.Visible = false;
+            labelErrorContrasena.Visible = false;
+            labelErrorContrasenaCoincidente.Visible = false;
+            labelErrorEliminacion.Visible = false;
+            labelErrorNombreUsuarioExistente.Visible = false;
             FormHelper.ChequearAdminLogueado(this);
             if (!Page.IsPostBack)
             {
@@ -65,12 +70,18 @@ namespace SmartAssemblyTFI
                 labelErrorContrasena.Visible = true;
                 return;
             }
-            if (TextBox6.Text != TextBox7.Text)
+            if (ContrasenasCoincidentes)
             {
                 labelErrorContrasenaCoincidente.Visible = true;
                 return;
             }
-            _gestorEmpleado.Agregar(EmpleadoCargadoAgregar);
+            var empleado = EmpleadoCargadoAgregar;
+            if (NombreUsuarioYaRegistrado(empleado))
+            {
+                labelErrorNombreUsuarioExistente.Visible = true;
+                return;
+            }
+            _gestorEmpleado.Agregar(empleado);
             ActualizarGrid();
         }
 
@@ -92,7 +103,7 @@ namespace SmartAssemblyTFI
                 labelErrorContrasena.Visible = true;
                 return;
             }
-            if (TextBox6.Text != TextBox7.Text)
+            if (ContrasenasCoincidentes)
             {
                 labelErrorContrasenaCoincidente.Visible = true;
                 return;
@@ -129,6 +140,10 @@ namespace SmartAssemblyTFI
             Nombre = TextBox4.Text,
             NombreUsuario = TextBox1.Text
         };
+
+        private bool NombreUsuarioYaRegistrado(Empleado empleado) => _gestorEmpleado.Todos.Any(x => x.NombreUsuario.ToLower() == empleado.NombreUsuario.ToLower());
+
+        private bool ContrasenasCoincidentes => TextBox6.Text != TextBox7.Text;
 
         private Empleado GetEmpleadoDataGrid(object sender) => _gestorEmpleado.Todos.ElementAt((EmpleadosGrid.PageIndex * EmpleadosGrid.PageSize) + FormHelper.ObtenerRowIndexGrid(sender));
 

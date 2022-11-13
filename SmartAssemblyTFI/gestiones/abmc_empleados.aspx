@@ -117,6 +117,7 @@
                 </div>
                 <center>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasenaCoincidente" Text="La contraseñas deben ser iguales"></asp:Label>
+                    <asp:Label Visible="false" ForeColor="Red" runat="server" ID="labelErrorNombreUsuarioExistente" Text="Nombre de usuario ya registrado"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorContrasena" Text="La contraseña debe tener al menos una mayuscula, una minuscula, un numero y al menos 8 caracteres"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelError" Text="Ingrese todos los datos validos para realizar la gestion"></asp:Label>
                     <asp:Label Visible="False" ForeColor="Red" runat="server" ID="labelErrorEliminacion" Text="No puedes eliminar este usuario"></asp:Label>

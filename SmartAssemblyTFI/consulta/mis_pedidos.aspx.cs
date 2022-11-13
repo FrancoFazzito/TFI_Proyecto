@@ -25,13 +25,12 @@ namespace SmartAssemblyTFI
         protected void Button5_Click(object sender, EventArgs e)
         {
             var computadora = GetPedidoDataGrid(sender).Computadora;
-            var enumerable = computadora.Componentes.Where(c => c.Tipo == "RAM");
             GridViewComputadoraSeleccionada.DataSource = new List<string>
             {
                 $"CPU: {computadora["CPU"].Nombre}",
                 $"Mother: {computadora["MOTHER"].Nombre}",
                 $"GPU: {(computadora["GPU"] == null ? "Video integrado" : computadora["GPU"].Nombre)}",
-                $"Memoria: {enumerable.Sum(c => c.Capacidad)}GB",
+                $"Memoria: {computadora.Componentes.Where(c => c.Tipo == "RAM").Sum(c => c.Capacidad)}GB",
                 $"HDD: {computadora["HDD"].Nombre}",
                 $"SSD: {computadora["SSD"].Nombre}"
             };

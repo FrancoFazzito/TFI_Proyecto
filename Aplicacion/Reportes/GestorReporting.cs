@@ -11,15 +11,6 @@ namespace Aplicacion
     {
         private readonly IEnumerable<Pedido> _pedidos = new GestorPedido().Todos;
 
-        public Dictionary<string, decimal> ObtenerValorPedidosDoceMeses
-            => _pedidos.OrderBy(x => x.Fecha)
-                       .GroupBy(x => x.Fecha.Month)
-                       .ToDictionary(x => x.Key.ToString(), x => Math.Truncate(x.Sum(p => p.Computadora.Precio)));
-
-        public Dictionary<string, decimal> ClientesSegmentados
-            => _pedidos.GroupBy(x => x.Computadora.TipoUso)
-                       .ToDictionary(x => x.Key.ToString(), x => Math.Truncate(x.Average(p => p.Computadora.Precio)));
-
         public Dictionary<string, string> ComponentesMasVendidos
         {
             get
@@ -56,9 +47,25 @@ namespace Aplicacion
             }
         }
 
+        public Dictionary<string, decimal> ObtenerValorPedidosDoceMeses
+            => _pedidos.OrderBy(x => x.Fecha)
+                       .GroupBy(x => x.Fecha.Month)
+                       .ToDictionary(x => x.Key.ToString(), x => Math.Truncate(x.Sum(p => p.Computadora.Precio)));
+
+        public Dictionary<string, decimal> ClientesSegmentados
+            => _pedidos.GroupBy(x => x.Computadora.TipoUso)
+                       .ToDictionary(x => x.Key.ToString(), x => Math.Truncate(x.Average(p => p.Computadora.Precio)));
+
         public Dictionary<string, decimal> GananciasUltimosMeses
             => ObtenerValorPedidosDoceMeses.OrderByDescending(x => x.Key)
                                            .Take(3)
-                                           .ToDictionary(x => x.Key, x => Math.Truncate(x.Value * decimal.Parse(ConfigurationManager.AppSettings["divisorGanancia"])));
+                                           .ToDictionary(x => x.Key, x => CalcularGanancia(x));
+
+        private decimal CalcularGanancia(KeyValuePair<string, decimal> x)
+        {
+            decimal porcentajeGanancia = decimal.Parse(ConfigurationManager.AppSettings["porcentajeGanancia"]) / 100;
+            decimal ganancia = x.Value * porcentajeGanancia;
+            return Math.Truncate(ganancia);
+        }
     }
 }

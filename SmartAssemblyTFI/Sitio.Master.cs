@@ -11,13 +11,11 @@ namespace SmartAssemblyTFI
             {
                 IntercambiarBotonesClienteLogueado();
                 LinkButton7.Text = $"¡Hola {SesionCliente.Logueado.Nombre}!";
-                return;
             }
             if (SesionEmpleado.Logueado != null)
             {
                 IntercambiarBotonesEmpleadoLogueado();
                 LinkButton7.Text = $"¡Hola {SesionEmpleado.Logueado.Nombre}!";
-                return;
             }
         }
 

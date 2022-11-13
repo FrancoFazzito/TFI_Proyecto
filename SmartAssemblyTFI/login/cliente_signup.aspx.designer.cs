@@ -114,6 +114,15 @@ namespace SmartAssemblyTFI
         protected global::System.Web.UI.WebControls.Label labelErrorContrasenaCoincidente;
 
         /// <summary>
+        /// Control labelErrorMailExistente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label labelErrorMailExistente;
+
+        /// <summary>
         /// Control labelErrorContrasena.
         /// </summary>
         /// <remarks>

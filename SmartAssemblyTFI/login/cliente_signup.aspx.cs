@@ -14,6 +14,10 @@ namespace SmartAssemblyTFI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            labelError.Visible = false;
+            labelErrorContrasena.Visible = false;
+            labelErrorContrasenaCoincidente.Visible = false;
+            labelErrorMailExistente.Visible = false;
             if (!Page.IsPostBack)
             {
                 FormHelper.RellenarDropDownList(DropDownList1, _gestorDomicilio.Provincias.Select(x => x.Nombre));
@@ -40,6 +44,11 @@ namespace SmartAssemblyTFI
                 Correo = TextBox4.Text,
                 Contrasena = TextBox8.Text
             };
+            if (MailYaRegistrado(cliente))
+            {
+                labelErrorMailExistente.Visible = true;
+                return;
+            }
             if (!ValidarContrasenaCoincidente(cliente))
             {
                 labelErrorContrasenaCoincidente.Visible = true;
@@ -73,6 +82,8 @@ namespace SmartAssemblyTFI
         private bool TelefonoValido => TextBox3.Text.All(x => char.IsDigit(x));
 
         private bool NombreApellidoValidos => TextBox1.Text.All(x => char.IsLetter(x) && TextBox2.Text.All(c => char.IsLetter(c)));
+
+        private bool MailYaRegistrado(Cliente cliente) => _gestorCliente.Todos.Any(x => x.Correo.ToLower() == cliente.Correo.ToLower());
 
         private bool TextboxsValidos => FormHelper.ValidarTextoTextbox(TextBox1)
                                         && FormHelper.ValidarTextoTextbox(TextBox2)
