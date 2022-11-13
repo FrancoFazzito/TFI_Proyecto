@@ -61,7 +61,7 @@
                             <h6 class="text-uppercase fw-bold mb-4">Administracion
                             </h6>
                             <p>
-                                <a href="login/admin_login.aspx" class="text-reset">Ingreso admin</a>
+                                <asp:LinkButton runat="server" class="text-reset" OnClick="Unnamed2_Click">Ingreso empleados</asp:LinkButton>
                             </p>
                         </div>
                         <div class="col-md-3 col-lg-4 mx-auto">

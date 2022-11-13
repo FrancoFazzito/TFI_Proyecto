@@ -11,11 +11,13 @@ namespace SmartAssemblyTFI
             {
                 IntercambiarBotonesClienteLogueado();
                 LinkButton7.Text = $"¡Hola {SesionCliente.Logueado.Nombre}!";
+                return;
             }
             if (SesionEmpleado.Logueado != null)
             {
                 IntercambiarBotonesEmpleadoLogueado();
                 LinkButton7.Text = $"¡Hola {SesionEmpleado.Logueado.Nombre}!";
+                return;
             }
         }
 
@@ -63,5 +65,10 @@ namespace SmartAssemblyTFI
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e) => Response.Redirect(Page.AppRelativeVirtualPath.Contains("home") ? "consulta/mis_pedidos.aspx" : "../consulta/mis_pedidos.aspx");
+
+        protected void Unnamed2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Page.AppRelativeVirtualPath.Contains("home") ? "login/admin_login.aspx" : "../login/admin_login.aspx");
+        }
     }
 }

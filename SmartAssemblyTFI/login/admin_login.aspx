@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h3>Ingreso usuario administrador</h3>
+                                    <h3>Ingreso de empleado</h3>
                                 </center>
                             </div>
                         </div>
