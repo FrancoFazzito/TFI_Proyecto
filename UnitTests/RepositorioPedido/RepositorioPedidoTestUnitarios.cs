@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Repositorio.Repositorios.Pedidos;
+using Repositorio;
 using System.Linq;
 
 namespace UnitTests
