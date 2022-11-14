@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Repositorio.Repositorios.Pedidos
+namespace Repositorio
 {
     public class PedidoConsulta
     {

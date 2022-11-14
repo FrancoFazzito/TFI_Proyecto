@@ -1,7 +1,7 @@
 ﻿using Dapper;
 using Dominio;
 
-namespace Repositorio.Repositorios.Pedidos
+namespace Repositorio
 {
     public class ParametrosPedido
     {

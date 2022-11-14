@@ -1,9 +1,9 @@
 ﻿using Dominio;
-using Repositorio.Repositorios.Pedidos;
+using Repositorio;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Aplicacion.Pedidos
+namespace Aplicacion
 {
     public class GestorPedido
     {

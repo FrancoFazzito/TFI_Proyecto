@@ -1,5 +1,4 @@
-﻿using Aplicacion.Pedidos;
-using Dominio;
+﻿using Dominio;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
