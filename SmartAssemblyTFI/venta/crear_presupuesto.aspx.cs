@@ -10,6 +10,8 @@ namespace SmartAssemblyTFI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            labelErrorPresupuesto.Visible = false;
+            labelErrorValidacion.Visible = false;
             if (!Page.IsPostBack)
             {
                 FormHelper.RellenarDropDownList(DropDownList2, new GestorTipoUso().Todos.Select(t => t.Nombre));
@@ -21,9 +23,10 @@ namespace SmartAssemblyTFI
         {
             try
             {
-                if (!FormHelper.ValidarNumeroTextbox(TextBox1))
+                if (!FormHelper.ValidarNumeroTextbox(TextBox1) || !PresupuestoValido)
                 {
                     labelErrorValidacion.Visible = true;
+                    return;
                 }
                 var tipoUso = DropDownList2.SelectedValue;
                 var importancia = DropDownList3.SelectedIndex == 0 ? "precio" : "calidad";
@@ -39,5 +42,7 @@ namespace SmartAssemblyTFI
                 labelErrorPresupuesto.Visible = true;
             }
         }
+
+        private bool PresupuestoValido => TextBox1.Text != "";
     }
 }
